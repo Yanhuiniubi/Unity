@@ -10,7 +10,7 @@ public class TableRole
 }
 public class TableRoleMod
 {
-    private static string csvFilePath = "D:/Unity/proj/Test/Assets/StreamingAssets/Role.csv";
+    private static string csvFilePath = "D:/Unity/proj/Unity/Test/Assets/StreamingAssets/Role.csv";
     private static Dictionary<int,TableRole> dic = new Dictionary<int,TableRole>();
     private static void Init()
     {
@@ -23,8 +23,7 @@ public class TableRoleMod
             for (int j = 0;j < values.Length;j++)
                 values[j] = values[j].Replace("\"", "");
             //write init code in here
-            cfg.ID = int.Parse(values[0]);
-            cfg.Name = values[1];
+            
 
             dic.Add(cfg.ID, cfg);
         }

@@ -64,7 +64,7 @@ public class CsvToScriptGenerator : EditorWindow
 
             sb.AppendLine($"public class {outputFileName}Mod");
             sb.AppendLine("{");
-            sb.AppendLine($"    private static string csvFilePath = \"{csvFilePath}\";");
+            sb.AppendLine($"    private static string csvFilePath = \"{csvFilePath.Replace('\\','/')}\";");
             sb.AppendLine($"    private static Dictionary<{typeName[0].Substring(1, typeName[0].Length - 2)},{outputFileName}> dic = new Dictionary<{typeName[0].Substring(1, typeName[0].Length - 2)},{outputFileName}>();");
             sb.AppendLine($"    private static void Init()\r\n    {{\r\n        var csvContent = File.ReadAllText(csvFilePath);\r\n        " +
                 $"string[] records = csvContent.Split('\\n');\r\n        for (int i = 2;i < records.Length;i++)\r\n        {{\r\n            " +
