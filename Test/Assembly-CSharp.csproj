@@ -60,15 +60,17 @@
     <Analyzer Include="D:\Unity\2022.3.49f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Normal\Test.cs" />
+    <Compile Include="Assets\Scripts\Normal\GameMod.cs" />
+    <Compile Include="Assets\Scripts\Normal\RedLogic.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\AccessoryLogic.cs" />
+    <Compile Include="Assets\Scripts\Generate\TableAnimal.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\FreeCameraLogic.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\DemoFree.cs" />
+    <Compile Include="Assets\Scripts\Normal\UILogicBase.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\AccessoryWearLogic.cs" />
-    <Compile Include="Assets\Scripts\UIMod.cs" />
-    <Compile Include="Assets\Scripts\TableAnimal.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleSampleCharacterControl.cs" />
-    <Compile Include="Assets\Scripts\UILogicBase.cs" />
-    <Compile Include="Assets\Scripts\Test.cs" />
+    <Compile Include="Assets\Scripts\Normal\UIMod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Supercyan Character Pack Free Sample\Shaders\Legacy\CelShader.shader" />

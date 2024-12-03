@@ -4,29 +4,29 @@ using System.IO;
 using System.Text;
 using UnityEngine.UIElements;
 
-public class CsvToScriptGenerator : EditorWindow
+public class CsvToScriptGenerator /*: EditorWindow*/
 {
-    private string outputFolder = "Scripts";
+    private static string outputFolder = "Scripts/Generate";
 
+    //[MenuItem("Tools/CsvToScript Generator")]
+    //public static void ShowWindow()
+    //{
+    //    GetWindow<CsvToScriptGenerator>(false, "CsvToScript Generator", true);
+    //}
+
+    //private void OnGUI()
+    //{
+    //    GUILayout.Label("CSV to Script Generator", EditorStyles.boldLabel);
+
+    //    outputFolder = EditorGUILayout.TextField("Output Folder:", outputFolder);
+
+    //    if (GUILayout.Button("Generate C# Scripts"))
+    //    {
+    //        GenerateScripts();
+    //    }
+    //}
     [MenuItem("Tools/CsvToScript Generator")]
-    public static void ShowWindow()
-    {
-        GetWindow<CsvToScriptGenerator>(false, "CsvToScript Generator", true);
-    }
-
-    private void OnGUI()
-    {
-        GUILayout.Label("CSV to Script Generator", EditorStyles.boldLabel);
-
-        outputFolder = EditorGUILayout.TextField("Output Folder:", outputFolder);
-
-        if (GUILayout.Button("Generate C# Scripts"))
-        {
-            GenerateScripts();
-        }
-    }
-
-    private void GenerateScripts()
+    public static void GenerateScripts()
     {
         string streamingAssetsPath = Application.streamingAssetsPath;
         string[] csvFiles = Directory.GetFiles(streamingAssetsPath, "*.csv");
@@ -36,7 +36,24 @@ public class CsvToScriptGenerator : EditorWindow
             Debug.LogError("No CSV files found in StreamingAssets folder.");
             return;
         }
+        string folderPath = Path.Combine(Application.dataPath, outputFolder);
 
+        if (Directory.Exists(folderPath))
+        {
+            string[] files = Directory.GetFiles(folderPath);
+
+            foreach (string file in files)
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch (System.Exception ex)
+                {
+                    Debug.LogError($"Cannot delete file: {file}, Error: {ex.Message}");
+                }
+            }
+        }
         foreach (string csvFilePath in csvFiles)
         {
             string csvContent = File.ReadAllText(csvFilePath);
@@ -66,8 +83,9 @@ public class CsvToScriptGenerator : EditorWindow
             sb.AppendLine("{");
             sb.AppendLine($"    private static string csvFilePath = \"{csvFilePath.Replace('\\','/')}\";");
             sb.AppendLine($"    private static Dictionary<{typeName[0].Substring(1, typeName[0].Length - 2)},{outputFileName}> dic = new Dictionary<{typeName[0].Substring(1, typeName[0].Length - 2)},{outputFileName}>();");
+            sb.AppendLine($"    private static {outputFileName}[] array;\r\n    public static {outputFileName}[] Array\r\n    {{\r\n        get\r\n        {{\r\n            if (array == null)\r\n                Init();\r\n            return array;\r\n        }}\r\n    }}");
             sb.AppendLine($"    private static void Init()\r\n    {{\r\n        var csvContent = File.ReadAllText(csvFilePath);\r\n        " +
-                $"string[] records = csvContent.Split('\\n');\r\n        for (int i = 2;i < records.Length;i++)\r\n        {{\r\n            " +
+                $"string[] records = csvContent.Split('\\n');\r\n        array = new {outputFileName}[records.Length - 2];\r\n        for (int i = 2;i < records.Length;i++)\r\n        {{\r\n            " +
                 $"{outputFileName} cfg = new {outputFileName}();\r\n            var values = records[i].Split(',');\r\n            " +
                 $"for (int j = 0;j < values.Length;j++)\r\n                values[j] = values[j].Replace(\"\\\"\", \"\");");
             for (int index = 0;index < typeName.Length;index++)
@@ -79,7 +97,7 @@ public class CsvToScriptGenerator : EditorWindow
                 else if (typeName[index].IndexOf("string") != -1)
                     sb.AppendLine($"            cfg.{fieldName[index].Substring(1, fieldName[index].Length - 2)} = values[{index}];");
             }
-            sb.AppendLine($"            dic.Add(cfg.ID, cfg);");
+            sb.AppendLine($"            dic.Add(cfg.ID, cfg);\r\n            array[i - 2] = cfg;");
             sb.AppendLine("        }");
             sb.AppendLine("    }");
             sb.AppendLine($"    public static {outputFileName} Get(int id)\r\n    {{\r\n        if (dic.Count == 0)\r\n            Init();\r\n        if (dic.ContainsKey(id))\r\n            return dic[id];\r\n        return null;\r\n    }}");

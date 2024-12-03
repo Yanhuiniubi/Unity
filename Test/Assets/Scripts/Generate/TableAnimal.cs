@@ -13,10 +13,21 @@ public class TableAnimalMod
 {
     private static string csvFilePath = "D:/Unity/proj/Unity/Test/Assets/StreamingAssets/Animal.csv";
     private static Dictionary<int,TableAnimal> dic = new Dictionary<int,TableAnimal>();
+    private static TableAnimal[] array;
+    public static TableAnimal[] Array
+    {
+        get
+        {
+            if (array == null)
+                Init();
+            return array;
+        }
+    }
     private static void Init()
     {
         var csvContent = File.ReadAllText(csvFilePath);
         string[] records = csvContent.Split('\n');
+        array = new TableAnimal[records.Length - 2];
         for (int i = 2;i < records.Length;i++)
         {
             TableAnimal cfg = new TableAnimal();
@@ -27,6 +38,7 @@ public class TableAnimalMod
             cfg.Name = values[1];
             cfg.Attack = float.Parse(values[2]);
             dic.Add(cfg.ID, cfg);
+            array[i - 2] = cfg;
         }
     }
     public static TableAnimal Get(int id)
