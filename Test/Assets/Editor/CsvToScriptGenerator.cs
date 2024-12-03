@@ -69,8 +69,19 @@ public class CsvToScriptGenerator : EditorWindow
             sb.AppendLine($"    private static void Init()\r\n    {{\r\n        var csvContent = File.ReadAllText(csvFilePath);\r\n        " +
                 $"string[] records = csvContent.Split('\\n');\r\n        for (int i = 2;i < records.Length;i++)\r\n        {{\r\n            " +
                 $"{outputFileName} cfg = new {outputFileName}();\r\n            var values = records[i].Split(',');\r\n            " +
-                $"for (int j = 0;j < values.Length;j++)\r\n                values[j] = values[j].Replace(\"\\\"\", \"\");\r\n            " +
-                $"//write init code in here\r\n            \r\n\r\n            dic.Add(cfg.ID, cfg);\r\n        }}\r\n    }}");
+                $"for (int j = 0;j < values.Length;j++)\r\n                values[j] = values[j].Replace(\"\\\"\", \"\");");
+            for (int index = 0;index < typeName.Length;index++)
+            {
+                if (typeName[index].IndexOf("int") != -1)
+                    sb.AppendLine($"            cfg.{fieldName[index].Substring(1, fieldName[index].Length - 2)} = int.Parse(values[{index}]);");
+                else if (typeName[index].IndexOf("float") != -1)
+                    sb.AppendLine($"            cfg.{fieldName[index].Substring(1, fieldName[index].Length - 2)} = float.Parse(values[{index}]);");
+                else if (typeName[index].IndexOf("string") != -1)
+                    sb.AppendLine($"            cfg.{fieldName[index].Substring(1, fieldName[index].Length - 2)} = values[{index}];");
+            }
+            sb.AppendLine($"            dic.Add(cfg.ID, cfg);");
+            sb.AppendLine("        }");
+            sb.AppendLine("    }");
             sb.AppendLine($"    public static {outputFileName} Get(int id)\r\n    {{\r\n        if (dic.Count == 0)\r\n            Init();\r\n        if (dic.ContainsKey(id))\r\n            return dic[id];\r\n        return null;\r\n    }}");
             sb.AppendLine("}");
 

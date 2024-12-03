@@ -65,7 +65,7 @@
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\DemoFree.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\AccessoryWearLogic.cs" />
     <Compile Include="Assets\Scripts\UIMod.cs" />
-    <Compile Include="Assets\Scripts\TableRole.cs" />
+    <Compile Include="Assets\Scripts\TableAnimal.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleSampleCharacterControl.cs" />
     <Compile Include="Assets\Scripts\UILogicBase.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />

@@ -3,32 +3,33 @@ using System;
 using System.IO;
 using System.Text;
 
-public class TableRole
+public class TableAnimal
 {
     public int ID;
     public string Name;
+    public float Attack;
 }
-public class TableRoleMod
+public class TableAnimalMod
 {
-    private static string csvFilePath = "D:/Unity/proj/Unity/Test/Assets/StreamingAssets/Role.csv";
-    private static Dictionary<int,TableRole> dic = new Dictionary<int,TableRole>();
+    private static string csvFilePath = "D:/Unity/proj/Unity/Test/Assets/StreamingAssets/Animal.csv";
+    private static Dictionary<int,TableAnimal> dic = new Dictionary<int,TableAnimal>();
     private static void Init()
     {
         var csvContent = File.ReadAllText(csvFilePath);
         string[] records = csvContent.Split('\n');
         for (int i = 2;i < records.Length;i++)
         {
-            TableRole cfg = new TableRole();
+            TableAnimal cfg = new TableAnimal();
             var values = records[i].Split(',');
             for (int j = 0;j < values.Length;j++)
                 values[j] = values[j].Replace("\"", "");
-            //write init code in here
-            
-
+            cfg.ID = int.Parse(values[0]);
+            cfg.Name = values[1];
+            cfg.Attack = float.Parse(values[2]);
             dic.Add(cfg.ID, cfg);
         }
     }
-    public static TableRole Get(int id)
+    public static TableAnimal Get(int id)
     {
         if (dic.Count == 0)
             Init();
