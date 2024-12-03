@@ -25,8 +25,8 @@ public class UILogicBase
         {
             GameMod.Inst.StopCoroutine(co);
             co = null;
+            UIMod.Inst.DeleteUI(resPath);
         }
-        UIMod.Inst.DeleteUI(resPath);
     }
     /// <summary>
     /// UIÃ¿´ÎÒþ²Ø
