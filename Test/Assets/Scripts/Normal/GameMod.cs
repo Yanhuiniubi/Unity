@@ -7,6 +7,7 @@ public class GameMod : MonoBehaviour
     private static GameMod inst;
     public static GameMod Inst => inst;
     public Transform UIRoot;
+    public Transform UI3DRoot;
     private void Awake()
     {
         inst = this;

@@ -9,9 +9,9 @@ public class UILogicBase
     public GameObject root;
     private Coroutine co;
     /// <summary>
-    /// 初始化组件
+    /// 初始化
     /// </summary>
-    public virtual void InitComponent()
+    public virtual void OnInit()
     {
 
     }

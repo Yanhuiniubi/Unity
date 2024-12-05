@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class RedLogic : UILogicBase
 {
     Image img;
-    public override void InitComponent()
+    public override void OnInit()
     {
-        base.InitComponent();
+        base.OnInit();
         img = GetUIComponent<Image>("Red");
     }
     public override void OnHide()
