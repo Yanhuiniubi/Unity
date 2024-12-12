@@ -6,7 +6,7 @@ public class UI3DLogicBase
 {
     public string resPath;
     public string name;
-    public GameObject root;
+    public GameObject gameObject;
     private Coroutine co;
     /// <summary>
     /// ≥ı ºªØ
@@ -37,26 +37,26 @@ public class UI3DLogicBase
     }
     protected T GetUIComponentInchildren<T>(string path) where T : Component
     {
-        return root.transform.Find(path).GetComponent<T>();
+        return gameObject.transform.Find(path).GetComponent<T>();
     }
     protected T GetUIComponent<T>(string path) where T : Component
     {
-        return root.GetComponent<T>();
+        return gameObject.GetComponent<T>();
     }
 
     public void HideThisPanel()
     {
         co = GameMod.Inst.StartCoroutine(DelayDeleteObj());
-        root.SetActive(false);
+        gameObject.SetActive(false);
         OnHide();
     }
     IEnumerator DelayDeleteObj()
     {
         yield return new WaitForSeconds(3f);
-        if (!root.activeSelf)
+        if (!gameObject.activeSelf)
         {
             UIMod.Inst.Delete3DUI(resPath + name);
-            GameObject.Destroy(root);
+            GameObject.Destroy(gameObject);
         }
     }
 }

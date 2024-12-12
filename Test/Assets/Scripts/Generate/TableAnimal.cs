@@ -5,14 +5,14 @@ using System.Text;
 
 public class TableAnimal
 {
-    public int ID;
+    public string ID;
     public string Name;
-    public float Attack;
+    public string Desc;
 }
 public class TableAnimalMod
 {
     private static string csvFilePath = "D:/Unity/proj/Unity/Test/Assets/StreamingAssets/Animal.csv";
-    private static Dictionary<int,TableAnimal> dic = new Dictionary<int,TableAnimal>();
+    private static Dictionary<string,TableAnimal> dic = new Dictionary<string,TableAnimal>();
     private static TableAnimal[] array;
     public static TableAnimal[] Array
     {
@@ -34,14 +34,14 @@ public class TableAnimalMod
             var values = records[i].Split(',');
             for (int j = 0;j < values.Length;j++)
                 values[j] = values[j].Replace("\"", "");
-            cfg.ID = int.Parse(values[0]);
+            cfg.ID = values[0];
             cfg.Name = values[1];
-            cfg.Attack = float.Parse(values[2]);
+            cfg.Desc = values[2];
             dic.Add(cfg.ID, cfg);
             array[i - 2] = cfg;
         }
     }
-    public static TableAnimal Get(int id)
+    public static TableAnimal Get(string id)
     {
         if (dic.Count == 0)
             Init();

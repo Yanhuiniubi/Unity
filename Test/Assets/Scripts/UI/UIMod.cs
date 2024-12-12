@@ -18,7 +18,7 @@ public class UIMod
         if (cacheUIDic.ContainsKey(path))
         {
             UILogicBase cacheUI = cacheUIDic[path];
-            cacheUI.root.SetActive(true);
+            cacheUI.gameObject.SetActive(true);
             cacheUI.OnShow(param);
             _uiPanelQueue.Push(cacheUI);
             return;
@@ -27,7 +27,7 @@ public class UIMod
         GameObject res = Resources.Load<GameObject>(path);
         GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UIRoot : parent);
         T uibase = new T();
-        uibase.root = root;
+        uibase.gameObject = root;
         uibase.resPath = path;
         uibase.OnInit();
         uibase.OnShow(param);
@@ -60,7 +60,7 @@ public class UIMod
         if (cache3DUIDic_hide.ContainsKey(key))
         {
             UI3DLogicBase cacheUI = cache3DUIDic_hide[key];
-            cacheUI.root.SetActive(true);
+            cacheUI.gameObject.SetActive(true);
             cacheUI.OnShow(param);
             cache3DUIDic_hide.Remove(key);
             cache3DUIDic_show.Add(key, cacheUI);
@@ -70,7 +70,7 @@ public class UIMod
         GameObject res = Resources.Load<GameObject>(path);
         GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UI3DRoot : parent);
         T uibase = new T();
-        uibase.root = root;
+        uibase.gameObject = root;
         uibase.resPath = path;
         uibase.name = name;
         uibase.OnInit();

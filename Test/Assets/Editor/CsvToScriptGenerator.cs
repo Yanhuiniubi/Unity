@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using System.Text;
 using UnityEngine.UIElements;
+using System;
 
 public class CsvToScriptGenerator /*: EditorWindow*/
 {
@@ -100,7 +101,7 @@ public class CsvToScriptGenerator /*: EditorWindow*/
             sb.AppendLine($"            dic.Add(cfg.ID, cfg);\r\n            array[i - 2] = cfg;");
             sb.AppendLine("        }");
             sb.AppendLine("    }");
-            sb.AppendLine($"    public static {outputFileName} Get(int id)\r\n    {{\r\n        if (dic.Count == 0)\r\n            Init();\r\n        if (dic.ContainsKey(id))\r\n            return dic[id];\r\n        return null;\r\n    }}");
+            sb.AppendLine($"    public static {outputFileName} Get({typeName[0].Substring(1, typeName[0].Length - 2)} id)\r\n    {{\r\n        if (dic.Count == 0)\r\n            Init();\r\n        if (dic.ContainsKey(id))\r\n            return dic[id];\r\n        return null;\r\n    }}");
             sb.AppendLine("}");
 
             string outputPath = Path.Combine(Application.dataPath, outputFolder, outputFileName + ".cs");

@@ -9,6 +9,7 @@ public class GameMod : MonoBehaviour
     public Transform UIRoot;
     public Transform UI3DRoot;
     public Vector3 PlayerPosition => gameObject.transform.position;
+    public GameObject PlayerObj => gameObject;
     private void Awake()
     {
         inst = this;

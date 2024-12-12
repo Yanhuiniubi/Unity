@@ -2,26 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI3DInfo
+public class ChickenLogic : MonoBehaviour
 {
-    public Vector3 BasePos;
-    public float Height;
-    public TableAnimal Cfg;
-}
-
-public class DeerLogic : MonoBehaviour
-{
-    const string NAME = "Deer";
+    const string NAME = "Chicken";
     const string UIPATH = "Prefab/IntroDution";
     const string KEY = UIPATH + NAME;
-    private CapsuleCollider _collider; 
+    private CapsuleCollider _collider;
     private void Start()
     {
-        _collider = transform.Find("deer_001").gameObject.GetComponent<CapsuleCollider>();
+        _collider = transform.Find("chicken_001").gameObject.GetComponent<CapsuleCollider>();
     }
     void Update()
     {
-        if (Vector3.Distance(gameObject.transform.position,GameMod.Inst.PlayerPosition) <= 5)
+        if (Vector3.Distance(gameObject.transform.position, GameMod.Inst.PlayerPosition) <= 5)
         {
             if (!UIMod.Inst.IsActiveUI3D(KEY))
             {

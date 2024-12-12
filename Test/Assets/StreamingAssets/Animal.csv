@@ -1,4 +1,4 @@
-"ID","Name","Attack"
-"int","string","float"
-"1","Tiger","9.5"
-"2","Dog","2.5"
+"ID","Name","Desc"
+"string","string","string"
+"Deer","Deer","Hello im Deer"
+"Chicken","Chicken","Hello im Chicken"
