@@ -8,6 +8,7 @@ public class GameMod : MonoBehaviour
     public static GameMod Inst => inst;
     public Transform UIRoot;
     public Transform UI3DRoot;
+    public Vector3 PlayerPosition => gameObject.transform.position;
     private void Awake()
     {
         inst = this;
@@ -15,13 +16,6 @@ public class GameMod : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            UIMod.Inst.ShowUI<RedLogic>("Prefab/Red");
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            UIMod.Inst.HideUI();
-        }
+        
     }
 }

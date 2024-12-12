@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,25 +47,23 @@ public class UIMod
         if (cacheUIDic.ContainsKey(path))
             cacheUIDic.Remove(path);
     }
-    private Dictionary<string, UILogicBase> cache3DUIDic_show = new Dictionary<string, UILogicBase>();
-    private Dictionary<string, UILogicBase> cache3DUIDic_hide = new Dictionary<string, UILogicBase>();
-    public void Show3DUI<T>(string path,bool isRepeat,object param = null, Transform parent = null) where T : UILogicBase, new()
+    private Dictionary<string, UI3DLogicBase> cache3DUIDic_show = new Dictionary<string, UI3DLogicBase>();
+    private Dictionary<string, UI3DLogicBase> cache3DUIDic_hide = new Dictionary<string, UI3DLogicBase>();
+    public void Show3DUI<T>(string path,string name,object param = null, Transform parent = null) where T : UI3DLogicBase, new()
     {
-        if (cache3DUIDic_show.ContainsKey(path))
+        string key = path + name;
+        if (cache3DUIDic_show.ContainsKey(key))
         {
-            if (!isRepeat)
-            {
-                Debug.LogError("请勿重复show同一个UI");
-                return;
-            }
+            Debug.LogError("请勿重复show同一个UI");
+            return;
         }
-        if (cache3DUIDic_hide.ContainsKey(path))
+        if (cache3DUIDic_hide.ContainsKey(key))
         {
-            UILogicBase cacheUI = cache3DUIDic_hide[path];
+            UI3DLogicBase cacheUI = cache3DUIDic_hide[key];
             cacheUI.root.SetActive(true);
             cacheUI.OnShow(param);
-            cache3DUIDic_hide.Remove(path);
-            cache3DUIDic_show.Add(path, cacheUI);
+            cache3DUIDic_hide.Remove(key);
+            cache3DUIDic_show.Add(key, cacheUI);
             return;
         }
 
@@ -75,18 +72,28 @@ public class UIMod
         T uibase = new T();
         uibase.root = root;
         uibase.resPath = path;
+        uibase.name = name;
         uibase.OnInit();
         uibase.OnShow(param);
-        cache3DUIDic_show.Add(path, uibase);
+        cache3DUIDic_show.Add(key, uibase);
     }
-    public void HideUI(string path)
+    public void HideUI(string key)
     {
-        if (cache3DUIDic_show.ContainsKey(path))
+        if (cache3DUIDic_show.ContainsKey(key))
         {
-            UILogicBase uiBase = cache3DUIDic_show[path];
+            UI3DLogicBase uiBase = cache3DUIDic_show[key];
             uiBase.HideThisPanel();
-            cache3DUIDic_show.Remove(path);
-            cache3DUIDic_hide.Add(path, uiBase);
+            cache3DUIDic_show.Remove(key);
+            cache3DUIDic_hide.Add(key, uiBase);
         }
+    }
+    public void Delete3DUI(string key)
+    {
+        if (cache3DUIDic_hide.ContainsKey(key))
+            cache3DUIDic_hide.Remove(key);
+    }
+    public bool IsActiveUI3D(string key)
+    {
+        return cache3DUIDic_show.ContainsKey(key);
     }
 }

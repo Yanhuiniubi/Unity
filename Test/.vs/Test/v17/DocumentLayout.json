@@ -3,53 +3,28 @@
   "WorkspaceRootPath": "D:\\Unity\\proj\\Unity\\Test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B728BA6F-BB4A-66B9-57A2-597CAD6A31B0}|Assembly-CSharp-Editor.csproj|d:\\unity\\proj\\unity\\test\\assets\\editor\\csvtoscriptgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B728BA6F-BB4A-66B9-57A2-597CAD6A31B0}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\csvtoscriptgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\mono\\deerlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mono\\deerlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UIMod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\UIMod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|d:\\unity\\proj\\unity\\test\\assets\\scripts\\ui\\uiintrodutionlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiintrodutionlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UILogicBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\UILogicBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|d:\\unity\\proj\\unity\\test\\assets\\scripts\\ui\\ui3dlogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ui3dlogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uilogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uilogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\proj\\Test\\Assets\\UnityProject\\Editor\\CsvToScriptGenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uimod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uimod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\proj\\Test\\Assets\\Scripts\\GeneratedScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\proj\\Test\\Assets\\UnityProject\\Scripts\\TableRole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\FreeCameraLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:Assets\\Supercyan Character Pack Free Sample\\Scripts\\FreeCameraLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\DemoFree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:Assets\\Supercyan Character Pack Free Sample\\Scripts\\DemoFree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryWearLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryWearLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryLogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\unity\\proj\\unity\\test\\assets\\scripts\\tablerole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\tablerole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\mono\\gamemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mono\\gamemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,159 +38,80 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TableRole.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Test\\Assets\\UnityProject\\Scripts\\TableRole.cs",
-              "RelativeDocumentMoniker": "..\\..\\Test\\Assets\\UnityProject\\Scripts\\TableRole.cs",
-              "ToolTip": "D:\\Unity\\proj\\Test\\Assets\\UnityProject\\Scripts\\TableRole.cs",
-              "RelativeToolTip": "..\\..\\Test\\Assets\\UnityProject\\Scripts\\TableRole.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "DocumentIndex": 2,
+              "Title": "UI3DLogicBase.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UI3DLogicBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UI3DLogicBase.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UI3DLogicBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UI3DLogicBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T12:56:38.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TableRole.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\TableRole.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\TableRole.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\TableRole.cs",
-              "RelativeToolTip": "Assets\\Scripts\\TableRole.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAkwBoAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T11:57:55.598Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Test.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Test.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Test.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Test.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Test.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T07:34:44.314Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CsvToScriptGenerator.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Editor\\CsvToScriptGenerator.cs",
-              "RelativeDocumentMoniker": "Assets\\Editor\\CsvToScriptGenerator.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Editor\\CsvToScriptGenerator.cs",
-              "RelativeToolTip": "Assets\\Editor\\CsvToScriptGenerator.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAgwE8AAAB3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T07:33:06.941Z",
+              "WhenOpened": "2024-12-12T10:18:34.591Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SimpleSampleCharacterControl.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
-              "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
-              "RelativeToolTip": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAwwEIAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T07:22:54.632Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FreeCameraLogic.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\FreeCameraLogic.cs",
-              "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\FreeCameraLogic.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\FreeCameraLogic.cs",
-              "RelativeToolTip": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\FreeCameraLogic.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T07:22:20.162Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DemoFree.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\DemoFree.cs",
-              "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\DemoFree.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\DemoFree.cs",
-              "RelativeToolTip": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\DemoFree.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T07:20:23.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UILogicBase.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UILogicBase.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UILogicBase.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UILogicBase.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UILogicBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T06:29:29.612Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UIMod.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UIMod.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UIMod.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UIMod.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UIMod.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAbAAAA",
+              "Title": "UIIntroDutionLogic.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIIntroDutionLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIIntroDutionLogic.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIIntroDutionLogic.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIIntroDutionLogic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T06:46:13.395Z"
+              "WhenOpened": "2024-12-12T10:08:17.906Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CsvToScriptGenerator.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Test\\Assets\\UnityProject\\Editor\\CsvToScriptGenerator.cs",
-              "RelativeDocumentMoniker": "..\\..\\Test\\Assets\\UnityProject\\Editor\\CsvToScriptGenerator.cs",
-              "ToolTip": "D:\\Unity\\proj\\Test\\Assets\\UnityProject\\Editor\\CsvToScriptGenerator.cs",
-              "RelativeToolTip": "..\\..\\Test\\Assets\\UnityProject\\Editor\\CsvToScriptGenerator.cs",
+              "Title": "UIMod.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMod.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIMod.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMod.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIMod.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAkwFkAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T12:57:11.399Z"
+              "WhenOpened": "2024-12-12T10:01:09.582Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AccessoryWearLogic.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryWearLogic.cs",
-              "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryWearLogic.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryWearLogic.cs",
-              "RelativeToolTip": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryWearLogic.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAgwCoAAAAzAAAA",
+              "DocumentIndex": 0,
+              "Title": "DeerLogic.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\DeerLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Mono\\DeerLogic.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\DeerLogic.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Mono\\DeerLogic.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAzwBgAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T07:20:24.044Z"
+              "WhenOpened": "2024-12-12T10:01:10.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UILogicBase.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UILogicBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UILogicBase.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UILogicBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UILogicBase.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAkwDwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T10:01:08.767Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GeneratedScript.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Test\\Assets\\Scripts\\GeneratedScript.cs",
-              "RelativeDocumentMoniker": "..\\..\\Test\\Assets\\Scripts\\GeneratedScript.cs",
-              "ToolTip": "D:\\Unity\\proj\\Test\\Assets\\Scripts\\GeneratedScript.cs",
-              "RelativeToolTip": "..\\..\\Test\\Assets\\Scripts\\GeneratedScript.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBEAAAAyAAAA",
+              "Title": "GameMod.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\GameMod.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Mono\\GameMod.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\GameMod.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Mono\\GameMod.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T11:10:20.116Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AccessoryLogic.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryLogic.cs",
-              "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryLogic.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryLogic.cs",
-              "RelativeToolTip": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryLogic.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T07:19:58.863Z"
+              "WhenOpened": "2024-12-12T10:00:53.391Z"
             }
           ]
         }
