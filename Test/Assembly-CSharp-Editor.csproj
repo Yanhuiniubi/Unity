@@ -56,21 +56,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="D:\Unity\proj\Unity\Test\Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll" />
+    <Analyzer Include="D:\Unity\proj\Unity\Test\Assets\AssetStore\Behavior Designer\Runtime\BehaviorDesigner.Runtime.dll" />
     <Analyzer Include="D:\Unity\2022.3.49f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="D:\Unity\2022.3.49f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\StackedConditionalDrawer.cs" />
-    <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\FloatSliderDrawer.cs" />
-    <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\IntSliderDrawer.cs" />
-    <Compile Include="Assets\Behavior Designer\Editor\BehaviorTreeInspector.cs" />
-    <Compile Include="Assets\Behavior Designer\Editor\ExternalBehaviorTreeInspector.cs" />
-    <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\StackedActionDrawer.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Editor\Object Drawers\StackedConditionalDrawer.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Editor\Object Drawers\StackedActionDrawer.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Editor\Object Drawers\IntSliderDrawer.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Editor\BehaviorTreeInspector.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Editor\Object Drawers\FloatSliderDrawer.cs" />
     <Compile Include="Assets\Editor\CsvToScriptGenerator.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Editor\ExternalBehaviorTreeInspector.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Behavior Designer\Editor\BehaviorDesigner.Editor.dll" />
-    <None Include="Assets\Behavior Designer\Editor\GridShader.shader" />
+    <None Include="Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll" />
+    <None Include="Assets\AssetStore\Behavior Designer\Editor\GridShader.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -454,7 +456,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="BehaviorDesigner.Runtime">
-      <HintPath>Assets\Behavior Designer\Runtime\BehaviorDesigner.Runtime.dll</HintPath>
+      <HintPath>Assets\AssetStore\Behavior Designer\Runtime\BehaviorDesigner.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
@@ -462,7 +464,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="BehaviorDesigner.Editor">
-      <HintPath>Assets\Behavior Designer\Editor\BehaviorDesigner.Editor.dll</HintPath>
+      <HintPath>Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">
