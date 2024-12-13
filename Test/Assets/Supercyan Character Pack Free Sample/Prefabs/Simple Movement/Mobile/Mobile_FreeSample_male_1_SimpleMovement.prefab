@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8769323758270817721
 Transform:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7549674169760670748
 Transform:
   m_ObjectHideFlags: 0
@@ -118,8 +118,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3850480376232512821}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.012336068, y: 0.9861655, z: -0.08627834, w: -0.14100184}
-  m_LocalPosition: {x: 4.655, y: 1.346, z: 1.872}
+  m_LocalRotation: {x: -0.17337596, y: -0.024213087, z: 0.0042574457, w: -0.9845488}
+  m_LocalPosition: {x: -1.829, y: 1.275, z: 0.035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 4406856725117065810}
   - component: {fileID: 8185524529252926696}
   m_Layer: 0
-  m_Name: Camera1
+  m_Name: CameraTree
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,13 +244,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6111832522748562636}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17337596, y: -0.024213087, z: 0.0042574457, w: -0.9845488}
-  m_LocalPosition: {x: -2.0288353, y: 2.1759524, z: -2.6921012}
+  m_LocalRotation: {x: -0.17364816, y: 0, z: -0, w: -0.9848078}
+  m_LocalPosition: {x: -1.79, y: 2.53, z: -2.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4797587167834380321}
-  m_LocalEulerAnglesHint: {x: 10, y: 196.274, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 360, z: 0}
 --- !u!20 &4406856725117065810
 Camera:
   m_ObjectHideFlags: 0
@@ -366,6 +366,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3764581079822060442, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 4406856725117065810}
     - target: {fileID: 3764581079822060442, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
       propertyPath: m_turnSpeed
       value: 100

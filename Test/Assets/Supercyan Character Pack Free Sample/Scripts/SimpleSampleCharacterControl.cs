@@ -18,7 +18,7 @@ namespace Supercyan.FreeSample
         }
 
         [SerializeField] private float m_moveSpeed = 2;
-        [SerializeField] private float m_turnSpeed = 200;
+        //[SerializeField] private float m_turnSpeed = 200;
         [SerializeField] private float m_jumpForce = 4;
 
         [SerializeField] private Animator m_animator = null;
@@ -44,11 +44,24 @@ namespace Supercyan.FreeSample
         private bool m_isGrounded;
 
         private List<Collider> m_collisions = new List<Collider>();
-
+        public float mouseSensitivity = 100f;
+        public Camera cam;
+        private float _cameramaxRotationX_min;
+        private float _cameramaxRotationX_max;
+        private float _cameramaxPositionZ_min;
+        private float _cameramaxPositionZ_max;
         private void Awake()
         {
             if (!m_animator) { gameObject.GetComponent<Animator>(); }
             if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        private void Start()
+        {
+            _cameramaxRotationX_min = cam.transform.eulerAngles.x - 20;
+            _cameramaxRotationX_max = cam.transform.eulerAngles.x + 20;
+            _cameramaxPositionZ_min = cam.transform.localPosition.z - 1;
+            _cameramaxPositionZ_max = cam.transform.localPosition.z + 1;
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -156,11 +169,30 @@ namespace Supercyan.FreeSample
 
             m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
             m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
+            Vector3 moveDirection = (transform.forward * m_currentV + transform.right * m_currentH).normalized;
+            // 更新主角的移动速度和方向
+            float moveSpeed = new Vector2(m_currentH, m_currentV).magnitude;
+            m_animator.SetFloat("MoveSpeed", moveSpeed);
+            transform.position += moveDirection * m_moveSpeed * moveSpeed * Time.deltaTime;
 
-            transform.position += transform.forward * m_currentV * m_moveSpeed * Time.deltaTime;
-            transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * -mouseSensitivity * Time.deltaTime;
+            // 绕Y轴旋转角色
+            transform.Rotate(Vector3.up * mouseX);
+            float angle = cam.transform.eulerAngles.x + mouseY;
+            // 计算摄像机Z轴位置
+            float cameraZPosition = Mathf.Lerp(_cameramaxPositionZ_min, _cameramaxPositionZ_max,
+                Mathf.InverseLerp(_cameramaxRotationX_min, _cameramaxRotationX_max, angle));
 
-            m_animator.SetFloat("MoveSpeed", m_currentV);
+            if (angle < _cameramaxRotationX_max && angle > _cameramaxRotationX_min)
+            {
+                cam.transform.Rotate(Vector3.right * mouseY);
+
+                // 更新摄像机Z轴位置
+                Vector3 cameraLocalPosition = cam.transform.localPosition;
+                cameraLocalPosition.z = Mathf.Clamp(cameraZPosition, _cameramaxPositionZ_min, _cameramaxPositionZ_max);
+                cam.transform.localPosition = cameraLocalPosition;
+            }
 
             JumpingAndLanding();
         }
