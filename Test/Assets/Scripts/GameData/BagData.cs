@@ -20,6 +20,7 @@ public class BagData
     public static readonly BagData Inst = new BagData();
     private List<ItemInfo> _itemList;
     private Dictionary<string, ItemInfo> _itemDic;
+    private bool _isDirt;
     public List<ItemInfo> ItemList => _itemList;
     private BagData()
     {
@@ -38,6 +39,7 @@ public class BagData
             _itemDic.Add(ID, info);
             _itemList.Add(info);
         }
+        _isDirt = true;
     }
     public bool UseItem(string ID, int count)
     {
@@ -45,6 +47,7 @@ public class BagData
         {
             _itemDic[ID].Count -= count;
             DoUseItem(ID, count);
+            _isDirt = true;
         }
         return false;
     }
@@ -54,7 +57,11 @@ public class BagData
     }
     public void SortItem()
     {
-        _itemList.Sort((x, y) => x.Count.CompareTo(y.Count));
+        if (_isDirt)
+        {
+            _itemList.Sort((x, y) => y.Count.CompareTo(x.Count));
+            _isDirt = false;
+        }
     }
     public void SaveData()
     {

@@ -12,7 +12,7 @@ public class UI3DInfo
 public class DeerLogic : MonoBehaviour
 {
     const string NAME = "Deer";
-    const string UIPATH = "Prefab/IntroDution";
+    const string UIPATH = UIDef.UI_INTRODUTION;
     const string KEY = UIPATH + NAME;
     private CapsuleCollider _collider; 
     private void Start()

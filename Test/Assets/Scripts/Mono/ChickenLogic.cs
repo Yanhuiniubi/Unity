@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChickenLogic : MonoBehaviour
 {
     const string NAME = "Chicken";
-    const string UIPATH = "Prefab/IntroDution";
+    const string UIPATH = UIDef.UI_INTRODUTION;
     const string KEY = UIPATH + NAME;
     private CapsuleCollider _collider;
     private void Start()

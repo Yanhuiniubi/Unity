@@ -39,7 +39,7 @@ public class UILogicBase
     {
         return gameObject.transform.Find(path).GetComponent<T>();
     }
-    protected T GetUIComponent<T>(string path) where T : Component
+    protected T GetUIComponent<T>() where T : Component
     {
         return gameObject.GetComponent<T>();
     }

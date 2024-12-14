@@ -11,7 +11,7 @@ public class TableAnimal
 }
 public class TableAnimalMod
 {
-    private static string csvFilePath = "D:/Unity/proj/Unity/Test/Assets/StreamingAssets/Animal.csv";
+    private static string csvFilePath = "F:/unity/NewOrigin/NewTry/Unity/Test/Assets/StreamingAssets/Animal.csv";
     private static Dictionary<string,TableAnimal> dic = new Dictionary<string,TableAnimal>();
     private static TableAnimal[] array;
     public static TableAnimal[] Array
