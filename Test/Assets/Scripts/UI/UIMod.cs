@@ -7,20 +7,23 @@ public class UIMod
 {
     public static readonly UIMod Inst = new UIMod();
     private Stack<UILogicBase> _uiPanelQueue = new Stack<UILogicBase>();
-    private Dictionary<string, UILogicBase> cacheUIDic = new Dictionary<string, UILogicBase>();
+    private Dictionary<string, UILogicBase> cacheUIDic_hide = new Dictionary<string, UILogicBase>();
+    private Dictionary<string, UILogicBase> cacheUIDic_show = new Dictionary<string, UILogicBase>();
     public void ShowUI<T>(string path,object param = null,Transform parent = null) where T : UILogicBase , new()
     {
-        if (_uiPanelQueue.Count > 0 && _uiPanelQueue.Peek().resPath.Equals(path))
+        if (cacheUIDic_show.ContainsKey(path))
         {
             Debug.LogError("请勿重复show同一个UI");
             return;
         }
-        if (cacheUIDic.ContainsKey(path))
+        GameMod.Inst.SetGameState(eGameState.OpenUI);
+        if (cacheUIDic_hide.ContainsKey(path))
         {
-            UILogicBase cacheUI = cacheUIDic[path];
+            UILogicBase cacheUI = cacheUIDic_hide[path];
             cacheUI.gameObject.SetActive(true);
             cacheUI.OnShow(param);
             _uiPanelQueue.Push(cacheUI);
+            cacheUIDic_show.Add(path, cacheUI);
             return;
         }
 
@@ -29,9 +32,11 @@ public class UIMod
         T uibase = new T();
         uibase.gameObject = root;
         uibase.resPath = path;
+        _uiPanelQueue.Push(uibase);
+        cacheUIDic_show.Add(path, uibase);
+
         uibase.OnInit();
         uibase.OnShow(param);
-        _uiPanelQueue.Push(uibase);
     }
     public void HideUI()
     {
@@ -39,13 +44,16 @@ public class UIMod
         {
             UILogicBase uiBase = _uiPanelQueue.Pop();
             uiBase.HideThisPanel();
-            cacheUIDic.Add(uiBase.resPath, uiBase);
+            cacheUIDic_hide.Add(uiBase.resPath, uiBase);
+            cacheUIDic_show.Remove(uiBase.resPath);
         }
+        if (_uiPanelQueue.Count == 0)
+            GameMod.Inst.SetGameState(eGameState.Normal);
     }
     public void DeleteUI(string path)
     {
-        if (cacheUIDic.ContainsKey(path))
-            cacheUIDic.Remove(path);
+        if (cacheUIDic_hide.ContainsKey(path))
+            cacheUIDic_hide.Remove(path);
     }
     private Dictionary<string, UI3DLogicBase> cache3DUIDic_show = new Dictionary<string, UI3DLogicBase>();
     private Dictionary<string, UI3DLogicBase> cache3DUIDic_hide = new Dictionary<string, UI3DLogicBase>();
@@ -95,5 +103,9 @@ public class UIMod
     public bool IsActiveUI3D(string key)
     {
         return cache3DUIDic_show.ContainsKey(key);
+    }
+    public bool IsActiveUI(string path)
+    {
+        return cacheUIDic_show.ContainsKey(path);
     }
 }

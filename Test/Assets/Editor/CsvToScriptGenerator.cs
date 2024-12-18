@@ -70,6 +70,7 @@ public class CsvToScriptGenerator /*: EditorWindow*/
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine("using System;");
             sb.AppendLine("using System.IO;\nusing System.Text;");
+            sb.AppendLine("using UnityEngine;");
             sb.AppendLine();
             sb.AppendLine($"public class {outputFileName}");
             sb.AppendLine("{");
@@ -82,7 +83,7 @@ public class CsvToScriptGenerator /*: EditorWindow*/
 
             sb.AppendLine($"public class {outputFileName}Mod");
             sb.AppendLine("{");
-            sb.AppendLine($"    private static string csvFilePath = \"{csvFilePath.Replace('\\','/')}\";");
+            sb.AppendLine($"    private static string csvFilePath = Path.Combine(Application.streamingAssetsPath, \"{Path.GetFileNameWithoutExtension(csvFilePath)}.csv\");");
             sb.AppendLine($"    private static Dictionary<{typeName[0].Substring(1, typeName[0].Length - 2)},{outputFileName}> dic = new Dictionary<{typeName[0].Substring(1, typeName[0].Length - 2)},{outputFileName}>();");
             sb.AppendLine($"    private static {outputFileName}[] array;\r\n    public static {outputFileName}[] Array\r\n    {{\r\n        get\r\n        {{\r\n            if (array == null)\r\n                Init();\r\n            return array;\r\n        }}\r\n    }}");
             sb.AppendLine($"    private static void Init()\r\n    {{\r\n        var csvContent = File.ReadAllText(csvFilePath);\r\n        " +

@@ -54,7 +54,7 @@ namespace Supercyan.FreeSample
         {
             if (!m_animator) { gameObject.GetComponent<Animator>(); }
             if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
-            //Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         private void Start()
         {
@@ -152,6 +152,8 @@ namespace Supercyan.FreeSample
 
         private void TankUpdate()
         {
+            if (GameMod.Inst.GameState == eGameState.OpenUI)
+                return;
             float v = Input.GetAxis("Vertical");
             float h = Input.GetAxis("Horizontal");
 

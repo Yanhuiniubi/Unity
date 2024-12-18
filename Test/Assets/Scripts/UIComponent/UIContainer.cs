@@ -42,5 +42,6 @@ public class UIContainer<T> where T : UITemplateBase, new()
                 _children.Add(template);
             }
         }
+        temp.gameObject.SetActive(false);
     }
 }

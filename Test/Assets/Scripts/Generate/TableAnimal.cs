@@ -2,16 +2,16 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using System.Text;
+using UnityEngine;
 
 public class TableAnimal
 {
     public string ID;
-    public string Name;
     public string Desc;
 }
 public class TableAnimalMod
 {
-    private static string csvFilePath = "F:/unity/NewOrigin/NewTry/Unity/Test/Assets/StreamingAssets/Animal.csv";
+    private static string csvFilePath = Path.Combine(Application.streamingAssetsPath, "Animal.csv");
     private static Dictionary<string,TableAnimal> dic = new Dictionary<string,TableAnimal>();
     private static TableAnimal[] array;
     public static TableAnimal[] Array
@@ -35,8 +35,7 @@ public class TableAnimalMod
             for (int j = 0;j < values.Length;j++)
                 values[j] = values[j].Replace("\"", "");
             cfg.ID = values[0];
-            cfg.Name = values[1];
-            cfg.Desc = values[2];
+            cfg.Desc = values[1];
             dic.Add(cfg.ID, cfg);
             array[i - 2] = cfg;
         }
