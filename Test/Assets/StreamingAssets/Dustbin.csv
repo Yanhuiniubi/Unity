@@ -1,0 +1,6 @@
+"ID","Type","Desc","Name"
+"string","int","string","string"
+"Kehuishou","0","请将可回收垃圾放置此垃圾桶内","KehuishouBox"
+"Youhai","1","请将有害垃圾放置此垃圾桶内","YouhaiBox"
+"Chuyu","2","请将厨余垃圾放置此垃圾桶内","ChuyuBox"
+"Qita","3","请将其他垃圾放置此垃圾桶内","QitaBox"

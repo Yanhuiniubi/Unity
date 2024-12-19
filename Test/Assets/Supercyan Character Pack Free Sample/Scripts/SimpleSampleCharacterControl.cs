@@ -52,8 +52,8 @@ namespace Supercyan.FreeSample
         private float _cameramaxPositionZ_max;
         private void Awake()
         {
-            if (!m_animator) { gameObject.GetComponent<Animator>(); }
-            if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
+            if (!m_animator) { m_animator = gameObject.GetComponent<Animator>(); }
+            if (!m_rigidBody) { m_rigidBody = gameObject.GetComponent<Rigidbody>(); }
             Cursor.lockState = CursorLockMode.Locked;
         }
         private void Start()
@@ -153,7 +153,10 @@ namespace Supercyan.FreeSample
         private void TankUpdate()
         {
             if (GameMod.Inst.GameState == eGameState.OpenUI)
+            {
+                m_animator.SetFloat("MoveSpeed", 0);
                 return;
+            }
             float v = Input.GetAxis("Vertical");
             float h = Input.GetAxis("Horizontal");
 

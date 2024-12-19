@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6549170160472048522}
   - component: {fileID: 4637332543490101320}
   - component: {fileID: 3506433766872438114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: YouhaiBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181874333220790321}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.689106, y: 8.449788, z: 1.9473739}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -118,8 +118,7 @@ GameObject:
   - component: {fileID: 6622480189410900440}
   - component: {fileID: 7981533026155355881}
   - component: {fileID: 3944863842385788149}
-  - component: {fileID: 4785645795523782476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,27 +190,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4785645795523782476
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206919992428923620}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5113102645516676866
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,8 +201,7 @@ GameObject:
   - component: {fileID: 8945832222131439393}
   - component: {fileID: 2406582646818149563}
   - component: {fileID: 8762059927638580553}
-  - component: {fileID: 2400394580505636985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Youhai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,24 +273,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2400394580505636985
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5113102645516676866}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

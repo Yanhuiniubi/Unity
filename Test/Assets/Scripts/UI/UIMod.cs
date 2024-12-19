@@ -27,7 +27,7 @@ public class UIMod
             return;
         }
 
-        GameObject res = Resources.Load<GameObject>(path);
+        GameObject res = ResData.Inst.GetResByPath<GameObject>(path);
         GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UIRoot : parent);
         T uibase = new T();
         uibase.gameObject = root;
@@ -75,7 +75,7 @@ public class UIMod
             return;
         }
 
-        GameObject res = Resources.Load<GameObject>(path);
+        GameObject res = ResData.Inst.GetResByPath<GameObject>(path);
         GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UI3DRoot : parent);
         T uibase = new T();
         uibase.gameObject = root;

@@ -17,12 +17,24 @@ public class GameMod : MonoBehaviour
     public Vector3 PlayerPosition => gameObject.transform.position;
     public GameObject PlayerObj => gameObject;
     public Transform GarbageRoot;
+    public Transform DustbinRoot;
+    private CapsuleCollider _capsuleCollider;
+    public float PlayerHeight
+    {
+        get
+        {
+            if (_capsuleCollider == null)
+                _capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+            return _capsuleCollider.height;
+        }
+    }
     private eGameState _gameState;
     public eGameState GameState => _gameState;
     private void Awake()
     {
         inst = this;
         _gameState = eGameState.Normal;
+        DustbinData.Inst.InitData();
     }
     public void SetGameState(eGameState state)
     {

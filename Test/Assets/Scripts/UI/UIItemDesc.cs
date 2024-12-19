@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[UIBind(UIDef.UI_UIITEMDESC)]
 public class UIItemDesc : UILogicBase
 {
     private TextMeshProUGUI _txtTitle;

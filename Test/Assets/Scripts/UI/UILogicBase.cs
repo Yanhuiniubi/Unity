@@ -52,7 +52,7 @@ public class UILogicBase
     }
     IEnumerator DelayDeleteObj()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         if (!gameObject.activeSelf)
         {
             UIMod.Inst.DeleteUI(resPath);

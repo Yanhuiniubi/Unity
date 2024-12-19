@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using Unity.VisualScripting;
 using UnityEditor.Search;
@@ -54,7 +55,7 @@ public class GarbageData
         GarbageInfo info = new GarbageInfo();
         var cfg = TableItemGarbageMod.Get(id);
         info.Cfg = cfg;
-        GameObject obj = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>(cfg.PrefabPath),
+        GameObject obj = GameObject.Instantiate<GameObject>(ResData.Inst.GetResByPath<GameObject>(cfg.PrefabPath),
             GameMod.Inst.GarbageRoot);
         info.GameObject = obj;
         obj.transform.position = new Vector3(0,5,0);
@@ -119,5 +120,14 @@ public class GarbageData
         {
             Debug.LogError($"_garDic_Obj 不存在{obj.name}");
         }
+    }
+    public TableItemGarbage GetGarbageCfgByObj(GameObject obj)
+    {
+        if (_garDic_Obj.TryGetValue(obj,out var val))
+        {
+            return val.Cfg;
+        }
+        Debug.LogError("GarbageData GetGarbageCfgByObj 传入的obj未被缓存");
+        return null;
     }
 }

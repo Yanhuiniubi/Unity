@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+[UIBind(UIDef.UI_INTRODUTION)]
 public class UIIntroDutionLogic : UI3DLogicBase
 {
     private UI3DInfo _info;
@@ -28,7 +29,7 @@ public class UIIntroDutionLogic : UI3DLogicBase
         gameObject.transform.position = new Vector3(_info.BasePos.x, _info.BasePos.y + _info.Height, _info.BasePos.z);
         _coroutine = GameMod.Inst.StartCoroutine(TurnToPlayer());
 
-        txt.text = _info.Cfg.Desc;
+        txt.text = _info.Desc;
     }
 
     IEnumerator TurnToPlayer()

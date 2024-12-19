@@ -21,7 +21,7 @@ public class ChickenLogic : MonoBehaviour
                 UI3DInfo info = new UI3DInfo();
                 info.BasePos = gameObject.transform.position;
                 info.Height = _collider.height;
-                info.Cfg = TableAnimalMod.Get(NAME);
+                info.Desc = TableAnimalMod.Get(NAME).Desc;
                 UIMod.Inst.Show3DUI<UIIntroDutionLogic>(UIPATH, NAME, info);
             }
         }

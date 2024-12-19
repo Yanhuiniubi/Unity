@@ -8,6 +8,12 @@ public class ItemInfo
 {
     public string ID;
     public int Count;
+    public ItemInfo() { }
+    public ItemInfo(string id, int count)
+    {
+        ID = id;
+        Count = count;
+    }
 }
 
 [System.Serializable]
@@ -38,7 +44,7 @@ public class BagData
             info.Count = count;
             _itemDic.Add(ID, info);
             _itemList.Add(info);
-        }
+        }    
         _isDirt = true;
     }
     public bool UseItem(string ID, int count)

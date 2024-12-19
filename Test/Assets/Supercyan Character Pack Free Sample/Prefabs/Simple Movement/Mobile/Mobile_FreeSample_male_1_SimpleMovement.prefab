@@ -489,9 +489,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RayStartPos: {fileID: 141426544669047808}
   RayDistance: 3
-  LayerMask:
+  LayerMaskGarbage:
     serializedVersion: 2
     m_Bits: 8
+  LayerDustbin:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &7997823908950545591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,6 +510,7 @@ MonoBehaviour:
   UIRoot: {fileID: 0}
   UI3DRoot: {fileID: 0}
   GarbageRoot: {fileID: 0}
+  DustbinRoot: {fileID: 0}
 --- !u!4 &5292256546635234178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1121125582535847827, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}

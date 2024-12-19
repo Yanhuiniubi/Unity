@@ -6,7 +6,7 @@ public class UI3DInfo
 {
     public Vector3 BasePos;
     public float Height;
-    public TableAnimal Cfg;
+    public string Desc;
 }
 
 public class DeerLogic : MonoBehaviour
@@ -28,7 +28,7 @@ public class DeerLogic : MonoBehaviour
                 UI3DInfo info = new UI3DInfo();
                 info.BasePos = gameObject.transform.position;
                 info.Height = _collider.height;
-                info.Cfg = TableAnimalMod.Get(NAME);
+                info.Desc = TableAnimalMod.Get(NAME).Desc;
                 UIMod.Inst.Show3DUI<UIIntroDutionLogic>(UIPATH, NAME, info);
             }
         }
