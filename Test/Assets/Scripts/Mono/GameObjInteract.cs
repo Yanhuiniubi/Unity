@@ -40,6 +40,8 @@ public class GameObjInteract : MonoBehaviour
             GarbageData.Inst.GenerateGarbage(type);
         }
     }
+    private string _cacheLastGarbageName;
+    private bool _cacheHideUI;
     private void CheckInteractObj()
     {
         Ray ray = new Ray(RayStartPos.position, RayStartPos.forward);
@@ -53,12 +55,15 @@ public class GameObjInteract : MonoBehaviour
             GameObject obj = hit.collider.gameObject;
             if (obj.layer == 3)
             {
-                if (!UIMod.Inst.IsActiveUI3D(KEY_GARBAGE))
+                var cfg = GarbageData.Inst.GetGarbageCfgByObj(obj);
+                if (!UIMod.Inst.IsActiveUI3D(KEY_GARBAGE) || !cfg.Name.Equals(_cacheLastGarbageName))
                 {
+                    UIMod.Inst.HideUI(KEY_GARBAGE);
                     UI3DInfo info = new UI3DInfo();
                     info.BasePos = obj.transform.position;
                     info.Height = GameMod.Inst.PlayerHeight;
-                    info.Desc = GarbageData.Inst.GetGarbageCfgByObj(obj).Name;
+                    info.Desc = cfg.Name;
+                    _cacheLastGarbageName = info.Desc;
                     UIMod.Inst.Show3DUI<UIIntroDutionLogic>(UIDef.UI_INTRODUTION, "Garbage", info);
                 }
                 interactionType = eInteractionType.PickUpGarbage;
@@ -75,6 +80,7 @@ public class GameObjInteract : MonoBehaviour
                 }
                 interactionType = eInteractionType.OpenBag;
             }
+            _cacheHideUI = true;
             if (Input.GetKeyDown(KeyCode.F))
             {
                 switch (interactionType)
@@ -95,10 +101,11 @@ public class GameObjInteract : MonoBehaviour
                 }
             }
         }
-        else
+        else if (_cacheHideUI)
         {
             UIMod.Inst.HideUI(KEY_DUSTBIN);
             UIMod.Inst.HideUI(KEY_GARBAGE);
+            _cacheHideUI = false;
         }
     }
     private void CheckOpenBag()
