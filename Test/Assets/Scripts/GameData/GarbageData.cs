@@ -5,6 +5,9 @@ using System.Reflection;
 using Unity.VisualScripting;
 using UnityEditor.Search;
 using UnityEngine;
+/// <summary>
+/// 垃圾类型
+/// </summary>
 public enum eGarbageType
 {
     Kehuishou = 0,
@@ -12,6 +15,9 @@ public enum eGarbageType
     Chuyu = 2,
     Qita = 3
 }
+/// <summary>
+/// 垃圾数据
+/// </summary>
 public class GarbageInfo
 {
     public GameObject GameObject;
@@ -121,6 +127,11 @@ public class GarbageData
             Debug.LogError($"_garDic_Obj 不存在{obj.name}");
         }
     }
+    /// <summary>
+    /// 根据垃圾物体获取相应的配置表数据
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
     public TableItemGarbage GetGarbageCfgByObj(GameObject obj)
     {
         if (_garDic_Obj.TryGetValue(obj,out var val))

@@ -11,6 +11,10 @@ public class UIContainer<T> where T : UITemplateBase, new()
     {
         gameObject = obj;
     }
+    /// <summary>
+    /// ÊµÀý»¯Template
+    /// </summary>
+    /// <param name="count"></param>
     public void Ensuresize(int count)
     {
         Transform parent = gameObject.transform;

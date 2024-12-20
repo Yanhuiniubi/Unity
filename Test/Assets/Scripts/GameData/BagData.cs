@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// 道具信息
+/// </summary>
 [System.Serializable]
 public class ItemInfo
 {
@@ -25,6 +28,9 @@ public class ItemInfoList
 
 public static class BagEvent
 {
+    /// <summary>
+    /// 垃圾数量变化
+    /// </summary>
     public static Action OnItemChanged;
 }
 public class BagData
@@ -39,6 +45,11 @@ public class BagData
         _itemList = new List<ItemInfo>();
         _itemDic = new Dictionary<string, ItemInfo>();
     }
+    /// <summary>
+    /// 添加垃圾
+    /// </summary>
+    /// <param name="ID"></param>
+    /// <param name="count"></param>
     public void AddItem(string ID,int count)
     {
         if (_itemDic.ContainsKey(ID))
@@ -54,6 +65,13 @@ public class BagData
         _isDirt = true;
         BagEvent.OnItemChanged?.Invoke();
     }
+    /// <summary>
+    /// 使用垃圾
+    /// </summary>
+    /// <param name="dustbinType"></param>
+    /// <param name="itemID"></param>
+    /// <param name="count"></param>
+    /// <returns></returns>
     public bool UseItem(int dustbinType,string itemID, int count)
     {
         if (_itemDic.ContainsKey(itemID) && _itemDic[itemID].Count >= count)
@@ -74,6 +92,7 @@ public class BagData
             DoUseItem(dustbinType,TableItemGarbageMod.Get(itemID).Type,count);
             _isDirt = true;
             BagEvent.OnItemChanged?.Invoke();
+
         }
         return false;
     }
@@ -85,6 +104,9 @@ public class BagData
             PlayerData.Inst.DeleteCoinsByItemCount(count);
 
     }
+    /// <summary>
+    /// 脏标记时排序
+    /// </summary>
     public void SortItem()
     {
         if (_isDirt)

@@ -10,6 +10,9 @@ public class DustbinData
     {
         _dic = new Dictionary<GameObject, TableDustbin>();
     }
+    /// <summary>
+    /// 初始化数据
+    /// </summary>
     public void InitData()
     {
         var arr = TableDustbinMod.Array;
@@ -20,6 +23,11 @@ public class DustbinData
             _dic.Add(obj, arr[i]);
         }
     }
+    /// <summary>
+    /// 根据游戏物体获取垃圾桶配置表数据
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
     public TableDustbin GetDustbinCfgByObj(GameObject obj)
     {
         if (_dic.TryGetValue(obj, out var val))

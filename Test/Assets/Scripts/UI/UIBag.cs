@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// 打开背包来源
+/// </summary>
 public enum eOpenBagFrom
 {
     Dustbin_Kehuishou,
@@ -36,19 +38,19 @@ public class UIBag : UILogicBase
         switch (_openFrom)
         {
             case eOpenBagFrom.Dustbin_Kehuishou:
-                _title.text = "可回收垃圾桶";
+                _title.text = "可回收垃圾".ParseColorText("00CBFF") + "桶";
                 break;
             case eOpenBagFrom.Dustbin_Youhai:
-                _title.text = "有害垃圾桶";
+                _title.text = "有害垃圾".ParseColorText("FF0700") + "桶";
                 break;
             case eOpenBagFrom.Dustbin_Chuyu:
-                _title.text = "厨余垃圾桶";
+                _title.text = "厨余垃圾".ParseColorText("78FF23") + "桶";
                 break;
             case eOpenBagFrom.Dustbin_Qita:
-                _title.text = "其他垃圾桶";
+                _title.text = "其他垃圾".ParseColorText("CBFF9E") + "桶";
                 break;
             case eOpenBagFrom.BagKey:
-                _title.text = "背包";
+                _title.text = "背包".ParseColorText("FFFFFF");
                 break;
             default:
                 break;
@@ -61,6 +63,9 @@ public class UIBag : UILogicBase
         BagEvent.OnItemChanged -= SetItems;
         Cursor.lockState = CursorLockMode.Locked;
     }
+    /// <summary>
+    /// 设置背包道具显示
+    /// </summary>
     private void SetItems()
     {
         BagData.Inst.SortItem();

@@ -29,6 +29,9 @@ public class GameMod : MonoBehaviour
         }
     }
     private eGameState _gameState;
+    /// <summary>
+    /// ”Œœ∑◊¥Ã¨
+    /// </summary>
     public eGameState GameState => _gameState;
     private void Awake()
     {
@@ -40,6 +43,10 @@ public class GameMod : MonoBehaviour
     {
         UIMod.Inst.ShowUI<UIMain>(UIDef.UI_MAIN, changeGameState: false);
     }
+    /// <summary>
+    /// …Ë÷√”Œœ∑◊¥Ã¨
+    /// </summary>
+    /// <param name="state"></param>
     public void SetGameState(eGameState state)
     {
         _gameState = state;

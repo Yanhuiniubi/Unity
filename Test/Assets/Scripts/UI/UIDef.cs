@@ -13,10 +13,11 @@ public class UIBindAttribute : Attribute
 }
 public class UIDef
 {
-    public const string UI_INTRODUTION = "Prefab/IntroDution";
-    public const string UI_BAGITEM = "Prefab/BagItem";
-    public const string UI_UIBAG = "Prefab/UI-Bag";
-    public const string UI_UIITEMDESC = "Prefab/UI-ItemDesc";
-    public const string UI_UIITEMUSE = "Prefab/UI-ItemUse";
-    public const string UI_MAIN = "Prefab/UI-Main";
+    public const string UI_INTRODUTION = "Prefab/UI/IntroDution";
+    public const string UI_BAGITEM = "Prefab/UI/BagItem";
+    public const string UI_UIBAG = "Prefab/UI/UI-Bag";
+    public const string UI_UIITEMDESC = "Prefab/UI/UI-ItemDesc";
+    public const string UI_UIITEMUSE = "Prefab/UI/UI-ItemUse";
+    public const string UI_MAIN = "Prefab/UI/UI-Main";
+    public const string UI_ITEMUSERESULT = "Prefab/UI/UI-ItemUseResult";
 }

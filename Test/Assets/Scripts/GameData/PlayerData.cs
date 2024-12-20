@@ -17,19 +17,19 @@ public class PlayerData
     {
 
     }
+    /// <summary>
+    /// 根据道具数量增加金币
+    /// </summary>
+    /// <param name="count"></param>
     public void AddCoinsByItemCount(int count)
     {
         _coins += count * 5;
         PlayerEvent.OnCoinsChanged?.Invoke();
     }
-    public bool UseCoinsByItemCount(int count)
-    {
-        if (count * 5 > _coins)
-            return false;
-        _coins -= count * 5;
-        PlayerEvent.OnCoinsChanged?.Invoke();
-        return true;
-    }
+    /// <summary>
+    /// 回收类型错误，扣除金币
+    /// </summary>
+    /// <param name="count"></param>
     public void DeleteCoinsByItemCount(int count)
     {
         _coins = Math.Max(0, _coins - count * 2);

@@ -574,6 +574,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasExitedCollision.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\CharacterController\SetCenter.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Math\BoolComparison.cs" />
+    <Compile Include="Assets\Scripts\Expand.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetVelocity.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector3\GetMagnitude.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Composites\RandomSelector.cs" />

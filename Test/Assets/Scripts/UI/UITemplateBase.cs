@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 所有Tempplate的基类
+/// </summary>
 public class UITemplateBase
 {
     public GameObject gameObject;

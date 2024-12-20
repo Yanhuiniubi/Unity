@@ -14,16 +14,8 @@ public class GameObjInteract : MonoBehaviour
     private const string KEY_DUSTBIN = UIDef.UI_INTRODUTION + "Dustbin";
     public Transform RayStartPos;
     public int RayDistance = 3;
-    public LayerMask LayerMaskGarbage;
-    public LayerMask LayerDustbin;
-    private void Awake()
-    {
-        InitDustbinData();
-    }
-    private void InitDustbinData()
-    {
-
-    }
+    public LayerMask LayerMaskGarbage;//垃圾的layer
+    public LayerMask LayerDustbin;//垃圾桶的layer
     void Update()
     {
         if (GameMod.Inst.GameState == eGameState.OpenUI)
@@ -32,6 +24,9 @@ public class GameObjInteract : MonoBehaviour
         CheckGenerateGarbage();
         CheckOpenBag();
     }
+    /// <summary>
+    /// 生成垃圾
+    /// </summary>
     private void CheckGenerateGarbage()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -42,6 +37,9 @@ public class GameObjInteract : MonoBehaviour
     }
     private string _cacheLastGarbageName;
     private bool _cacheHideUI;
+    /// <summary>
+    /// 射线检测可交互的物体
+    /// </summary>
     private void CheckInteractObj()
     {
         Ray ray = new Ray(RayStartPos.position, RayStartPos.forward);
@@ -108,6 +106,9 @@ public class GameObjInteract : MonoBehaviour
             _cacheHideUI = false;
         }
     }
+    /// <summary>
+    /// 打开背包
+    /// </summary>
     private void CheckOpenBag()
     {
         if (Input.GetKeyDown(KeyCode.B))

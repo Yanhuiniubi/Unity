@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 3DUIµÄ»ùÀà
+/// </summary>
 public class UI3DLogicBase
 {
     public string resPath;
