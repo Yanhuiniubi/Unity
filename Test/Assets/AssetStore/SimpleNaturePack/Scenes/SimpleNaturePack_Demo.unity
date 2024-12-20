@@ -13962,11 +13962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3935618321362738305, guid: 0c8189c76c1982d4f80176ecee98659a, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7147191325110905264, guid: 0c8189c76c1982d4f80176ecee98659a, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14302,6 +14298,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1548960081}
     m_Modifications:
+    - target: {fileID: 1419864136388856857, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 131de190cb93c60499d0da6a2b7c592d, type: 3}
     - target: {fileID: 4801649050728350613, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14382,13 +14382,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4940662088877677517, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
+      propertyPath: m_text
+      value: "\u5E9F\u7535\u6C60\u5C5E\u4E8E\u53EF\u56DE\u6536\u5783\u573E\uFF01"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940662088877677517, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
+      propertyPath: m_fontSize
+      value: 59.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7350742246226923769, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
       propertyPath: m_Name
       value: UI-ItemUseResult
       objectReference: {fileID: 0}
     - target: {fileID: 7350742246226923769, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131592215716644694, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 715.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131592215716644694, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 41.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131592215716644694, guid: f7a7df53551bf23489ea1358db5eaf95, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
