@@ -30,6 +30,7 @@ public class UIBag : UILogicBase
     public override void OnShow(object param)
     {
         base.OnShow(param);
+        BagEvent.OnItemChanged += SetItems;
         Cursor.lockState = CursorLockMode.None;
         _openFrom = (eOpenBagFrom)param;
         switch (_openFrom)
@@ -57,6 +58,7 @@ public class UIBag : UILogicBase
     public override void OnHide()
     {
         base.OnHide();
+        BagEvent.OnItemChanged -= SetItems;
         Cursor.lockState = CursorLockMode.Locked;
     }
     private void SetItems()
@@ -68,7 +70,7 @@ public class UIBag : UILogicBase
         var children = _container.Children;
         for (int i = 0;i < count;i++)
         {
-            children[i].SetData(itemList[i].ID, itemList[i].Count,_openFrom != eOpenBagFrom.BagKey);
+            children[i].SetData(itemList[i].ID, itemList[i].Count,_openFrom != eOpenBagFrom.BagKey, _openFrom);
         }
     }
     private void CloseUI()

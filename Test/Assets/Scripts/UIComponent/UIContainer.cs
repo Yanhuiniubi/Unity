@@ -35,6 +35,7 @@ public class UIContainer<T> where T : UITemplateBase, new()
             while (curChildCount != count)
             {
                 GameObject go = GameObject.Instantiate<GameObject>(temp.gameObject, parent.transform);
+                go.SetActive(true);
                 T template = new T();
                 template.gameObject = go;
                 template.OnInit();

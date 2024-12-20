@@ -4,6 +4,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public class ItemUseInfo
+{
+    public ItemInfo ItemInfo;
+    public eOpenBagFrom OpenBagFrom;
+}
 [UIBind(UIDef.UI_UIITEMUSE)]
 public class UIItemUse : UILogicBase
 {
@@ -14,7 +19,7 @@ public class UIItemUse : UILogicBase
     private Slider _slider;
     private Image _imgItem;
 
-    private ItemInfo _item;
+    private ItemUseInfo _item;
     public override void OnHide()
     {
         base.OnHide();
@@ -37,7 +42,7 @@ public class UIItemUse : UILogicBase
     public override void OnShow(object param)
     {
         base.OnShow(param);
-        _item = param as ItemInfo;
+        _item = param as ItemUseInfo;
         if (_item == null)
         {
             Debug.LogError("UIItemUse OnShow param is not ItemInfo");
@@ -47,10 +52,10 @@ public class UIItemUse : UILogicBase
     }
     private void SetView()
     {
-        var cfg = TableItemGarbageMod.Get(_item.ID);
+        var cfg = TableItemGarbageMod.Get(_item.ItemInfo.ID);
         _txtName.text = cfg.Name;
         _slider.minValue = 0;
-        _slider.maxValue = _item.Count;
+        _slider.maxValue = _item.ItemInfo.Count;
         _slider.value = 0;
         _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(cfg.IconPath);
     }
@@ -60,7 +65,8 @@ public class UIItemUse : UILogicBase
     }
     private void OnConfirmBtnClick()
     {
-
+        BagData.Inst.UseItem((int)_item.OpenBagFrom, _item.ItemInfo.ID, (int)_slider.value);
+        CloseUI();
     }
     private void OnCountChanged(float val)
     {

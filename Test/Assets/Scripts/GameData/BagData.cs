@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ public class ItemInfo
 public class ItemInfoList
 {
     public List<ItemInfo> itemList;
+}
+
+public static class BagEvent
+{
+    public static Action OnItemChanged;
 }
 public class BagData
 {
@@ -46,19 +52,37 @@ public class BagData
             _itemList.Add(info);
         }    
         _isDirt = true;
+        BagEvent.OnItemChanged?.Invoke();
     }
-    public bool UseItem(string ID, int count)
+    public bool UseItem(int dustbinType,string itemID, int count)
     {
-        if (_itemDic.ContainsKey(ID) && _itemDic[ID].Count >= count)
+        if (_itemDic.ContainsKey(itemID) && _itemDic[itemID].Count >= count)
         {
-            _itemDic[ID].Count -= count;
-            DoUseItem(ID, count);
+            _itemDic[itemID].Count -= count;
+            if (_itemDic[itemID].Count == 0)
+            {
+                _itemDic.Remove(itemID);
+                for (int i = 0;i < _itemList.Count;i++)
+                {
+                    if (_itemList[i].ID.Equals(itemID))
+                    {
+                        _itemList.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
+            DoUseItem(dustbinType,TableItemGarbageMod.Get(itemID).Type,count);
             _isDirt = true;
+            BagEvent.OnItemChanged?.Invoke();
         }
         return false;
     }
-    private void DoUseItem(string ID, int count)
+    private void DoUseItem(int dustbinType,int itemType,int count)
     {
+        if (dustbinType == itemType)
+            PlayerData.Inst.AddCoinsByItemCount(count);
+        else
+            PlayerData.Inst.DeleteCoinsByItemCount(count);
 
     }
     public void SortItem()

@@ -36,6 +36,10 @@ public class GameMod : MonoBehaviour
         _gameState = eGameState.Normal;
         DustbinData.Inst.InitData();
     }
+    private void Start()
+    {
+        UIMod.Inst.ShowUI<UIMain>(UIDef.UI_MAIN, changeGameState: false);
+    }
     public void SetGameState(eGameState state)
     {
         _gameState = state;

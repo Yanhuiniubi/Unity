@@ -18,4 +18,5 @@ public class UIDef
     public const string UI_UIBAG = "Prefab/UI-Bag";
     public const string UI_UIITEMDESC = "Prefab/UI-ItemDesc";
     public const string UI_UIITEMUSE = "Prefab/UI-ItemUse";
+    public const string UI_MAIN = "Prefab/UI-Main";
 }
