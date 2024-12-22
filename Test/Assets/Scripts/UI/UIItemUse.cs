@@ -50,14 +50,15 @@ public class UIItemUse : UILogicBase
         }
         SetView();
     }
+    private TableItemGarbage _garbageCfg;
     private void SetView()
     {
-        var cfg = TableItemGarbageMod.Get(_item.ItemInfo.ID);
-        _txtName.text = cfg.Name;
+        _garbageCfg = TableItemGarbageMod.Get(_item.ItemInfo.ID);
+        _txtName.text = _garbageCfg.Name;
         _slider.minValue = 0;
         _slider.maxValue = _item.ItemInfo.Count;
         _slider.value = 0;
-        _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(cfg.IconPath);
+        _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(_garbageCfg.IconPath);
     }
     private void CloseUI()
     {
@@ -65,8 +66,12 @@ public class UIItemUse : UILogicBase
     }
     private void OnConfirmBtnClick()
     {
-        BagData.Inst.UseItem((int)_item.OpenBagFrom, _item.ItemInfo.ID, (int)_slider.value);
+        ItemUseResultInfo info = new ItemUseResultInfo();
+        info.Cfg = _garbageCfg;
+        info.DustbinType = (int)_item.OpenBagFrom;
+        BagData.Inst.UseItem((int)_item.OpenBagFrom, _item.ItemInfo.ID, (int)_slider.value,out info.CoinsChanged);
         CloseUI();
+        UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, info);
     }
     private void OnCountChanged(float val)
     {

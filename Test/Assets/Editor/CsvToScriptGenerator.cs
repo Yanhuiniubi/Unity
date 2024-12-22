@@ -58,6 +58,7 @@ public class CsvToScriptGenerator /*: EditorWindow*/
         foreach (string csvFilePath in csvFiles)
         {
             string csvContent = File.ReadAllText(csvFilePath);
+            csvContent = csvContent.Replace("\r", "");
             string outputFileName = "Table" + Path.GetFileNameWithoutExtension(csvFilePath);
 
             string[] records = csvContent.Split('\n');

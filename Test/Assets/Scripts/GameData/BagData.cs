@@ -31,18 +31,18 @@ public static class BagEvent
     /// <summary>
     /// 垃圾数量变化
     /// </summary>
-    public static Action OnItemChanged;
+    public static Action OnGarbageItemChanged;
 }
 public class BagData
 {
     public static readonly BagData Inst = new BagData();
-    private List<ItemInfo> _itemList;
+    private List<ItemInfo> _itemGarbageList;
     private Dictionary<string, ItemInfo> _itemDic;
     private bool _isDirt;
-    public List<ItemInfo> ItemList => _itemList;
+    public List<ItemInfo> ItemList => _itemGarbageList;
     private BagData()
     {
-        _itemList = new List<ItemInfo>();
+        _itemGarbageList = new List<ItemInfo>();
         _itemDic = new Dictionary<string, ItemInfo>();
     }
     /// <summary>
@@ -60,10 +60,10 @@ public class BagData
             info.ID = ID;
             info.Count = count;
             _itemDic.Add(ID, info);
-            _itemList.Add(info);
+            _itemGarbageList.Add(info);
         }    
         _isDirt = true;
-        BagEvent.OnItemChanged?.Invoke();
+        BagEvent.OnGarbageItemChanged?.Invoke();
     }
     /// <summary>
     /// 使用垃圾
@@ -72,36 +72,37 @@ public class BagData
     /// <param name="itemID"></param>
     /// <param name="count"></param>
     /// <returns></returns>
-    public bool UseItem(int dustbinType,string itemID, int count)
+    public bool UseItem(int dustbinType,string itemID, int count,out int coinsChange)
     {
+        coinsChange = 0;
         if (_itemDic.ContainsKey(itemID) && _itemDic[itemID].Count >= count)
         {
             _itemDic[itemID].Count -= count;
             if (_itemDic[itemID].Count == 0)
             {
                 _itemDic.Remove(itemID);
-                for (int i = 0;i < _itemList.Count;i++)
+                for (int i = 0;i < _itemGarbageList.Count;i++)
                 {
-                    if (_itemList[i].ID.Equals(itemID))
+                    if (_itemGarbageList[i].ID.Equals(itemID))
                     {
-                        _itemList.RemoveAt(i);
+                        _itemGarbageList.RemoveAt(i);
                         break;
                     }
                 }
             }
-            DoUseItem(dustbinType,TableItemGarbageMod.Get(itemID).Type,count);
+            coinsChange = DoUseItem(dustbinType,TableItemGarbageMod.Get(itemID).Type,count);
             _isDirt = true;
-            BagEvent.OnItemChanged?.Invoke();
+            BagEvent.OnGarbageItemChanged?.Invoke();
 
         }
         return false;
     }
-    private void DoUseItem(int dustbinType,int itemType,int count)
+    private int DoUseItem(int dustbinType,int itemType,int count)
     {
         if (dustbinType == itemType)
-            PlayerData.Inst.AddCoinsByItemCount(count);
+            return PlayerData.Inst.AddCoinsByItemCount(count);
         else
-            PlayerData.Inst.DeleteCoinsByItemCount(count);
+            return PlayerData.Inst.DeleteCoinsByItemCount(count);
 
     }
     /// <summary>
@@ -111,13 +112,13 @@ public class BagData
     {
         if (_isDirt)
         {
-            _itemList.Sort((x, y) => y.Count.CompareTo(x.Count));
+            _itemGarbageList.Sort((x, y) => y.Count.CompareTo(x.Count));
             _isDirt = false;
         }
     }
     public void SaveData()
     {
-        ItemInfoList itemListData = new ItemInfoList { itemList = _itemList };
+        ItemInfoList itemListData = new ItemInfoList { itemList = _itemGarbageList };
         string json = JsonUtility.ToJson(itemListData, true);
 
         // 使用 Application.persistentDataPath 以确保跨平台兼容性
@@ -135,9 +136,9 @@ public class BagData
             string json = File.ReadAllText(filePath);
             ItemInfoList itemListData = JsonUtility.FromJson<ItemInfoList>(json);
 
-            _itemList = itemListData.itemList;
+            _itemGarbageList = itemListData.itemList;
             _itemDic.Clear();
-            foreach (var item in _itemList)
+            foreach (var item in _itemGarbageList)
             {
                 _itemDic.Add(item.ID, item);
             }

@@ -19,7 +19,7 @@ public class DustbinData
         int length = arr.Length;
         for (int i = 0;i < length;i++)
         {
-            GameObject obj = GameObject.Find(arr[i].Name);
+            GameObject obj = GameObject.Find(arr[i].Name.Trim());
             _dic.Add(obj, arr[i]);
         }
     }

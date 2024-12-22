@@ -32,7 +32,7 @@ public class UIBag : UILogicBase
     public override void OnShow(object param)
     {
         base.OnShow(param);
-        BagEvent.OnItemChanged += SetItems;
+        BagEvent.OnGarbageItemChanged += SetItems;
         Cursor.lockState = CursorLockMode.None;
         _openFrom = (eOpenBagFrom)param;
         switch (_openFrom)
@@ -60,7 +60,7 @@ public class UIBag : UILogicBase
     public override void OnHide()
     {
         base.OnHide();
-        BagEvent.OnItemChanged -= SetItems;
+        BagEvent.OnGarbageItemChanged -= SetItems;
         Cursor.lockState = CursorLockMode.Locked;
     }
     /// <summary>
