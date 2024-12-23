@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 6008100237389821084}
   m_Layer: 3
   m_Name: BatteryC
-  m_TagString: Untagged
+  m_TagString: Garbage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7845865845224933953
 Transform:
   m_ObjectHideFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.872, y: 0.559, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3.5858612, y: 4.0077, z: 4.0077}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

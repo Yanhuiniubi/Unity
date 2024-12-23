@@ -53,22 +53,22 @@ public class GarbageData
     /// </summary>
     /// <param name="type"></param>
     /// <returns></returns>
-    private GarbageInfo InitNewGarbageInfo(string id)
+    private GarbageInfo InitNewGarbageInfo(string id, Vector3 pos)
     {
         GarbageInfo info = new GarbageInfo();
         var cfg = TableItemGarbageMod.Get(id);
         info.Cfg = cfg;
-        GameObject obj = GameObject.Instantiate<GameObject>(ResData.Inst.GetResByPath<GameObject>(cfg.PrefabPath),
-            GameMod.Inst.GarbageRoot);
+        GameObject obj = GameObject.Instantiate<GameObject>(ResData.Inst.GetResByPath<GameObject>(cfg.PrefabPath)
+           ,GameMod.Inst.GarbageRoot);
         info.GameObject = obj;
-        obj.transform.position = new Vector3(0,5,0);
+        obj.transform.position = new Vector3(pos.x,pos.y + 3,pos.z);
         return info;
     }
     /// <summary>
     /// 从对象池中获取一个垃圾
     /// </summary>
     /// <param name="type"></param>
-    private GarbageInfo GetGarbageFromPoor(eGarbageType type)
+    private GarbageInfo GetGarbageFromPoor(eGarbageType type, Vector3 pos)
     {
         var list = _garDic_Type[type];
         int index = Random.Range(0, list.Count);
@@ -78,12 +78,12 @@ public class GarbageData
             if (queue.Count > 0)
                 return queue.Dequeue();
             else
-                return InitNewGarbageInfo(id);
+                return InitNewGarbageInfo(id, pos);
         }
         else
         {
             _poor[id] = new Queue<GarbageInfo>();
-            return InitNewGarbageInfo(id);
+            return InitNewGarbageInfo(id, pos);
         }
     }
     /// <summary>
@@ -100,9 +100,9 @@ public class GarbageData
     /// </summary>
     /// <param name="type"></param>
     /// <param name="count"></param>
-    public void GenerateGarbage(eGarbageType type)
+    public void GenerateGarbage(eGarbageType type,Vector3 pos)
     {
-        GarbageInfo info = GetGarbageFromPoor(type);
+        GarbageInfo info = GetGarbageFromPoor(type, pos);
         _garDic_Obj.Add(info.GameObject, info);
         info.GameObject.SetActive(true);
     }

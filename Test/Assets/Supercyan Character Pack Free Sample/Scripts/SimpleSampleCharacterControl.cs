@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Supercyan.FreeSample
@@ -66,6 +67,8 @@ namespace Supercyan.FreeSample
 
         private void OnCollisionEnter(Collision collision)
         {
+            if (collision.gameObject.CompareTag("Garbage"))
+                return;
             ContactPoint[] contactPoints = collision.contacts;
             for (int i = 0; i < contactPoints.Length; i++)
             {
@@ -82,6 +85,8 @@ namespace Supercyan.FreeSample
 
         private void OnCollisionStay(Collision collision)
         {
+            if (collision.gameObject.CompareTag("Garbage"))
+                return;
             ContactPoint[] contactPoints = collision.contacts;
             bool validSurfaceNormal = false;
             for (int i = 0; i < contactPoints.Length; i++)
@@ -112,6 +117,8 @@ namespace Supercyan.FreeSample
 
         private void OnCollisionExit(Collision collision)
         {
+            if (collision.gameObject.CompareTag("Garbage"))
+                return;
             if (m_collisions.Contains(collision.collider))
             {
                 m_collisions.Remove(collision.collider);

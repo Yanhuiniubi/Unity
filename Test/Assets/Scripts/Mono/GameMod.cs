@@ -16,8 +16,10 @@ public class GameMod : MonoBehaviour
     public Transform UI3DRoot;
     public Vector3 PlayerPosition => gameObject.transform.position;
     public GameObject PlayerObj => gameObject;
+    public Transform GarbageRoundBox;
     public Transform GarbageRoot;
     public Transform DustbinRoot;
+    public LayerMask _groundMask;
     private CapsuleCollider _capsuleCollider;
     public float PlayerHeight
     {
@@ -42,6 +44,7 @@ public class GameMod : MonoBehaviour
     private void Start()
     {
         UIMod.Inst.ShowUI<UIMain>(UIDef.UI_MAIN, changeGameState: false);
+        GarbageGenerateManager.Inst.GenerateGarbage(20);
     }
     /// <summary>
     /// …Ë÷√”Œœ∑◊¥Ã¨

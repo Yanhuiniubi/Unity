@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIMod
 {
     public static readonly UIMod Inst = new UIMod();
-    private Stack<UILogicBase> _uiPanelQueue = new Stack<UILogicBase>();
+    private Stack<UILogicBase> _uiPanelStack = new Stack<UILogicBase>();
     private Dictionary<string, UILogicBase> cacheUIDic_hide = new Dictionary<string, UILogicBase>();
     private Dictionary<string, UILogicBase> cacheUIDic_show = new Dictionary<string, UILogicBase>();
     /// <summary>
@@ -31,7 +31,7 @@ public class UIMod
             UILogicBase cacheUI = cacheUIDic_hide[path];
             cacheUI.gameObject.SetActive(true);
             cacheUI.OnShow(param);
-            _uiPanelQueue.Push(cacheUI);
+            _uiPanelStack.Push(cacheUI);
             cacheUIDic_show.Add(path, cacheUI);
             return;
         }
@@ -41,7 +41,7 @@ public class UIMod
         T uibase = new T();
         uibase.gameObject = root;
         uibase.resPath = path;
-        _uiPanelQueue.Push(uibase);
+        _uiPanelStack.Push(uibase);
         cacheUIDic_show.Add(path, uibase);
 
         uibase.OnInit();
@@ -52,14 +52,14 @@ public class UIMod
     /// </summary>
     public void HideUI()
     {
-        if (_uiPanelQueue.Count > 0)
+        if (_uiPanelStack.Count > 0)
         {
-            UILogicBase uiBase = _uiPanelQueue.Pop();
+            UILogicBase uiBase = _uiPanelStack.Pop();
             uiBase.HideThisPanel();
             cacheUIDic_hide.Add(uiBase.resPath, uiBase);
             cacheUIDic_show.Remove(uiBase.resPath);
         }
-        if (_uiPanelQueue.Count == 1)
+        if (_uiPanelStack.Count == 1)
             GameMod.Inst.SetGameState(eGameState.Normal);
     }
     /// <summary>

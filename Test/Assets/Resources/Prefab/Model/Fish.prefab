@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 2799992308944065957}
   m_Layer: 3
   m_Name: Fish
-  m_TagString: Untagged
+  m_TagString: Garbage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3830862730550705304
 Transform:
   m_ObjectHideFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.263, y: 1.591, z: -0.101}
-  m_LocalScale: {x: 1.5, y: 2, z: 1.5}
+  m_LocalScale: {x: 1.7929306, y: 2.6718, z: 2.00385}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

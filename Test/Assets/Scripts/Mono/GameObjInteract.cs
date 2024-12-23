@@ -21,19 +21,7 @@ public class GameObjInteract : MonoBehaviour
         if (GameMod.Inst.GameState == eGameState.OpenUI)
             return;
         CheckInteractObj();
-        CheckGenerateGarbage();
         CheckOpenBag();
-    }
-    /// <summary>
-    /// Éú³ÉÀ¬»ø
-    /// </summary>
-    private void CheckGenerateGarbage()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            eGarbageType type = (eGarbageType)Random.Range(0, 4);
-            GarbageData.Inst.GenerateGarbage(type);
-        }
     }
     private string _cacheLastGarbageName;
     private bool _cacheHideUI;
