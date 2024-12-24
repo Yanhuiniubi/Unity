@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using UnityEngine.UIElements;
 using System;
+using OfficeOpenXml;
 
 public class CsvToScriptGenerator /*: EditorWindow*/
 {
@@ -29,9 +30,46 @@ public class CsvToScriptGenerator /*: EditorWindow*/
     [MenuItem("Tools/CsvToScript Generator")]
     public static void GenerateScripts()
     {
-        string streamingAssetsPath = Application.streamingAssetsPath;
-        string[] csvFiles = Directory.GetFiles(streamingAssetsPath, "*.csv");
+        // 设置许可证上下文
+        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
+        string streamingAssetsPath = Application.streamingAssetsPath;
+        string[] excelFiles = Directory.GetFiles(streamingAssetsPath, "*.xlsx");
+
+        foreach (string excelFilePath in excelFiles)
+        {
+            FileInfo excelFile = new FileInfo(excelFilePath);
+            FileInfo csvFile = new FileInfo(excelFilePath.Replace(".xlsx",".csv"));
+
+            using (ExcelPackage package = new ExcelPackage(excelFile))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[0]; // 获取第一个工作表
+                int totalRows = worksheet.Dimension.Rows;
+                int totalCols = worksheet.Dimension.Columns;
+
+                using (StreamWriter writer = new StreamWriter(csvFile.FullName))
+                {
+                    for (int row = 1; row <= totalRows; row++)
+                    {
+                        for (int col = 1; col <= totalCols; col++)
+                        {
+                            // 获取单元格值并写入 CSV 文件
+                            object cellValue = worksheet.Cells[row, col].Value;
+                            writer.Write(cellValue != null ? $"\"{cellValue.ToString()}\"" : "\"\"");
+
+                            if (col < totalCols)
+                            {
+                                writer.Write(",");
+                            }
+                        }
+                        if (row != totalRows)
+                            writer.WriteLine();
+                    }
+                }
+            }
+        }
+
+        string[] csvFiles = Directory.GetFiles(streamingAssetsPath, "*.csv");
         if (csvFiles.Length == 0)
         {
             Debug.LogError("No CSV files found in StreamingAssets folder.");

@@ -30,6 +30,7 @@ public class GarbageData
     private Dictionary<eGarbageType, List<TableItemGarbage>> _garDic_Type;
     private Dictionary<string, Queue<GarbageInfo>> _poor;//对象池
     private TableItemGarbage[] _tableItems;
+    public int GarbageCount => _garDic_Obj.Count;
     private GarbageData()
     {
         _garDic_Obj = new Dictionary<GameObject, GarbageInfo>();
@@ -105,6 +106,7 @@ public class GarbageData
         GarbageInfo info = GetGarbageFromPoor(type, pos);
         _garDic_Obj.Add(info.GameObject, info);
         info.GameObject.SetActive(true);
+        PlayerEvent.OnGarbageCntChanged?.Invoke();
     }
     /// <summary>
     /// 根据垃圾Obj回收垃圾
@@ -118,6 +120,7 @@ public class GarbageData
             ReturnGarbageToPoor(info.Cfg.ID, info);
             _garDic_Obj.Remove(obj);
             BagData.Inst.AddItem(info.Cfg.ID, 1);
+            PlayerEvent.OnGarbageCntChanged?.Invoke();
         }
         else
         {

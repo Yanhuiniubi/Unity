@@ -69,6 +69,10 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Editor\ExternalBehaviorTreeInspector.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Editor\EPPlus.dll" />
+    <None Include="Assets\Editor\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <None Include="Assets\Editor\EPPlus.Interfaces.dll" />
+    <None Include="Assets\Editor\EPPlus.System.Drawing.dll" />
     <None Include="Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll" />
     <None Include="Assets\AssetStore\Behavior Designer\Editor\GridShader.shader" />
   </ItemGroup>
@@ -463,6 +467,22 @@
     </Reference>
     <Reference Include="BehaviorDesigner.Editor">
       <HintPath>Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>Assets\Editor\EPPlus.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces">
+      <HintPath>Assets\Editor\EPPlus.Interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing">
+      <HintPath>Assets\Editor\EPPlus.System.Drawing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream">
+      <HintPath>Assets\Editor\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">
@@ -1078,6 +1098,18 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{2B280B4A-594F-D3B3-72EA-E59769BEFEDC}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{5A714DA5-10A7-8342-E8B5-523ED9F3BD11}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
+      <Project>{E0DF84D3-FB9F-EABA-D097-9F74596AE624}</Project>
+      <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,6 +6,7 @@ using System;
 public static class PlayerEvent
 {
     public static Action OnCoinsChanged;
+    public static Action OnGarbageCntChanged;
 }
 
 public class PlayerData
