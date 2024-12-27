@@ -15,7 +15,7 @@ public class UIBagItem : UITemplateBase
     private int _count;
     private bool _canUseItem;
     private eOpenBagFrom _openBagFrom;
-    private TableItemGarbage _cfg;
+    private TableItemMain _cfg;
     public override void OnInit()
     {
         base.OnInit();
@@ -34,7 +34,7 @@ public class UIBagItem : UITemplateBase
         _canUseItem = canUseItem;
         _openBagFrom = openBagFrom;
         _itemCount.text = count.ToString();
-        _cfg = TableItemGarbageMod.Get(id);
+        _cfg = TableItemMainMod.Get(id);
         _icon.sprite = ResData.Inst.GetResByPath<Sprite>(_cfg.IconPath);
         _itemName.text = _cfg.Name;
     }

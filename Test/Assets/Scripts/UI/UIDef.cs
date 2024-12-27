@@ -20,4 +20,5 @@ public class UIDef
     public const string UI_UIITEMUSE = "Prefab/UI/UI-ItemUse";
     public const string UI_MAIN = "Prefab/UI/UI-Main";
     public const string UI_ITEMUSERESULT = "Prefab/UI/UI-ItemUseResult";
+    public const string UI_COINCHANGED = "Prefab/UI/UI-CoinChanged";
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -108,6 +109,50 @@ public class UIMod
         uibase.OnInit();
         uibase.OnShow(param);
         cache3DUIDic_show.Add(key, uibase);
+    }
+    /// <summary>
+    /// 展示tips类UI
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="path"></param>
+    /// <param name="param"></param>
+    /// <param name="parent"></param>
+    public void ShowTipsUI<T>(string path, object param = null, Transform parent = null) where T : UILogicBase, new()
+    {
+        if (cacheUIDic_show.ContainsKey(path))
+        {
+            UILogicBase cacheUI = cacheUIDic_show[path];
+            cacheUI.gameObject.SetActive(false);
+            cacheUI.OnShow(param);
+            cacheUI.gameObject.SetActive(true);
+            return;
+        }
+        if (cacheUIDic_hide.ContainsKey(path))
+        {
+            UILogicBase cacheUI = cacheUIDic_hide[path];
+            cacheUI.gameObject.SetActive(true);
+            cacheUI.OnShow(param);
+            cacheUIDic_show.Add(path, cacheUI);
+            cacheUIDic_hide.Remove(path);
+            return;
+        }
+
+        GameObject res = ResData.Inst.GetResByPath<GameObject>(path);
+        GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UITipsRoot : parent);
+        T uibase = new T();
+        uibase.gameObject = root;
+        uibase.resPath = path;
+        cacheUIDic_show.Add(path, uibase);
+
+        uibase.OnInit();
+        uibase.OnShow(param);
+    }
+    public void HideTips(string path)
+    {
+        UILogicBase uiBase = cacheUIDic_show[path];
+        uiBase.HideThisPanel();
+        cacheUIDic_hide.Add(uiBase.resPath, uiBase);
+        cacheUIDic_show.Remove(uiBase.resPath);
     }
     /// <summary>
     /// 与show3Dui配对使用

@@ -27,7 +27,7 @@ public class CsvToScriptGenerator /*: EditorWindow*/
     //        GenerateScripts();
     //    }
     //}
-    [MenuItem("Tools/CsvToScript Generator")]
+    [MenuItem("Tools/TableData Generate")]
     public static void GenerateScripts()
     {
         // 设置许可证上下文

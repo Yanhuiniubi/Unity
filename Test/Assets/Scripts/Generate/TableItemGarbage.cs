@@ -6,17 +6,14 @@ using UnityEngine;
 
 public class TableItemGarbage
 {
-    public string ID;
-    public string Name;
-    public string IconPath;
-    public string PrefabPath;
+    public int ID;
+    public string ItemID;
     public int Type;
-    public string Desc;
 }
 public class TableItemGarbageMod
 {
     private static string csvFilePath = Path.Combine(Application.streamingAssetsPath, "ItemGarbage.csv");
-    private static Dictionary<string,TableItemGarbage> dic = new Dictionary<string,TableItemGarbage>();
+    private static Dictionary<int,TableItemGarbage> dic = new Dictionary<int,TableItemGarbage>();
     private static TableItemGarbage[] array;
     public static TableItemGarbage[] Array
     {
@@ -38,17 +35,14 @@ public class TableItemGarbageMod
             var values = records[i].Split(',');
             for (int j = 0;j < values.Length;j++)
                 values[j] = values[j].Replace("\"", "");
-            cfg.ID = values[0];
-            cfg.Name = values[1];
-            cfg.IconPath = values[2];
-            cfg.PrefabPath = values[3];
-            cfg.Type = int.Parse(values[4]);
-            cfg.Desc = values[5];
+            cfg.ID = int.Parse(values[0]);
+            cfg.ItemID = values[1];
+            cfg.Type = int.Parse(values[2]);
             dic.Add(cfg.ID, cfg);
             array[i - 2] = cfg;
         }
     }
-    public static TableItemGarbage Get(string id)
+    public static TableItemGarbage Get(int id)
     {
         if (dic.Count == 0)
             Init();

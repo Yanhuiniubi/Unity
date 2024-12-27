@@ -50,10 +50,10 @@ public class UIItemUse : UILogicBase
         }
         SetView();
     }
-    private TableItemGarbage _garbageCfg;
+    private TableItemMain _garbageCfg;
     private void SetView()
     {
-        _garbageCfg = TableItemGarbageMod.Get(_item.ItemInfo.ID);
+        _garbageCfg = TableItemMainMod.Get(_item.ItemInfo.ID);
         _txtName.text = _garbageCfg.Name;
         _slider.minValue = 0;
         _slider.maxValue = _item.ItemInfo.Count;
@@ -69,7 +69,7 @@ public class UIItemUse : UILogicBase
         ItemUseResultInfo info = new ItemUseResultInfo();
         info.Cfg = _garbageCfg;
         info.DustbinType = (int)_item.OpenBagFrom;
-        BagData.Inst.UseItem((int)_item.OpenBagFrom, _item.ItemInfo.ID, (int)_slider.value,out info.CoinsChanged);
+        info.IsSuccess = BagData.Inst.UseGarbage(TableItemMainMod.Get(_item.ItemInfo.ID), (int)_slider.value, (int)_item.OpenBagFrom);
         CloseUI();
         UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, info);
     }

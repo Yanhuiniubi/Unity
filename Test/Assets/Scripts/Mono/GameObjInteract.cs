@@ -6,7 +6,7 @@ public enum eInteractionType
 {
     None,
     PickUpGarbage,
-    OpenBag
+    OpenBagFromDustbin
 }
 public class GameObjInteract : MonoBehaviour
 {
@@ -39,7 +39,7 @@ public class GameObjInteract : MonoBehaviour
         {
             eInteractionType interactionType = eInteractionType.None;
             GameObject obj = hit.collider.gameObject;
-            if (obj.layer == 3)
+            if (obj.layer == 3)//À¬»ø
             {
                 var cfg = GarbageData.Inst.GetGarbageCfgByObj(obj);
                 if (!UIMod.Inst.IsActiveUI3D(KEY_GARBAGE) || !cfg.Name.Equals(_cacheLastGarbageName))
@@ -54,7 +54,7 @@ public class GameObjInteract : MonoBehaviour
                 }
                 interactionType = eInteractionType.PickUpGarbage;
             }
-            else if (obj.layer == 6)
+            else if (obj.layer == 6)//À¬»øÍ°
             {
                 if (!UIMod.Inst.IsActiveUI3D(KEY_DUSTBIN))
                 {
@@ -64,7 +64,7 @@ public class GameObjInteract : MonoBehaviour
                     info.Desc = DustbinData.Inst.GetDustbinCfgByObj(obj).Desc;
                     UIMod.Inst.Show3DUI<UIIntroDutionLogic>(UIDef.UI_INTRODUTION, "Dustbin", info);
                 }
-                interactionType = eInteractionType.OpenBag;
+                interactionType = eInteractionType.OpenBagFromDustbin;
             }
             _cacheHideUI = true;
             if (Input.GetKeyDown(KeyCode.F))
@@ -76,7 +76,7 @@ public class GameObjInteract : MonoBehaviour
                             GarbageData.Inst.DeleteGarbage(obj);
                         }
                         break;
-                    case eInteractionType.OpenBag:
+                    case eInteractionType.OpenBagFromDustbin:
                         {
                             UIMod.Inst.ShowUI<UIBag>(UIDef.UI_UIBAG, (eOpenBagFrom)
                                 DustbinData.Inst.GetDustbinCfgByObj(obj).Type);

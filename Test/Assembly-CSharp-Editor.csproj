@@ -60,6 +60,7 @@
     <Analyzer Include="D:\Unity\2022.3.49f1c1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Blink\Art\Characters\LowPoly\Editor\MaterialTilingOffset.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Editor\Object Drawers\StackedConditionalDrawer.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Editor\Object Drawers\StackedActionDrawer.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Editor\Object Drawers\IntSliderDrawer.cs" />
@@ -429,6 +430,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>Assets\Editor\EPPlus.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
       <Private>False</Private>
@@ -441,8 +446,16 @@
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream">
+      <HintPath>Assets\Editor\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces">
+      <HintPath>Assets\Editor\EPPlus.Interfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="log4netPlastic">
@@ -465,24 +478,12 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="BehaviorDesigner.Editor">
-      <HintPath>Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="EPPlus">
-      <HintPath>Assets\Editor\EPPlus.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="EPPlus.Interfaces">
-      <HintPath>Assets\Editor\EPPlus.Interfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="EPPlus.System.Drawing">
       <HintPath>Assets\Editor\EPPlus.System.Drawing.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.IO.RecyclableMemoryStream">
-      <HintPath>Assets\Editor\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    <Reference Include="BehaviorDesigner.Editor">
+      <HintPath>Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">
@@ -1077,12 +1078,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">

@@ -50,20 +50,28 @@ public class BagData
     /// </summary>
     /// <param name="ID"></param>
     /// <param name="count"></param>
-    public void AddItem(string ID,int count)
+    public void AddItem(TableItemMain cfg,int count)
     {
-        if (_itemDic.ContainsKey(ID))
-            _itemDic[ID].Count += count;
-        else
+        if (cfg.ItemType >= 0 && cfg.ItemType <= 3)//À¬»ø
         {
-            ItemInfo info = new ItemInfo();
-            info.ID = ID;
-            info.Count = count;
-            _itemDic.Add(ID, info);
-            _itemGarbageList.Add(info);
-        }    
-        _isDirt = true;
-        BagEvent.OnGarbageItemChanged?.Invoke();
+            if (_itemDic.ContainsKey(cfg.ID))
+                _itemDic[cfg.ID].Count += count;
+            else
+            {
+                ItemInfo info = new ItemInfo();
+                info.ID = cfg.ID;
+                info.Count = count;
+                _itemDic.Add(cfg.ID, info);
+                _itemGarbageList.Add(info);
+            }
+            _isDirt = true;
+            BagEvent.OnGarbageItemChanged?.Invoke();
+        }
+        
+    }
+    public void UseItem(TableItemMain cfg, int count)
+    {
+
     }
     /// <summary>
     /// Ê¹ÓÃÀ¬»ø
@@ -72,9 +80,10 @@ public class BagData
     /// <param name="itemID"></param>
     /// <param name="count"></param>
     /// <returns></returns>
-    public bool UseItem(int dustbinType,string itemID, int count,out int coinsChange)
+    public bool UseGarbage(TableItemMain cfg, int count, int dustbinType)
     {
-        coinsChange = 0;
+        string itemID = cfg.ID;
+        int coinsChange = 0;
         if (_itemDic.ContainsKey(itemID) && _itemDic[itemID].Count >= count)
         {
             _itemDic[itemID].Count -= count;
@@ -90,14 +99,14 @@ public class BagData
                     }
                 }
             }
-            coinsChange = DoUseItem(dustbinType,TableItemGarbageMod.Get(itemID).Type,count);
+            coinsChange = DoUseGarbage(dustbinType, cfg.ItemType,count);
+            UIMod.Inst.ShowTipsUI<UICoinChanged>(UIDef.UI_COINCHANGED, coinsChange);
             _isDirt = true;
             BagEvent.OnGarbageItemChanged?.Invoke();
-
         }
-        return false;
+        return coinsChange > 0;
     }
-    private int DoUseItem(int dustbinType,int itemType,int count)
+    private int DoUseGarbage(int dustbinType,int itemType,int count)
     {
         if (dustbinType == itemType)
             return PlayerData.Inst.AddCoinsByItemCount(count);

@@ -18,7 +18,7 @@ public enum eGarbageType
 public class GarbageInfo
 {
     public GameObject GameObject;
-    public TableItemGarbage Cfg;
+    public TableItemMain Cfg;
 }
 /// <summary>
 /// 垃圾数据管理
@@ -57,7 +57,7 @@ public class GarbageData
     private GarbageInfo InitNewGarbageInfo(string id, Vector3 pos)
     {
         GarbageInfo info = new GarbageInfo();
-        var cfg = TableItemGarbageMod.Get(id);
+        var cfg = TableItemMainMod.Get(id);
         info.Cfg = cfg;
         GameObject obj = GameObject.Instantiate<GameObject>(ResData.Inst.GetResByPath<GameObject>(cfg.PrefabPath)
            ,GameMod.Inst.GarbageRoot);
@@ -73,7 +73,7 @@ public class GarbageData
     {
         var list = _garDic_Type[type];
         int index = Random.Range(0, list.Count);
-        string id = list[index].ID;
+        string id = list[index].ItemID;
         if (_poor.TryGetValue(id, out Queue<GarbageInfo> queue))
         {
             if (queue.Count > 0)
@@ -119,7 +119,7 @@ public class GarbageData
             obj.SetActive(false);
             ReturnGarbageToPoor(info.Cfg.ID, info);
             _garDic_Obj.Remove(obj);
-            BagData.Inst.AddItem(info.Cfg.ID, 1);
+            BagData.Inst.AddItem(info.Cfg, 1);
             PlayerEvent.OnGarbageCntChanged?.Invoke();
         }
         else
@@ -132,7 +132,7 @@ public class GarbageData
     /// </summary>
     /// <param name="obj"></param>
     /// <returns></returns>
-    public TableItemGarbage GetGarbageCfgByObj(GameObject obj)
+    public TableItemMain GetGarbageCfgByObj(GameObject obj)
     {
         if (_garDic_Obj.TryGetValue(obj,out var val))
         {

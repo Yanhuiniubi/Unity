@@ -11,7 +11,7 @@ public class UIItemDesc : UILogicBase
     private TextMeshProUGUI _txtDesc;
     private Button _closeBtn;
 
-    private TableItemGarbage _cfg;
+    private TableItemMain _cfg;
     public override void OnHide()
     {
         base.OnHide();
@@ -29,7 +29,7 @@ public class UIItemDesc : UILogicBase
     public override void OnShow(object param)
     {
         base.OnShow(param);
-        _cfg = param as TableItemGarbage;
+        _cfg = param as TableItemMain;
         if (_cfg == null)
         {
             Debug.LogError("UIItemDesc OnShow 传入参数 不为TableItemGarbage");

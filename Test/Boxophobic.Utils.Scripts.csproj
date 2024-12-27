@@ -76,8 +76,8 @@
     <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledScriptableObject.cs" />
     <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\CommonUtils\NPCController.cs" />
     <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledText.cs" />
-    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledButton.cs" />
     <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\SettingsUtils\SettingsData.cs" />
+    <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledButton.cs" />
     <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledGizmos\StyledLabelGizmo.cs" />
     <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledCategory.cs" />
     <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledInteractive.cs" />
@@ -434,6 +434,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>Assets\Editor\EPPlus.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
       <Private>False</Private>
@@ -446,8 +450,16 @@
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream">
+      <HintPath>Assets\Editor\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces">
+      <HintPath>Assets\Editor\EPPlus.Interfaces.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="log4netPlastic">
@@ -470,24 +482,12 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="BehaviorDesigner.Editor">
-      <HintPath>Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="EPPlus">
-      <HintPath>Assets\Editor\EPPlus.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="EPPlus.Interfaces">
-      <HintPath>Assets\Editor\EPPlus.Interfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="EPPlus.System.Drawing">
       <HintPath>Assets\Editor\EPPlus.System.Drawing.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.IO.RecyclableMemoryStream">
-      <HintPath>Assets\Editor\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    <Reference Include="BehaviorDesigner.Editor">
+      <HintPath>Assets\AssetStore\Behavior Designer\Editor\BehaviorDesigner.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
