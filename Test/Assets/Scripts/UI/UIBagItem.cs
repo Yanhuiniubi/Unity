@@ -42,7 +42,7 @@ public class UIBagItem : UITemplateBase
     {
         if (_canUseItem)
         {
-            ItemUseInfo info = new ItemUseInfo();
+            GarbageUseInfo info = new GarbageUseInfo();
             info.ItemInfo = new ItemInfo(_id, _count);
             info.OpenBagFrom = _openBagFrom;
             UIMod.Inst.ShowUI<UIItemUse>(UIDef.UI_UIITEMUSE, info);

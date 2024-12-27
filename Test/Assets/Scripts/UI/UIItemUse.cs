@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemUseInfo
+public class GarbageUseInfo
 {
     public ItemInfo ItemInfo;
     public eOpenBagFrom OpenBagFrom;
@@ -19,10 +19,12 @@ public class UIItemUse : UILogicBase
     private Slider _slider;
     private Image _imgItem;
 
-    private ItemUseInfo _item;
+    private GarbageUseInfo _garbage;
+    private TableItemShop _shopItem;
     public override void OnHide()
     {
         base.OnHide();
+        _garbage = null;
     }
 
     public override void OnInit()
@@ -42,23 +44,33 @@ public class UIItemUse : UILogicBase
     public override void OnShow(object param)
     {
         base.OnShow(param);
-        _item = param as ItemUseInfo;
-        if (_item == null)
-        {
-            Debug.LogError("UIItemUse OnShow param is not ItemInfo");
-            return;
-        }
+        if (param is GarbageUseInfo garbage)
+            _garbage = garbage;
+        else if (param is TableItemShop shopItem)
+            _shopItem = shopItem;
         SetView();
     }
     private TableItemMain _garbageCfg;
+    private TableItemMain _shopItemCfg;
     private void SetView()
     {
-        _garbageCfg = TableItemMainMod.Get(_item.ItemInfo.ID);
-        _txtName.text = _garbageCfg.Name;
-        _slider.minValue = 0;
-        _slider.maxValue = _item.ItemInfo.Count;
-        _slider.value = 0;
-        _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(_garbageCfg.IconPath);
+        if (_garbage != null)
+        {
+            _garbageCfg = TableItemMainMod.Get(_garbage.ItemInfo.ID);
+            _txtName.text = _garbageCfg.Name;
+            _slider.minValue = 0;
+            _slider.maxValue = _garbage.ItemInfo.Count;
+            _slider.value = 0;
+            _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(_garbageCfg.IconPath);
+        }
+        else if (_shopItem != null)
+        {
+            _txtName.text = _shopItem.Name;
+            _slider.minValue = 1;
+            _slider.maxValue = 10;
+            _slider.value = 1;
+            _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(_shopItem.IconPath);
+        }
     }
     private void CloseUI()
     {
@@ -66,15 +78,39 @@ public class UIItemUse : UILogicBase
     }
     private void OnConfirmBtnClick()
     {
-        ItemUseResultInfo info = new ItemUseResultInfo();
-        info.Cfg = _garbageCfg;
-        info.DustbinType = (int)_item.OpenBagFrom;
-        info.IsSuccess = BagData.Inst.UseGarbage(TableItemMainMod.Get(_item.ItemInfo.ID), (int)_slider.value, (int)_item.OpenBagFrom);
-        CloseUI();
-        UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, info);
+        if (_garbage != null)
+        {
+            ItemUseResultInfo info = new ItemUseResultInfo();
+            info.Cfg = _garbageCfg;
+            info.DustbinType = (int)_garbage.OpenBagFrom;
+            info.IsSuccess = BagData.Inst.UseGarbage(TableItemMainMod.Get(_garbage.ItemInfo.ID), (int)_slider.value, (int)_garbage.OpenBagFrom);
+            CloseUI();
+            UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, info);
+        }
+        else if (_shopItem != null)
+        {
+            
+        }
     }
     private void OnCountChanged(float val)
     {
-        _txtUse.text = $"投入{val}个";
+        if (_garbage != null)
+        {
+            _txtUse.text = $"投入{val}个";
+            if (val == 0)
+                _confirmBtn.gameObject.SetActive(false);
+            else
+                _confirmBtn.gameObject.SetActive(true);
+        }
+        else if (_shopItem != null)
+        {
+            string color = "";
+            int needCoin = _shopItem.Price * (int)val;
+            if (needCoin > PlayerData.Inst.Coins)
+                color = "FF1515";
+            else
+                color = "3CFF14";
+            _txtUse.text = $"购买{val}个" + $"（${_shopItem.Price * val}）".ParseColorText(color);
+        }
     }
 }
