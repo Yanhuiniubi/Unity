@@ -6,16 +6,19 @@ public enum eInteractionType
 {
     None,
     PickUpGarbage,
-    OpenBagFromDustbin
+    OpenBagFromDustbin,
+    OpenShop,
 }
 public class GameObjInteract : MonoBehaviour
 {
     private const string KEY_GARBAGE = UIDef.UI_INTRODUTION + "Garbage";
     private const string KEY_DUSTBIN = UIDef.UI_INTRODUTION + "Dustbin";
+    private const string KEY_SHOP = UIDef.UI_INTRODUTION + "Shop";
     public Transform RayStartPos;
     public int RayDistance = 3;
     public LayerMask LayerMaskGarbage;//垃圾的layer
     public LayerMask LayerDustbin;//垃圾桶的layer
+    public LayerMask LayerShopNpc;//商店npc的layer
     void Update()
     {
         if (GameMod.Inst.GameState == eGameState.OpenUI)
@@ -33,7 +36,7 @@ public class GameObjInteract : MonoBehaviour
         Ray ray = new Ray(RayStartPos.position, RayStartPos.forward);
 
         RaycastHit hit; 
-        LayerMask interact = LayerMaskGarbage | LayerDustbin;
+        LayerMask interact = LayerMaskGarbage | LayerDustbin | LayerShopNpc;
         // 如果射线与任何游戏对象相交
         if (Physics.Raycast(ray, out hit, RayDistance, interact))
         {
@@ -66,6 +69,18 @@ public class GameObjInteract : MonoBehaviour
                 }
                 interactionType = eInteractionType.OpenBagFromDustbin;
             }
+            else if (obj.layer == 9)//商店npc
+            {
+                if (!UIMod.Inst.IsActiveUI3D(KEY_SHOP))
+                {
+                    UI3DInfo info = new UI3DInfo();
+                    info.BasePos = obj.transform.position;
+                    info.Height = (hit.collider as BoxCollider).size.y;
+                    info.Desc = "我的商店能让你口袋掏空！";
+                    UIMod.Inst.Show3DUI<UIIntroDutionLogic>(UIDef.UI_INTRODUTION, "Shop", info);
+                }
+                interactionType = eInteractionType.OpenShop;
+            }
             _cacheHideUI = true;
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -82,6 +97,11 @@ public class GameObjInteract : MonoBehaviour
                                 DustbinData.Inst.GetDustbinCfgByObj(obj).Type);
                         }
                         break;
+                    case eInteractionType.OpenShop:
+                        {
+                            UIMod.Inst.ShowUI<UIShop>(UIDef.UI_SHOP);
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -91,6 +111,7 @@ public class GameObjInteract : MonoBehaviour
         {
             UIMod.Inst.HideUI(KEY_DUSTBIN);
             UIMod.Inst.HideUI(KEY_GARBAGE);
+            UIMod.Inst.HideUI(KEY_SHOP);
             _cacheHideUI = false;
         }
     }

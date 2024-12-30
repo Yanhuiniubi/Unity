@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using JetBrains.Annotations;
 
 public static class PlayerEvent
 {
@@ -37,5 +38,13 @@ public class PlayerData
         _coins = Math.Max(0, _coins - count * 2);
         PlayerEvent.OnCoinsChanged?.Invoke();
         return -count * 2;
+    }
+    public bool DeleteCoinsByTotalPrice(int spend)
+    {
+        if (spend > _coins)
+            return false;
+        _coins -= spend;
+        PlayerEvent.OnCoinsChanged?.Invoke();
+        return true;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -31,7 +32,7 @@ public class UIShop : UILogicBase
     {
         base.OnShow(param);
         SetTab();
-        SetShopItem();
+        SetShopItem(0);
     }
     private string[] _titles = { "Ö²±»" };
     private void SetTab()
@@ -41,12 +42,19 @@ public class UIShop : UILogicBase
         int count = children.Count;
         for (int i = 0;i < count;i++)
         {
-            children[i].SetData(i, _titles[i], _toggleGroup);
+            children[i].SetData(i, _titles[i], _toggleGroup, SetShopItem);
         }
     }
-    private void SetShopItem()
+    private void SetShopItem(int page)
     {
-
+        var itemList = ShopData.Inst.GetShopItemListByPage(page);
+        int count = itemList.Count;
+        _shopGrid.Ensuresize(count);
+        var children = _shopGrid.Children;
+        for (int i = 0;i < count;i++)
+        {
+            children[i].SetData(itemList[i]);
+        }
     }
     private void CloseUI()
     {
@@ -84,7 +92,7 @@ public class UIShopItem : UITemplateBase
     {
         UIMod.Inst.ShowUI<UIItemUse>(UIDef.UI_UIITEMUSE, _cfg);
     }
-    private void OnDescBtnClick()
+    private void OnDescBtnClick()   
     {
         UIMod.Inst.ShowUI<UIItemDesc>(UIDef.UI_UIITEMDESC, TableItemMainMod.Get(_cfg.ItemID));
     }
@@ -98,6 +106,7 @@ public class UIShopTab : UITemplateBase
 
     private Sprite _selected;
     private Sprite _unSelected;
+    private Action<int> OnSelectedTab;
     public override void OnInit()
     {
         base.OnInit();
@@ -107,11 +116,19 @@ public class UIShopTab : UITemplateBase
         _toggle.onValueChanged.AddListener(OnValueChanged);
     }
 
-    public void SetData(int page,string title,ToggleGroup toggleGroup)
+    public void SetData(int page,string title,ToggleGroup toggleGroup, Action<int> OnSelectedTab)
     {
         _page = page;
         _txtTitle.text = title;
+        this.OnSelectedTab = OnSelectedTab;
         _toggle.group = toggleGroup;
+        if (page == 0)
+        {
+            _toggle.isOn = true;
+            if (_selected == null)
+                _selected = ResData.Inst.GetResByPath<Sprite>("Icon/Selected");
+            _bg.sprite = _selected;
+        }
     }
     private void OnValueChanged(bool isOn)
     {
@@ -120,6 +137,8 @@ public class UIShopTab : UITemplateBase
         if (_unSelected == null)
             _unSelected = ResData.Inst.GetResByPath<Sprite>("Icon/UnSelected");
         _bg.sprite = isOn ? _selected : _unSelected;
+        if (isOn)
+            OnSelectedTab?.Invoke(_page);
     }
 }
 

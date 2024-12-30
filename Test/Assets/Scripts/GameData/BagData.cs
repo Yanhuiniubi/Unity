@@ -29,45 +29,52 @@ public class ItemInfoList
 public static class BagEvent
 {
     /// <summary>
-    /// 垃圾数量变化
+    /// 道具数量变化
     /// </summary>
-    public static Action OnGarbageItemChanged;
+    public static Action<int> OnItemChanged;
 }
 public class BagData
 {
     public static readonly BagData Inst = new BagData();
-    private List<ItemInfo> _itemGarbageList;
     private Dictionary<string, ItemInfo> _itemDic;
-    private bool _isDirt;
-    public List<ItemInfo> ItemList => _itemGarbageList;
+    private Dictionary<int, List<ItemInfo>> _pageDic;
+    private Dictionary<int,bool> _pageDirt;
     private BagData()
     {
-        _itemGarbageList = new List<ItemInfo>();
+        _pageDic = new Dictionary<int, List<ItemInfo>>();
         _itemDic = new Dictionary<string, ItemInfo>();
+        _pageDirt = new Dictionary<int, bool>();
+    }
+    public List<ItemInfo> GetItemListByPage(int page)
+    {
+        if (_pageDic.ContainsKey(page))
+            return _pageDic[page];
+        _pageDic[page] = new List<ItemInfo>();
+        return _pageDic[page];
     }
     /// <summary>
-    /// 添加垃圾
+    /// 添加道具
     /// </summary>
     /// <param name="ID"></param>
     /// <param name="count"></param>
     public void AddItem(TableItemMain cfg,int count)
     {
-        if (cfg.ItemType >= 0 && cfg.ItemType <= 3)//垃圾
+        if (_itemDic.ContainsKey(cfg.ID))
+            _itemDic[cfg.ID].Count += count;
+        else
         {
-            if (_itemDic.ContainsKey(cfg.ID))
-                _itemDic[cfg.ID].Count += count;
+            ItemInfo info = new ItemInfo();
+            info.ID = cfg.ID;
+            info.Count = count;
+            _itemDic.Add(cfg.ID, info);
+            if (_pageDic.ContainsKey(cfg.Page))
+                _pageDic[cfg.Page].Add(info);
             else
-            {
-                ItemInfo info = new ItemInfo();
-                info.ID = cfg.ID;
-                info.Count = count;
-                _itemDic.Add(cfg.ID, info);
-                _itemGarbageList.Add(info);
-            }
-            _isDirt = true;
-            BagEvent.OnGarbageItemChanged?.Invoke();
+                _pageDic[cfg.Page] = new List<ItemInfo>() { info };
         }
-        
+        _pageDirt[cfg.Page] = true;
+
+        BagEvent.OnItemChanged?.Invoke(cfg.Page);
     }
     public void UseItem(TableItemMain cfg, int count)
     {
@@ -90,19 +97,20 @@ public class BagData
             if (_itemDic[itemID].Count == 0)
             {
                 _itemDic.Remove(itemID);
-                for (int i = 0;i < _itemGarbageList.Count;i++)
+                var list = _pageDic[cfg.Page];
+                for (int i = 0;i < list.Count;i++)
                 {
-                    if (_itemGarbageList[i].ID.Equals(itemID))
+                    if (list[i].ID.Equals(itemID))
                     {
-                        _itemGarbageList.RemoveAt(i);
+                        list.RemoveAt(i);
                         break;
                     }
                 }
             }
             coinsChange = DoUseGarbage(dustbinType, cfg.ItemType,count);
             UIMod.Inst.ShowTipsUI<UICoinChanged>(UIDef.UI_COINCHANGED, coinsChange);
-            _isDirt = true;
-            BagEvent.OnGarbageItemChanged?.Invoke();
+            _pageDirt[cfg.Page] = true;
+            BagEvent.OnItemChanged?.Invoke(cfg.Page);
         }
         return coinsChange > 0;
     }
@@ -117,44 +125,13 @@ public class BagData
     /// <summary>
     /// 脏标记时排序
     /// </summary>
-    public void SortItem()
+    public void SortItem(int page)
     {
-        if (_isDirt)
+        if (_pageDirt.ContainsKey(page) && _pageDirt[page])
         {
-            _itemGarbageList.Sort((x, y) => y.Count.CompareTo(x.Count));
-            _isDirt = false;
-        }
-    }
-    public void SaveData()
-    {
-        ItemInfoList itemListData = new ItemInfoList { itemList = _itemGarbageList };
-        string json = JsonUtility.ToJson(itemListData, true);
-
-        // 使用 Application.persistentDataPath 以确保跨平台兼容性
-        string filePath = Path.Combine(Application.persistentDataPath, "savedItems.json");
-        File.WriteAllText(filePath, json);
-    }
-
-    public void LoadData()
-    {
-        // 使用 Application.persistentDataPath 以确保跨平台兼容性
-        string filePath = Path.Combine(Application.persistentDataPath, "savedItems.json");
-
-        if (File.Exists(filePath))
-        {
-            string json = File.ReadAllText(filePath);
-            ItemInfoList itemListData = JsonUtility.FromJson<ItemInfoList>(json);
-
-            _itemGarbageList = itemListData.itemList;
-            _itemDic.Clear();
-            foreach (var item in _itemGarbageList)
-            {
-                _itemDic.Add(item.ID, item);
-            }
-        }
-        else
-        {
-            Debug.LogError("No save file found!");
+            var list = _pageDic[page];
+            list.Sort((x, y) => y.Count.CompareTo(x.Count));
+            _pageDirt[page] = false;
         }
     }
 }

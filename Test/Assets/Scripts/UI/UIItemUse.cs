@@ -25,6 +25,7 @@ public class UIItemUse : UILogicBase
     {
         base.OnHide();
         _garbage = null;
+        _shopItem = null;
     }
 
     public override void OnInit()
@@ -80,7 +81,7 @@ public class UIItemUse : UILogicBase
     {
         if (_garbage != null)
         {
-            ItemUseResultInfo info = new ItemUseResultInfo();
+            GarbageUseResultInfo info = new GarbageUseResultInfo();
             info.Cfg = _garbageCfg;
             info.DustbinType = (int)_garbage.OpenBagFrom;
             info.IsSuccess = BagData.Inst.UseGarbage(TableItemMainMod.Get(_garbage.ItemInfo.ID), (int)_slider.value, (int)_garbage.OpenBagFrom);
@@ -89,7 +90,12 @@ public class UIItemUse : UILogicBase
         }
         else if (_shopItem != null)
         {
-            
+            ShopItemBuyResultInfo info = new ShopItemBuyResultInfo();
+            info.Cfg = _shopItem;
+            info.Count = (int)_slider.value;
+            info.IsSuccess = ShopData.Inst.ReqBuyShopItem(_shopItem, (int)_slider.value);
+            CloseUI();
+            UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, info);
         }
     }
     private void OnCountChanged(float val)

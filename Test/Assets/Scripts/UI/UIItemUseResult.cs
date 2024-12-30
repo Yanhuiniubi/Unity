@@ -4,11 +4,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemUseResultInfo
+public class GarbageUseResultInfo
 {
     public bool IsSuccess;
     public int DustbinType;
     public TableItemMain Cfg;
+}
+public class ShopItemBuyResultInfo
+{
+    public bool IsSuccess;
+    public int Count;
+    public TableItemShop Cfg;
 }
 
 [UIBind(UIDef.UI_ITEMUSERESULT)]
@@ -20,10 +26,13 @@ public class UIItemUseResult : UILogicBase
     private TextMeshProUGUI _txtDesc;
     private Button _btnSure;
 
-    private ItemUseResultInfo _info;
+    private GarbageUseResultInfo _garbageInfo;
+    private ShopItemBuyResultInfo _shopItemInfo;
     public override void OnHide()
     {
         base.OnHide();
+        _garbageInfo = null;
+        _shopItemInfo = null;
     }
 
     public override void OnInit()
@@ -40,47 +49,65 @@ public class UIItemUseResult : UILogicBase
     public override void OnShow(object param)
     {
         base.OnShow(param);
-        _info = param as ItemUseResultInfo;
-        if (_info == null)
-        {
-            Debug.LogError("UIItemUseResult OnShow param isnot ItemUseResultInfo");
-            return;
-        }
+        if (param is GarbageUseResultInfo)
+            _garbageInfo = param as GarbageUseResultInfo;
+        else if (param is ShopItemBuyResultInfo)
+            _shopItemInfo = param as ShopItemBuyResultInfo;
         SetView();
     }
     private void SetView()
     {
-        string garbage = "";
-        switch ((eGarbageType)_info.DustbinType)
+        if (_garbageInfo != null)
         {
-            case eGarbageType.Kehuishou:
-                garbage = "可回收垃圾！".ParseColorText("FFFFFF");
-                break;
-            case eGarbageType.Youhai:
-                garbage = "有害垃圾！".ParseColorText("FFFFFF");
-                break;
-            case eGarbageType.Chuyu:
-                garbage = "厨余垃圾！".ParseColorText("FFFFFF");
-                break;
-            case eGarbageType.Qita:
-                garbage = "其他垃圾！".ParseColorText("FFFFFF");
-                break;
-            default:
-                break;
+            string garbage = "";
+            switch ((eGarbageType)_garbageInfo.DustbinType)
+            {
+                case eGarbageType.Kehuishou:
+                    garbage = "可回收垃圾！".ParseColorText("FFFFFF");
+                    break;
+                case eGarbageType.Youhai:
+                    garbage = "有害垃圾！".ParseColorText("FFFFFF");
+                    break;
+                case eGarbageType.Chuyu:
+                    garbage = "厨余垃圾！".ParseColorText("FFFFFF");
+                    break;
+                case eGarbageType.Qita:
+                    garbage = "其他垃圾！".ParseColorText("FFFFFF");
+                    break;
+                default:
+                    break;
+            }
+            if (_garbageInfo.IsSuccess)
+            {
+                _txtResult.text = "恭喜！垃圾分类正确".ParseColorText("FF0059");
+                _txtDesc.text = $"{_garbageInfo.Cfg.Name.ParseColorText("FF0059")}属于{garbage}";
+                _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/28button_green");
+            }
+            else
+            {
+                _txtResult.text = "哦不！垃圾分类错误".ParseColorText("FFFFFF");
+                _txtDesc.text = $"{_garbageInfo.Cfg.Name.ParseColorText("FFFFFF")}不属于{garbage}";
+                _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/30button_red");
+            }
+            _itemIcon.sprite = ResData.Inst.GetResByPath<Sprite>(_garbageInfo.Cfg.IconPath);
         }
-        if (_info.IsSuccess)
+        else if (_shopItemInfo != null)
         {
-            _txtResult.text = "恭喜！垃圾分类正确".ParseColorText("FF0059");
-            _txtDesc.text = $"{_info.Cfg.Name.ParseColorText("FF0059")}属于{garbage}";
-            _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/28button_green");
+            if (_shopItemInfo.IsSuccess)
+            {
+                _txtResult.text = "恭喜！购买成功".ParseColorText("FF0059");
+                _txtDesc.text = $"{_shopItemInfo.Cfg.Name.ParseColorText("FF0059")} * {_shopItemInfo.Count}";
+                _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/28button_green");
+
+            }
+            else
+            {
+                _txtResult.text = "哦不！购买失败".ParseColorText("FFFFFF");
+                _txtDesc.text = $"资金不足以购买{_shopItemInfo.Cfg.Name} * {_shopItemInfo.Count}";
+                _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/30button_red");
+            }
+            _itemIcon.sprite = ResData.Inst.GetResByPath<Sprite>(_shopItemInfo.Cfg.IconPath);
         }
-        else
-        {
-            _txtResult.text = "哦不！垃圾分类错误".ParseColorText("FFFFFF");
-            _txtDesc.text = $"{_info.Cfg.Name.ParseColorText("FFFFFF")}不属于{garbage}";
-            _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/30button_red");
-        }
-        _itemIcon.sprite = ResData.Inst.GetResByPath<Sprite>(_info.Cfg.IconPath);
     }
     private void HideUI()
     {

@@ -19,6 +19,8 @@ public class UIBag : UILogicBase
 {
     private TextMeshProUGUI _title;
     private UIContainer<UIBagItem> _container;
+    private UIContainer<UIShopTab> _tabGrid;
+    private ToggleGroup _toggleGroup;
     private Button _closeBtn;
     private eOpenBagFrom _openFrom;
     public override void OnInit()
@@ -26,14 +28,15 @@ public class UIBag : UILogicBase
         base.OnInit();
         _title = GetUIComponentInchildren<TextMeshProUGUI>("ImgTitle/TxtTitle");
         _container = new UIContainer<UIBagItem>(gameObject.transform.Find("Scroll View/Grid").gameObject);
+        _tabGrid = new UIContainer<UIShopTab>(gameObject.transform.Find("ScrollViewPage/GridPage").gameObject);
+        _toggleGroup = GetUIComponentInchildren<ToggleGroup>("ScrollViewPage/GridPage");
         _closeBtn = GetUIComponentInchildren<Button>("CloseBtn");
         _closeBtn.onClick.AddListener(CloseUI);
     }
     public override void OnShow(object param)
     {
         base.OnShow(param);
-        BagEvent.OnGarbageItemChanged += SetItems;
-        Cursor.lockState = CursorLockMode.None;
+        BagEvent.OnItemChanged += SetItems;
         _openFrom = (eOpenBagFrom)param;
         switch (_openFrom)
         {
@@ -55,31 +58,106 @@ public class UIBag : UILogicBase
             default:
                 break;
         }
-        SetItems();
+        SetTab();
+        SetItems(0);
+    }
+    private string[] _titles = { "垃圾", "植被" };
+    private void SetTab()
+    {
+        int tabCount = 1;
+        if (_openFrom == eOpenBagFrom.BagKey)
+            tabCount = _titles.Length;
+        _tabGrid.Ensuresize(tabCount);
+        var children = _tabGrid.Children;
+        int count = children.Count;
+        for (int i = 0; i < count; i++)
+        {
+            children[i].SetData(i, _titles[i], _toggleGroup, SetItems);
+        }
     }
     public override void OnHide()
     {
         base.OnHide();
-        BagEvent.OnGarbageItemChanged -= SetItems;
-        Cursor.lockState = CursorLockMode.Locked;
+        BagEvent.OnItemChanged -= SetItems;
     }
     /// <summary>
     /// 设置背包道具显示
     /// </summary>
-    private void SetItems()
+    private void SetItems(int page)
     {
-        BagData.Inst.SortItem();
-        var itemList = BagData.Inst.ItemList;
+        BagData.Inst.SortItem(page);
+        var itemList = BagData.Inst.GetItemListByPage(page);
+        if (itemList == null)
+            return;
         int count = itemList.Count;
         _container.Ensuresize(count);
         var children = _container.Children;
         for (int i = 0;i < count;i++)
         {
-            children[i].SetData(itemList[i].ID, itemList[i].Count,_openFrom != eOpenBagFrom.BagKey, _openFrom);
+            children[i].SetData(itemList[i].ID, itemList[i].Count, _openFrom);
         }
     }
     private void CloseUI()
     {
         UIMod.Inst.HideUI();
+    }
+}
+
+public class UIBagItem : UITemplateBase
+{
+    private Button _btnUse;
+    private Image _icon;
+    private TextMeshProUGUI _itemCount;
+    private TextMeshProUGUI _itemName;
+    private Button _descBtn;
+    private string _id;
+    private int _count;
+    private eOpenBagFrom _openBagFrom;
+    private TableItemMain _cfg;
+    public override void OnInit()
+    {
+        base.OnInit();
+        _btnUse = GetUIComponent<Button>();
+        _descBtn = GetUIComponentInchildren<Button>("DescBtn");
+        _icon = GetUIComponentInchildren<Image>("ItemImg");
+        _itemCount = GetUIComponentInchildren<TextMeshProUGUI>("ItemCount");
+        _itemName = GetUIComponentInchildren<TextMeshProUGUI>("ItemName");
+        _btnUse.onClick.AddListener(OnUseBtnClick);
+        _descBtn.onClick.AddListener(OnDescBtnClick);
+    }
+    public void SetData(string id, int count, eOpenBagFrom openBagFrom)
+    {
+        _id = id;
+        _count = count;
+        _openBagFrom = openBagFrom;
+        _itemCount.text = count.ToString();
+        _cfg = TableItemMainMod.Get(id);
+        _icon.sprite = ResData.Inst.GetResByPath<Sprite>(_cfg.IconPath);
+        _itemName.text = _cfg.Name;
+    }
+    private void OnUseBtnClick()
+    {
+        switch (_openBagFrom)
+        {
+            case eOpenBagFrom.Dustbin_Kehuishou:
+            case eOpenBagFrom.Dustbin_Youhai:
+            case eOpenBagFrom.Dustbin_Chuyu:
+            case eOpenBagFrom.Dustbin_Qita:
+                GarbageUseInfo info = new GarbageUseInfo();
+                info.ItemInfo = new ItemInfo(_id, _count);
+                info.OpenBagFrom = _openBagFrom;
+                UIMod.Inst.ShowUI<UIItemUse>(UIDef.UI_UIITEMUSE, info);
+                break;
+            case eOpenBagFrom.BagKey:
+                if (_cfg.ItemType <= 3)//垃圾
+                    return;
+                break;
+            default:
+                break;
+        }
+    }
+    private void OnDescBtnClick()
+    {
+        UIMod.Inst.ShowUI<UIItemDesc>(UIDef.UI_UIITEMDESC, _cfg);
     }
 }

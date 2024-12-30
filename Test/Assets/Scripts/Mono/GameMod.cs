@@ -54,5 +54,9 @@ public class GameMod : MonoBehaviour
     public void SetGameState(eGameState state)
     {
         _gameState = state;
+        if (state == eGameState.Normal)
+            Cursor.lockState = CursorLockMode.Locked;
+        else if (state == eGameState.OpenUI)
+            Cursor.lockState = CursorLockMode.None;
     }
 }
