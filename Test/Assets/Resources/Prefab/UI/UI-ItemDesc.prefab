@@ -357,6 +357,8 @@ GameObject:
   - component: {fileID: 663516726383369964}
   - component: {fileID: 8116027385375372630}
   - component: {fileID: 3455843011417001668}
+  - component: {fileID: 4212493443783302253}
+  - component: {fileID: 5815318144575006810}
   m_Layer: 5
   m_Name: UI-ItemDesc
   m_TagString: Untagged
@@ -450,6 +452,34 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!111 &4212493443783302253
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240400680876862243}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 981fa572a4bebf845abd45ac56462336, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 981fa572a4bebf845abd45ac56462336, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!225 &5815318144575006810
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240400680876862243}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4472922594878171919
 GameObject:
   m_ObjectHideFlags: 0

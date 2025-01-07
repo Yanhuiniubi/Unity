@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -71,6 +72,12 @@ public class UIItemUse : UILogicBase
             _slider.maxValue = 10;
             _slider.value = 1;
             _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(_shopItem.IconPath);
+            string color = "";
+            if (_shopItem.Price > PlayerData.Inst.Coins)
+                color = "FF1515";
+            else
+                color = "3CFF14";
+            _txtUse.text = $"¹ºÂò1¸ö" + $"£¨${_shopItem.Price}£©".ParseColorText(color);
         }
     }
     private void CloseUI()

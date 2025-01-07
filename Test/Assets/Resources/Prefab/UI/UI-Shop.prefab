@@ -397,8 +397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 4557393502303144518}
-  m_Horizontal: 0
-  m_Vertical: 1
+  m_Horizontal: 1
+  m_Vertical: 0
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
@@ -1945,6 +1945,7 @@ GameObject:
   - component: {fileID: 648192604959704925}
   - component: {fileID: 7415080641823339816}
   - component: {fileID: 7709066566973193055}
+  - component: {fileID: 8463678041056042757}
   m_Layer: 5
   m_Name: UI-Shop
   m_TagString: Untagged
@@ -2039,6 +2040,22 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!111 &8463678041056042757
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861348961476055820}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 66d2e03e0f7c77548ba8a3fd29ea939e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 66d2e03e0f7c77548ba8a3fd29ea939e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8222510050884936886
 GameObject:
   m_ObjectHideFlags: 0

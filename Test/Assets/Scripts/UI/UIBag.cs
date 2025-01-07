@@ -8,11 +8,11 @@ using UnityEngine.UI;
 /// </summary>
 public enum eOpenBagFrom
 {
-    Dustbin_Kehuishou,
-    Dustbin_Youhai,
-    Dustbin_Chuyu,
-    Dustbin_Qita,
-    BagKey,
+    Dustbin_Kehuishou = 0,
+    Dustbin_Youhai = 1,
+    Dustbin_Chuyu = 2,
+    Dustbin_Qita = 3,
+    BagKey = 4,
 }
 [UIBind(UIDef.UI_UIBAG)]
 public class UIBag : UILogicBase

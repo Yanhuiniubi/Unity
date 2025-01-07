@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 7678907299101614774}
   - component: {fileID: 1288568981180217652}
   - component: {fileID: 3063767929118075334}
+  - component: {fileID: 8724614663881489732}
   m_Layer: 5
   m_Name: UI-Bag
   m_TagString: Untagged
@@ -389,6 +390,22 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!111 &8724614663881489732
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290847353858684697}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 66d2e03e0f7c77548ba8a3fd29ea939e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 66d2e03e0f7c77548ba8a3fd29ea939e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2333521901631022564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,8 +1353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 3421908743232194530}
-  m_Horizontal: 0
-  m_Vertical: 1
+  m_Horizontal: 1
+  m_Vertical: 0
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1

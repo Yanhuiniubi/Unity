@@ -27,7 +27,7 @@ public class GameMod : MonoBehaviour
         get
         {
             if (_capsuleCollider == null)
-                _capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+                _capsuleCollider = transform.Find("common_people_male_1").GetComponent<CapsuleCollider>();
             return _capsuleCollider.height;
         }
     }
