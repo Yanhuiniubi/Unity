@@ -67,9 +67,9 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\Clear.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasExitedCollision2D.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector2\GetXY.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\SetLookAtWeight.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Light\GetShadowStrength.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\PlayerPrefs\GetString.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\SetLookAtWeight.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedHumanBodyBones.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Math\IsIntPositive.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\SetLinearVelocity.cs" />
@@ -139,8 +139,8 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\GetDestination.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\SetStartRotation.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedCollider.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\GetBoolParameter.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\SetStartSpeed.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\GetBoolParameter.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Light\SetCookie.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\GameObject\FindGameObjectsWithTag.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\GetRotation.cs" />
@@ -178,16 +178,16 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector2\SetValue.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\SetStartDelay.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Input\IsButtonDown.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasExitedTrigger2D.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Transform\GetLocalEulerAngles.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasExitedTrigger2D.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\SetGravityScale.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedVector2.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedObjectList.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\IsName.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedTransformList.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\AudioSource\GetIgnoreListenerPause.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedBool.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\GetDirection.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedBool.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Math\RandomFloat.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\AudioSource\SetLoop.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetAngularVelocity.cs" />
@@ -287,8 +287,8 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedRect.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector2\GetMagnitude.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\CharacterController\GetSlopeLimit.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\GameObject\CompareTag.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedString.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\GameObject\CompareTag.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\CharacterController\GetVelocity.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector3\GetUpVector.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\SetIntegerParameter.cs" />
@@ -357,8 +357,8 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\GetIntegerParameter.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\AccessoryWearLogic.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\GetAngularVelocity.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\StartRecording.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\AddRelativeForce.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\StartRecording.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Light\GetShadowBias.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Input\GetButton.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Light\SetType.cs" />
@@ -422,8 +422,8 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\PlayerPrefs\Save.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\GetIsStopped.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\CircleCollider2D\SetRadius.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetUseGravity.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedGameObjectList.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetUseGravity.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetAngularDamping.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\GameObject\FindWithTag.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Math\IntClamp.cs" />
@@ -566,8 +566,8 @@
     <Compile Include="Assets\Scripts\UI\UIDef.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\SetBoolParameter.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\AddTorque.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\AudioSource\GetLoop.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\SetStartLifetime.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\AudioSource\GetLoop.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Quaternion\Slerp.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\GameObject\Find.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\StartPlayback.cs" />
@@ -583,8 +583,8 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetVelocity.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector3\GetMagnitude.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Composites\RandomSelector.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\GetHeight.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\GetRemainingDistance.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\GetHeight.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedInt.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\AddRelativeTorque.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedLayerMask.cs" />
@@ -611,6 +611,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedObject.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\SetEnableEmission.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\GetVelocity.cs" />
+    <Compile Include="Assets\Scripts\UI\UILoadingLogic.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector2\GetUpVector.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector2\GetSqrMagnitude.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Timeline\Resume.cs" />
@@ -633,11 +634,11 @@
     <Compile Include="Assets\Scripts\UI\UIItemUse.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Quaternion\Inverse.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\PlayerPrefs\SetInt.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Transform\SetLocalRotation.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedFloat.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Transform\SetLocalRotation.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Vector3\Operator.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedTransformList.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetRotation.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedTransformList.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Transform\Translate.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1503,20 +1504,72 @@
       <HintPath>D:\Unity\2022.3.49f1c1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.EditorCoroutines.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
@@ -1535,68 +1588,36 @@
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    <Reference Include="Unity.Addressables">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -1605,13 +1626,13 @@
       <Project>{2B280B4A-594F-D3B3-72EA-E59769BEFEDC}</Project>
       <Name>Boxophobic.Utils.Scripts</Name>
     </ProjectReference>
-    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
-      <Project>{5A714DA5-10A7-8342-E8B5-523ED9F3BD11}</Project>
-      <Name>Boxophobic.Utils.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
       <Project>{E0DF84D3-FB9F-EABA-D097-9F74596AE624}</Project>
       <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{5A714DA5-10A7-8342-E8B5-523ED9F3BD11}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

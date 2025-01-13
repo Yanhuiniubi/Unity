@@ -14,7 +14,7 @@ public class ShopItemBuyResultInfo
 {
     public bool IsSuccess;
     public int Count;
-    public TableItemShop Cfg;
+    public TableItemMain Cfg;
 }
 
 [UIBind(UIDef.UI_ITEMUSERESULT)]
@@ -81,15 +81,15 @@ public class UIItemUseResult : UILogicBase
             {
                 _txtResult.text = "恭喜！垃圾分类正确".ParseColorText("FF0059");
                 _txtDesc.text = $"{_garbageInfo.Cfg.Name.ParseColorText("FF0059")}属于{garbage}";
-                _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/28button_green");
+                _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
             }
             else
             {
                 _txtResult.text = "哦不！垃圾分类错误".ParseColorText("FFFFFF");
                 _txtDesc.text = $"{_garbageInfo.Cfg.Name.ParseColorText("FFFFFF")}不属于{garbage}";
-                _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/30button_red");
+                _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("30button_red.png");
             }
-            _itemIcon.sprite = ResData.Inst.GetResByPath<Sprite>(_garbageInfo.Cfg.IconPath);
+            _itemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_garbageInfo.Cfg.IconPath);
         }
         else if (_shopItemInfo != null)
         {
@@ -97,16 +97,15 @@ public class UIItemUseResult : UILogicBase
             {
                 _txtResult.text = "恭喜！购买成功".ParseColorText("FF0059");
                 _txtDesc.text = $"{_shopItemInfo.Cfg.Name.ParseColorText("FF0059")} * {_shopItemInfo.Count}";
-                _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/28button_green");
-
+                _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
             }
             else
             {
                 _txtResult.text = "哦不！购买失败".ParseColorText("FFFFFF");
                 _txtDesc.text = $"资金不足以购买{_shopItemInfo.Cfg.Name} * {_shopItemInfo.Count}";
-                _bg.sprite = ResData.Inst.GetResByPath<Sprite>("Icon/30button_red");
+                _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("30button_red.png");
             }
-            _itemIcon.sprite = ResData.Inst.GetResByPath<Sprite>(_shopItemInfo.Cfg.IconPath);
+            _itemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_shopItemInfo.Cfg.IconPath);
         }
     }
     private void HideUI()

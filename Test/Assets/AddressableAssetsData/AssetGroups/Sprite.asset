@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Sprite
+  m_EditorClassIdentifier: 
+  m_GroupName: Sprite
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e5f5648b01c2bab479946bb8a9182ed0
+  m_SerializeEntries:
+  - m_GUID: 131de190cb93c60499d0da6a2b7c592d
+    m_Address: 28button_green.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bd3927e32cf1294d95fd8fd245bfd25
+    m_Address: Sandwich.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e7ac424d2d6fd9409c61113863dac08
+    m_Address: Icon_Gear.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 331edea778e0ae34e969065560739864
+    m_Address: Paper.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40e18528df11eb1459c0a6df3f5d0977
+    m_Address: Medicine.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 511edf773de5afb4abe0065468d520e4
+    m_Address: Hamburger.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56bc7c5aee89f9448a8e648bc87a9809
+    m_Address: Mushroom.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7066e0747291df44fa5c2bf93bee3a6e
+    m_Address: UnSelected.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 780ae4285c8f3dc4798941b30be4d6bd
+    m_Address: Ceramic.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ba7a9cefd0e4b54f9a3fd63d81674ab
+    m_Address: SmallTree.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8fc9feebf624bba43a9df1301ccf1d8e
+    m_Address: 30button_red.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 940685744317b1440847d7d48fe57d4b
+    m_Address: Bottle.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a559ccda4794aa54899d4413d662991c
+    m_Address: Glass.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c60bfcec4272a6b499db3f234dbeca35
+    m_Address: Fish.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c82004f1e6d1d0749930851e7244f8a9
+    m_Address: BigTree.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf1462bc694c3c249831ad8ac5293aa2
+    m_Address: Selected.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d15102e1826bf5b428bb87eb66a9daef
+    m_Address: Icon_Battery_C.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8c8167a04660274a95848fab404fa64
+    m_Address: MiddleTree.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f437e46a82f7405468f39fbee9f8d916
+    m_Address: Flower.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4d67e60320fb21544b0c71788fe7719b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 457468970f6e7d84da24cb8d3b518898, type: 2}
+    - {fileID: 11400000, guid: 4477387fae399f743afb985cc2e3f5d3, type: 2}

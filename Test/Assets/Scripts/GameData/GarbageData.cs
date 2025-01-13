@@ -59,7 +59,7 @@ public class GarbageData
         GarbageInfo info = new GarbageInfo();
         var cfg = TableItemMainMod.Get(id);
         info.Cfg = cfg;
-        GameObject obj = GameObject.Instantiate<GameObject>(ResData.Inst.GetResByPath<GameObject>(cfg.PrefabPath)
+        GameObject obj = GameObject.Instantiate<GameObject>(ResData.Inst.GetResByAddressPermanent<GameObject>(cfg.PrefabPath)
            ,GameMod.Inst.GarbageRoot);
         info.GameObject = obj;
         obj.transform.position = new Vector3(pos.x,pos.y + 3,pos.z);
@@ -69,11 +69,8 @@ public class GarbageData
     /// 从对象池中获取一个垃圾
     /// </summary>
     /// <param name="type"></param>
-    private GarbageInfo GetGarbageFromPoor(eGarbageType type, Vector3 pos)
+    private GarbageInfo GetGarbageFromPoor(string id, Vector3 pos)
     {
-        var list = _garDic_Type[type];
-        int index = Random.Range(0, list.Count);
-        string id = list[index].ItemID;
         if (_poor.TryGetValue(id, out Queue<GarbageInfo> queue))
         {
             if (queue.Count > 0)
@@ -103,7 +100,10 @@ public class GarbageData
     /// <param name="count"></param>
     public void GenerateGarbage(eGarbageType type,Vector3 pos)
     {
-        GarbageInfo info = GetGarbageFromPoor(type, pos);
+        var list = _garDic_Type[type];
+        int index = Random.Range(0, list.Count);
+        string id = list[index].ItemID;
+        GarbageInfo info = GetGarbageFromPoor(id, pos);
         _garDic_Obj.Add(info.GameObject, info);
         info.GameObject.SetActive(true);
         PlayerEvent.OnGarbageCntChanged?.Invoke();

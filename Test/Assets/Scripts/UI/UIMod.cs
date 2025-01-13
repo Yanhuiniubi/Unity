@@ -18,7 +18,7 @@ public class UIMod
     /// <param name="param"></param>
     /// <param name="parent"></param>
     /// <param name="changeGameState"></param>
-    public void ShowUI<T>(string path,object param = null,Transform parent = null,bool changeGameState = true) where T : UILogicBase , new()
+    public void ShowUI<T>(string path, object param = null, Transform parent = null, bool changeGameState = true) where T : UILogicBase, new()
     {
         if (cacheUIDic_show.ContainsKey(path))
         {
@@ -36,17 +36,16 @@ public class UIMod
             cacheUIDic_show.Add(path, cacheUI);
             return;
         }
-
-        GameObject res = ResData.Inst.GetResByPath<GameObject>(path);
-        GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UIRoot : parent);
         T uibase = new T();
+        GameObject res = ResData.Inst.GetResByAddressPermanent<GameObject>(path);
+        GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UIRoot : parent);
         uibase.gameObject = root;
         uibase.resPath = path;
         _uiPanelStack.Push(uibase);
-        cacheUIDic_show.Add(path, uibase);
 
         uibase.OnInit();
         uibase.OnShow(param);
+        cacheUIDic_show.Add(path, uibase);
     }
     /// <summary>
     /// 隐藏stack顶部的UI，与showui配对使用
@@ -70,7 +69,10 @@ public class UIMod
     public void DeleteUI(string path)
     {
         if (cacheUIDic_hide.ContainsKey(path))
+        {
+            cacheUIDic_hide[path].Dispose();
             cacheUIDic_hide.Remove(path);
+        }
     }
     private Dictionary<string, UI3DLogicBase> cache3DUIDic_show = new Dictionary<string, UI3DLogicBase>();
     private Dictionary<string, UI3DLogicBase> cache3DUIDic_hide = new Dictionary<string, UI3DLogicBase>();
@@ -82,7 +84,7 @@ public class UIMod
     /// <param name="name"></param>
     /// <param name="param"></param>
     /// <param name="parent"></param>
-    public void Show3DUI<T>(string path,string name,object param = null, Transform parent = null) where T : UI3DLogicBase, new()
+    public void Show3DUI<T>(string path, string name, object param = null, Transform parent = null) where T : UI3DLogicBase, new()
     {
         string key = path + name;
         if (cache3DUIDic_show.ContainsKey(key))
@@ -99,10 +101,10 @@ public class UIMod
             cache3DUIDic_show.Add(key, cacheUI);
             return;
         }
-
-        GameObject res = ResData.Inst.GetResByPath<GameObject>(path);
-        GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UI3DRoot : parent);
         T uibase = new T();
+
+        GameObject res = ResData.Inst.GetResByAddressPermanent<GameObject>(path);
+        GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UI3DRoot : parent);
         uibase.gameObject = root;
         uibase.resPath = path;
         uibase.name = name;
@@ -137,15 +139,15 @@ public class UIMod
             return;
         }
 
-        GameObject res = ResData.Inst.GetResByPath<GameObject>(path);
-        GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UITipsRoot : parent);
         T uibase = new T();
+        GameObject res = ResData.Inst.GetResByAddressPermanent<GameObject>(path);
+        GameObject root = GameObject.Instantiate<GameObject>(res, parent == null ? GameMod.Inst.UITipsRoot : parent);
         uibase.gameObject = root;
         uibase.resPath = path;
-        cacheUIDic_show.Add(path, uibase);
 
         uibase.OnInit();
         uibase.OnShow(param);
+        cacheUIDic_show.Add(path, uibase);
     }
     public void HideTips(string path)
     {
@@ -175,7 +177,10 @@ public class UIMod
     public void Delete3DUI(string key)
     {
         if (cache3DUIDic_hide.ContainsKey(key))
+        {
+            cache3DUIDic_hide[key].Dispose();
             cache3DUIDic_hide.Remove(key);
+        }
     }
     /// <summary>
     /// 3dUI是否正在显示

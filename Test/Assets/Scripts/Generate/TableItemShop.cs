@@ -8,10 +8,7 @@ public class TableItemShop
 {
     public int ID;
     public string ItemID;
-    public string Name;
-    public string IconPath;
     public int Price;
-    public string Desc;
     public int Page;
 }
 public class TableItemShopMod
@@ -41,11 +38,8 @@ public class TableItemShopMod
                 values[j] = values[j].Replace("\"", "");
             cfg.ID = int.Parse(values[0]);
             cfg.ItemID = values[1];
-            cfg.Name = values[2];
-            cfg.IconPath = values[3];
-            cfg.Price = int.Parse(values[4]);
-            cfg.Desc = values[5];
-            cfg.Page = int.Parse(values[6]);
+            cfg.Price = int.Parse(values[2]);
+            cfg.Page = int.Parse(values[3]);
             dic.Add(cfg.ID, cfg);
             array[i - 2] = cfg;
         }

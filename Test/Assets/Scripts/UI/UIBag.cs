@@ -132,7 +132,7 @@ public class UIBagItem : UITemplateBase
         _openBagFrom = openBagFrom;
         _itemCount.text = count.ToString();
         _cfg = TableItemMainMod.Get(id);
-        _icon.sprite = ResData.Inst.GetResByPath<Sprite>(_cfg.IconPath);
+        _icon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_cfg.IconPath);
         _itemName.text = _cfg.Name;
     }
     private void OnUseBtnClick()

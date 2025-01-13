@@ -52,12 +52,13 @@ namespace Supercyan.FreeSample
         private float _cameramaxPositionZ_max;
         private void Awake()
         {
-            if (!m_animator) { m_animator = gameObject.GetComponent<Animator>(); }
-            if (!m_rigidBody) { m_rigidBody = gameObject.GetComponent<Rigidbody>(); }
-            Cursor.lockState = CursorLockMode.Locked;
+            
         }
         private void Start()
         {
+            if (!m_animator) { m_animator = gameObject.GetComponent<Animator>(); }
+            if (!m_rigidBody) { m_rigidBody = gameObject.GetComponent<Rigidbody>(); }
+            Cursor.lockState = CursorLockMode.Locked;
             _cameramaxRotationX_min = cam.transform.eulerAngles.x - 20;
             _cameramaxRotationX_max = cam.transform.eulerAngles.x + 20;
             _cameramaxPositionZ_min = cam.transform.localPosition.z - 1;

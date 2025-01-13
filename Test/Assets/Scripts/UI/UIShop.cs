@@ -69,7 +69,8 @@ public class UIShopItem : UITemplateBase
     private TextMeshProUGUI _itemName;
     private Button _descBtn;
 
-    private TableItemShop _cfg;
+    private TableItemShop _shopItemCfg;
+    private TableItemMain _itemCfg;
     public override void OnInit()
     {
         base.OnInit();
@@ -83,18 +84,19 @@ public class UIShopItem : UITemplateBase
     }
     public void SetData(TableItemShop cfg)
     {
-        _cfg = cfg;
+        _shopItemCfg = cfg;
+        _itemCfg = TableItemMainMod.Get(_shopItemCfg.ItemID);
         _itemPrice.text = cfg.Price.ToString();
-        _icon.sprite = ResData.Inst.GetResByPath<Sprite>(cfg.IconPath);
-        _itemName.text = cfg.Name;
+        _icon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_itemCfg.IconPath);
+        _itemName.text = _itemCfg.Name;
     }
     private void OnBuyBtnClick()
     {
-        UIMod.Inst.ShowUI<UIItemUse>(UIDef.UI_UIITEMUSE, _cfg);
+        UIMod.Inst.ShowUI<UIItemUse>(UIDef.UI_UIITEMUSE, _shopItemCfg);
     }
     private void OnDescBtnClick()   
     {
-        UIMod.Inst.ShowUI<UIItemDesc>(UIDef.UI_UIITEMDESC, TableItemMainMod.Get(_cfg.ItemID));
+        UIMod.Inst.ShowUI<UIItemDesc>(UIDef.UI_UIITEMDESC, TableItemMainMod.Get(_shopItemCfg.ItemID));
     }
 }
 public class UIShopTab : UITemplateBase
@@ -126,16 +128,16 @@ public class UIShopTab : UITemplateBase
         {
             _toggle.isOn = true;
             if (_selected == null)
-                _selected = ResData.Inst.GetResByPath<Sprite>("Icon/Selected");
+                _selected = ResData.Inst.GetResByAddressPermanent<Sprite>("Selected.png");
             _bg.sprite = _selected;
         }
     }
     private void OnValueChanged(bool isOn)
     {
         if (_selected == null)
-            _selected = ResData.Inst.GetResByPath<Sprite>("Icon/Selected");
+            _selected = ResData.Inst.GetResByAddressPermanent<Sprite>("Selected.png");
         if (_unSelected == null)
-            _unSelected = ResData.Inst.GetResByPath<Sprite>("Icon/UnSelected");
+            _unSelected = ResData.Inst.GetResByAddressPermanent<Sprite>("UnSelected.png");
         _bg.sprite = isOn ? _selected : _unSelected;
         if (isOn)
             OnSelectedTab?.Invoke(_page);

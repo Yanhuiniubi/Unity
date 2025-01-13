@@ -37,7 +37,7 @@ public class GameMod : MonoBehaviour
     /// </summary>
     public eGameState GameState => _gameState;
     private void Awake()
-    {
+    { 
         inst = this;
         _gameState = eGameState.Normal;
         DustbinData.Inst.InitData();

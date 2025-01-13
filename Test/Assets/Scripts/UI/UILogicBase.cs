@@ -10,12 +10,20 @@ public class UILogicBase
     public string resPath;
     public GameObject gameObject;
     private Coroutine co;
+    public HashSet<string> ResAddresses = new HashSet<string>();
     /// <summary>
     /// 初始化
     /// </summary>
     public virtual void OnInit()
     {
 
+    }
+    /// <summary>
+    /// 资源释放
+    /// </summary>
+    public virtual void Dispose()
+    {
+        ResData.Inst.ReleasAsset(ResAddresses);
     }
     /// <summary>
     /// UI每次显示

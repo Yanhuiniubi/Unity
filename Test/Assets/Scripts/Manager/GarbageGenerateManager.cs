@@ -7,6 +7,7 @@ using UnityEngine;
 public class GarbageGenerateManager
 {
     public static GarbageGenerateManager Inst = new GarbageGenerateManager();
+    private bool resIsLoaded;
     private GarbageGenerateManager()
     {
 

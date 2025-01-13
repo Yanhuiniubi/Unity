@@ -63,15 +63,16 @@ public class UIItemUse : UILogicBase
             _slider.minValue = 0;
             _slider.maxValue = _garbage.ItemInfo.Count;
             _slider.value = 0;
-            _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(_garbageCfg.IconPath);
+            _imgItem.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_garbageCfg.IconPath);
         }
         else if (_shopItem != null)
         {
-            _txtName.text = _shopItem.Name;
+            _shopItemCfg = TableItemMainMod.Get(_shopItem.ItemID);
+            _txtName.text = _shopItemCfg.Name;
             _slider.minValue = 1;
             _slider.maxValue = 10;
             _slider.value = 1;
-            _imgItem.sprite = ResData.Inst.GetResByPath<Sprite>(_shopItem.IconPath);
+            _imgItem.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_shopItemCfg.IconPath);
             string color = "";
             if (_shopItem.Price > PlayerData.Inst.Coins)
                 color = "FF1515";
@@ -98,7 +99,7 @@ public class UIItemUse : UILogicBase
         else if (_shopItem != null)
         {
             ShopItemBuyResultInfo info = new ShopItemBuyResultInfo();
-            info.Cfg = _shopItem;
+            info.Cfg = _shopItemCfg;
             info.Count = (int)_slider.value;
             info.IsSuccess = ShopData.Inst.ReqBuyShopItem(_shopItem, (int)_slider.value);
             CloseUI();

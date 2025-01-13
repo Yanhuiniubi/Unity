@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: UIPrefab
+  m_EditorClassIdentifier: 
+  m_GroupName: UIPrefab
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9d67b39221259314e81306a9826fb0b5
+  m_SerializeEntries:
+  - m_GUID: 0c8189c76c1982d4f80176ecee98659a
+    m_Address: UI-Main.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 693c5a7e17d3cac47aceda8da2916d10
+    m_Address: UI-ItemUse.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c04981d96e00264ba27f8a75a7d60be
+    m_Address: UI-ItemDesc.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97e6406f9da791a429df458aead3cce8
+    m_Address: UI-Loading.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6ba33f3d69c41e4ba8d03aec938427b
+    m_Address: UI-Bag.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aed86570924511348b8213eb53aae2de
+    m_Address: UI-ItemUseResult.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb5570b3356c1e549b03b61257839bc8
+    m_Address: UI-Shop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: beebc9e64bfe4894ca40654043bd7fe3
+    m_Address: IntroDution.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc4f0b982b21c9f47af8a5c3c34c2612
+    m_Address: UI-CoinChanged.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4d67e60320fb21544b0c71788fe7719b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2feaf5bd592c45c48a5dcc94cda1a5d1, type: 2}
+    - {fileID: 11400000, guid: 27a968603d8c6884e9c01fb2af91ec81, type: 2}
