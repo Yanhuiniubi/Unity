@@ -22,4 +22,6 @@ public class UIDef
     public const string UI_ITEMUSERESULT = "UI-ItemUseResult.prefab";
     public const string UI_COINCHANGED = "UI-CoinChanged.prefab";
     public const string UI_SHOP = "UI-Shop.prefab";
+    public const string UI_LOADING = "UI-Loading.prefab";
+    public const string UI_GAMEINTRODUTION = "UI-GameIntrodution.prefab";
 }

@@ -7,20 +7,12 @@ using UnityEngine;
 public class UITemplateBase
 {
     public GameObject gameObject;
-    public HashSet<string> ResAddresses = new HashSet<string>();
     /// <summary>
     /// 初始化
     /// </summary>
     public virtual void OnInit()
     {
 
-    }
-    /// <summary>
-    /// 资源释放
-    /// </summary>
-    public virtual void Dispose()
-    {
-        ResData.Inst.ReleasAsset(ResAddresses);
     }
     protected T GetUIComponentInchildren<T>(string path) where T : Component
     {

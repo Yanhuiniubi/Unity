@@ -35,12 +35,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoadGameObject
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 97e6406f9da791a429df458aead3cce8
-    m_Address: UI-Loading.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoadGameObject
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a6ba33f3d69c41e4ba8d03aec938427b
     m_Address: UI-Bag.prefab
     m_ReadOnly: 0

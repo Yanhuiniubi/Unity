@@ -70,7 +70,6 @@ public class UIMod
     {
         if (cacheUIDic_hide.ContainsKey(path))
         {
-            cacheUIDic_hide[path].Dispose();
             cacheUIDic_hide.Remove(path);
         }
     }
@@ -178,7 +177,6 @@ public class UIMod
     {
         if (cache3DUIDic_hide.ContainsKey(key))
         {
-            cache3DUIDic_hide[key].Dispose();
             cache3DUIDic_hide.Remove(key);
         }
     }

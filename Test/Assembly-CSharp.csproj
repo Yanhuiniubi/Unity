@@ -182,6 +182,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasExitedTrigger2D.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\SetGravityScale.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedVector2.cs" />
+    <Compile Include="Assets\Scripts\UI\UIGameIntrodutionLogic.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedObjectList.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\IsName.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedTransformList.cs" />

@@ -31,7 +31,6 @@ public class UIContainer<T> where T : UITemplateBase, new()
             while(curChildCount != count)
             {
                 GameObject.Destroy(parent.GetChild(curChildCount).gameObject);
-                _children[_children.Count - 1].Dispose();
                 curChildCount--;
                 _children.RemoveAt(_children.Count - 1);
             }

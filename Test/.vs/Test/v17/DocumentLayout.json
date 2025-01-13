@@ -3,36 +3,72 @@
   "WorkspaceRootPath": "D:\\Unity\\proj\\Unity\\Test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|d:\\unity\\proj\\unity\\test\\assets\\scripts\\ui\\uiloadinglogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uiloadinglogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiloadinglogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uigameintrodutionlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uigameintrodutionlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\gamedata\\resdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\resdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\AddressablesImpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\AddressablesImpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\MonoBehaviourCallbackHooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\MonoBehaviourCallbackHooks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\mono\\chickenlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mono\\chickenlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|d:\\unity\\proj\\unity\\test\\assets\\scripts\\ui\\uidef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uidef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\mono\\gamemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mono\\gamemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uicoinchanged.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uicoinchanged.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uibag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uibag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uiitemdesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiitemdesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uiitemuseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiitemuseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uimod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uimod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uilogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uilogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uidef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uidef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uiitemuse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiitemuse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\uicomponent\\uicontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicomponent\\uicontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uitemplatebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uitemplatebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\ui3dlogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ui3dlogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\mono\\chickenlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mono\\chickenlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uimain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,22 +99,6 @@
       "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mono\\deerlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uiitemuseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiitemuseresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uiitemuse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiitemuse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uibag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uibag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\gamedata\\garbagedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\garbagedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -89,14 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\gamedata\\dustbindata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamedata\\dustbindata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uilogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uilogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uitemplatebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uitemplatebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uiintrodutionlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -117,22 +129,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\DelegateList.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\DelegateList.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\uicomponent\\uicontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uicomponent\\uicontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uicoinchanged.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uicoinchanged.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\uiitemdesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiitemdesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\ui\\ui3dlogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ui3dlogicbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A513BC8D-6A7D-D6C5-EEBE-D27CF600D276}|Assembly-CSharp.csproj|D:\\Unity\\proj\\Unity\\Test\\assets\\scripts\\mono\\gameobjinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -190,37 +186,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MonoBehaviourCallbackHooks.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\MonoBehaviourCallbackHooks.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\MonoBehaviourCallbackHooks.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\MonoBehaviourCallbackHooks.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\MonoBehaviourCallbackHooks.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T07:53:35.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddressablesImpl.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\AddressablesImpl.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\AddressablesImpl.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\AddressablesImpl.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\AddressablesImpl.cs",
-              "ViewState": "AQIAAL8AAAAAAAAAAAAvwNMAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T07:45:43.164Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -230,66 +200,201 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UILoadingLogic.cs",
               "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UILoadingLogic.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\UILoadingLogic.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAnwBsAAAAkAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAjwCAAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-13T07:20:01.488Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UIMod.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMod.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIMod.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMod.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIMod.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAArwCcAAABNAAAA",
+              "DocumentIndex": 1,
+              "Title": "UIGameIntrodutionLogic.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIGameIntrodutionLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIGameIntrodutionLogic.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIGameIntrodutionLogic.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIGameIntrodutionLogic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T10:01:09.582Z",
+              "WhenOpened": "2025-01-13T08:54:11.368Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "UIItemDesc.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemDesc.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIItemDesc.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemDesc.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIItemDesc.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T07:29:45.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UICoinChanged.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UICoinChanged.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UICoinChanged.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UICoinChanged.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UICoinChanged.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T03:43:49.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GameMod.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\GameMod.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Mono\\GameMod.cs",
               "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\GameMod.cs",
               "RelativeToolTip": "Assets\\Scripts\\Mono\\GameMod.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAADwvy4AAAAsAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwCMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T10:00:53.391Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UIMain.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMain.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIMain.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMain.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIMain.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
+              "DocumentIndex": 2,
+              "Title": "ResData.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\ResData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\ResData.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\ResData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameData\\ResData.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAArwGcAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T07:41:51.076Z",
+              "WhenOpened": "2024-12-19T08:30:31.52Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UIMod.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMod.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIMod.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMod.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIMod.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAArwBwAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T10:01:09.582Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "UIBag.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIBag.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIBag.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIBag.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIBag.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAnwGsAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T06:45:42.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UIItemUseResult.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemUseResult.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIItemUseResult.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemUseResult.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIItemUseResult.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAvwGsAAABpAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T05:38:45.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UIContainer.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UIComponent\\UIContainer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIComponent\\UIContainer.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UIComponent\\UIContainer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIComponent\\UIContainer.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAgwBwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T03:21:53.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UILogicBase.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UILogicBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UILogicBase.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UILogicBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UILogicBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T10:01:08.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UIItemUse.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemUse.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIItemUse.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemUse.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIItemUse.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAMwEcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T08:03:04.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "UIDef.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIDef.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIDef.cs",
               "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIDef.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\UIDef.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAjwBQAAAAzAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T03:36:01.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T03:36:01.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
+              "Title": "UITemplateBase.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UITemplateBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UITemplateBase.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UITemplateBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UITemplateBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T05:25:28.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UI3DLogicBase.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UI3DLogicBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UI3DLogicBase.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UI3DLogicBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UI3DLogicBase.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T10:18:34.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UIShop.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIShop.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIShop.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIShop.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIShop.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAgwIcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T09:01:17.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ChickenLogic.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\ChickenLogic.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Mono\\ChickenLogic.cs",
@@ -297,37 +402,23 @@
               "RelativeToolTip": "Assets\\Scripts\\Mono\\ChickenLogic.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T11:06:07.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T11:06:07.442Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ResData.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\ResData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\ResData.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\ResData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameData\\ResData.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAcAAAA",
+              "DocumentIndex": 17,
+              "Title": "UIMain.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMain.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIMain.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIMain.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIMain.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T08:30:31.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T07:41:51.076Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SimpleSampleCharacterControl.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
-              "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
-              "RelativeToolTip": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T03:46:11.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "FreeCameraLogic.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\FreeCameraLogic.cs",
               "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\FreeCameraLogic.cs",
@@ -339,7 +430,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
+              "Title": "SimpleSampleCharacterControl.cs",
+              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
+              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
+              "RelativeToolTip": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\SimpleSampleCharacterControl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T03:46:11.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "DemoFree.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\DemoFree.cs",
               "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\DemoFree.cs",
@@ -351,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "AccessoryWearLogic.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryWearLogic.cs",
               "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryWearLogic.cs",
@@ -363,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "AccessoryLogic.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryLogic.cs",
               "RelativeDocumentMoniker": "Assets\\Supercyan Character Pack Free Sample\\Scripts\\AccessoryLogic.cs",
@@ -375,43 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UIShop.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIShop.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIShop.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIShop.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIShop.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAUwI0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T09:01:17.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UIItemUseResult.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemUseResult.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIItemUseResult.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemUseResult.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIItemUseResult.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAvwGsAAABpAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T05:38:45.734Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UIItemUse.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemUse.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIItemUse.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemUse.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIItemUse.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAArwEoAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T08:03:04.19Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "DeerLogic.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\DeerLogic.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Mono\\DeerLogic.cs",
@@ -423,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "GarbageData.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\GarbageData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\GarbageData.cs",
@@ -435,19 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UIBag.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIBag.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIBag.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIBag.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIBag.cs",
-              "ViewState": "AQIAAHQAAAAAAAAAAAAnwIQAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T06:45:42.319Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "GarbageGenerateManager.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Manager\\GarbageGenerateManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\GarbageGenerateManager.cs",
@@ -459,7 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "DustbinData.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\DustbinData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\DustbinData.cs",
@@ -471,31 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UILogicBase.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UILogicBase.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UILogicBase.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UILogicBase.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UILogicBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T10:01:08.767Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UITemplateBase.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UITemplateBase.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UITemplateBase.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UITemplateBase.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UITemplateBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T05:25:28.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "UIIntroDutionLogic.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIIntroDutionLogic.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIIntroDutionLogic.cs",
@@ -507,31 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "UIContainer.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UIComponent\\UIContainer.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UIComponent\\UIContainer.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UIComponent\\UIContainer.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UIComponent\\UIContainer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T03:21:53.396Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "UICoinChanged.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UICoinChanged.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UICoinChanged.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UICoinChanged.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UICoinChanged.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAUAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T03:43:49.801Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "DelegateList.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\DelegateList.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\DelegateList.cs",
@@ -543,7 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "AsyncOperationBase.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\AsyncOperations\\AsyncOperationBase.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\AsyncOperations\\AsyncOperationBase.cs",
@@ -555,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "DelayedActionManager.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\DelayedActionManager.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\Util\\DelayedActionManager.cs",
@@ -567,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "ProviderOperation.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\AsyncOperations\\ProviderOperation.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.addressables@1.22.3\\Runtime\\ResourceManager\\AsyncOperations\\ProviderOperation.cs",
@@ -579,31 +586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "UIItemDesc.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemDesc.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIItemDesc.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UIItemDesc.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIItemDesc.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T07:29:45.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "UI3DLogicBase.cs",
-              "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UI3DLogicBase.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UI3DLogicBase.cs",
-              "ToolTip": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\UI\\UI3DLogicBase.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UI3DLogicBase.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T10:18:34.591Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 34,
               "Title": "TableItemShop.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Generate\\TableItemShop.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Generate\\TableItemShop.cs",
@@ -615,7 +598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 32,
               "Title": "GameObjInteract.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Mono\\GameObjInteract.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Mono\\GameObjInteract.cs",
@@ -627,7 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 33,
               "Title": "TableDustbin.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Generate\\TableDustbin.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Generate\\TableDustbin.cs",
@@ -639,7 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 35,
               "Title": "TableItemMain.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Generate\\TableItemMain.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Generate\\TableItemMain.cs",
@@ -651,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 36,
               "Title": "TableItemGarbage.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Generate\\TableItemGarbage.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Generate\\TableItemGarbage.cs",
@@ -663,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 37,
               "Title": "TableAnimal.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Generate\\TableAnimal.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Generate\\TableAnimal.cs",
@@ -675,7 +658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "CsvToScriptGenerator.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Editor\\CsvToScriptGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\CsvToScriptGenerator.cs",
@@ -687,7 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 39,
               "Title": "BagData.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\BagData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\BagData.cs",
@@ -699,7 +682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 40,
               "Title": "PlayerData.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\PlayerData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\PlayerData.cs",
@@ -711,7 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 41,
               "Title": "ShopData.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\GameData\\ShopData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameData\\ShopData.cs",
@@ -723,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 42,
               "Title": "Expand.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Scripts\\Expand.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Expand.cs",
@@ -735,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 43,
               "Title": "AnimatorParamatersChange.cs",
               "DocumentMoniker": "D:\\Unity\\proj\\Unity\\Test\\Assets\\Rabbits\\Demo\\Scripts\\AnimatorParamatersChange.cs",
               "RelativeDocumentMoniker": "Assets\\Rabbits\\Demo\\Scripts\\AnimatorParamatersChange.cs",

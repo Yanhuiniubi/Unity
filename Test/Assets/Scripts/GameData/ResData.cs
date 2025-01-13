@@ -82,7 +82,7 @@ public class ResData
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="address"></param>
-    public void LoadPermanentAssetByLabel<T>(string label, Action OnFinish) where T : UnityEngine.Object
+    public void LoadPermanentAssetByLabel<T>(string label) where T : UnityEngine.Object
     {
         Addressables.LoadResourceLocationsAsync(label).Completed += handle =>
         {
