@@ -30,11 +30,12 @@ public class UILoadingLogic : MonoBehaviour
         _slider.value = cnt;
     }
     private int _progress;
+    private int _totalResKind = 2;
     private void OnResLoadFinish()
     {
-        if (++_progress == 2)
+        if (++_progress == _totalResKind)
         {
-            SceneManager.LoadSceneAsync("GameScene");
+            Addressables.LoadSceneAsync("GameScene.unity");
         }
         if (_progress == 1)
             ResData.Inst.LoadPermanentAssetByLabel<Sprite>("PreLoadSprite");

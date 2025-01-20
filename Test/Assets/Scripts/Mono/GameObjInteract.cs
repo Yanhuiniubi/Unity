@@ -69,7 +69,7 @@ public class GameObjInteract : MonoBehaviour
                 }
                 interactionType = eInteractionType.OpenBagFromDustbin;
             }
-            else if (obj.layer == 9)//…ÃµÍnpc
+            else if (obj.layer == 8)//…ÃµÍnpc
             {
                 if (!UIMod.Inst.IsActiveUI3D(KEY_SHOP))
                 {

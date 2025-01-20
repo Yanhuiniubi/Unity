@@ -118,7 +118,7 @@ public class ResData
             {
                 if (--value.ReferCount == 0)
                 {
-                    value.Handle.Release();
+                    Addressables.Release(value.Handle);
                     _resDic_normal.Remove(address);
                 }
             }
