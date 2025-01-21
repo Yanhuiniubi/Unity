@@ -65,6 +65,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoadGameObject
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50145cb924607ec41bf60dfc8c3adbcd
+    m_Address: UI-AIChat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4d67e60320fb21544b0c71788fe7719b, type: 2}
   m_SchemaSet:

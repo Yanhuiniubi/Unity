@@ -6,10 +6,19 @@ public class UIContainer<T> where T : UITemplateBase, new()
 {
     private List<T> _children = new List<T>();
     public List<T> Children => _children;
+    public int ChildCount => _children.Count;
     public GameObject gameObject;
     public UIContainer(GameObject obj)
     {
         gameObject = obj;
+    }
+    public T GetChildrenByIndex(int idx)
+    {
+        if (idx >= _children.Count)
+            return _children[_children.Count - 1];
+        if (idx < 0)
+            return _children[0];
+        return _children[idx];
     }
     /// <summary>
     /// ÊµÀý»¯Template

@@ -62,6 +62,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\BoxCollider\GetSize.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\GetDrag.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\Clear.cs" />
+    <Compile Include="Assets\Scripts\GameData\AIChatData.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasExitedCollision2D.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\SetLookAtWeight.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Light\GetShadowStrength.cs" />
@@ -352,8 +353,9 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\String\GetLength.cs" />
     <Compile Include="Assets\Scripts\Mono\DeerLogic.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\GameObject\DestroyImmediate.cs" />
-    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Light\SetCookieSize.cs" />
+    <Compile Include="Assets\Scripts\AI\AIAssistant.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Input\IsMouseUp.cs" />
+    <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Light\SetCookieSize.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\Sleep.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetLinearVelocity.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\CrossFade.cs" />
@@ -544,6 +546,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Transform\SetLocalScale.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetLinearDamping.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\AudioSource\PlayDelayed.cs" />
+    <Compile Include="Assets\RobotSphere\Assets\Scripts\RobotFreeAnim.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\GetMass.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\GameObject\Destroy.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\SetRadius.cs" />
@@ -610,6 +613,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\AddTorque.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\AudioSource\GetLoop.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Quaternion\Slerp.cs" />
+    <Compile Include="Assets\Scripts\UI\UIAIChatLogic.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\SetSpeed.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Quaternion\Identity.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasExitedCollision.cs" />
@@ -928,6 +932,9 @@
     </Reference>
     <Reference Include="BehaviorDesigner.Runtime">
       <HintPath>Assets\AssetStore\Behavior Designer\Runtime\BehaviorDesigner.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>F:\unity\2022.3.3f1c1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

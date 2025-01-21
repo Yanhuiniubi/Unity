@@ -24,4 +24,5 @@ public class UIDef
     public const string UI_SHOP = "UI-Shop.prefab";
     public const string UI_LOADING = "UI-Loading.prefab";
     public const string UI_GAMEINTRODUTION = "UI-GameIntrodution.prefab";
+    public const string UI_AICHAT = "UI-AIChat.prefab";
 }

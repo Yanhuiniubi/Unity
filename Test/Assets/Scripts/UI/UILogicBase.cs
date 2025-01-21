@@ -9,13 +9,14 @@ public class UILogicBase
 {
     public string resPath;
     public GameObject gameObject;
+    public RectTransform rectTransform;
     private Coroutine co;
     /// <summary>
     /// 初始化
     /// </summary>
     public virtual void OnInit()
     {
-
+        rectTransform = gameObject.GetComponent<RectTransform>();
     }
     /// <summary>
     /// UI每次显示
