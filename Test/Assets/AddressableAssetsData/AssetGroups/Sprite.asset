@@ -143,6 +143,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoadSprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4edd415ab2cd6784ea5e7905122a703d
+    m_Address: Button Blue.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c77a20011fee4694cb75577a7509ffda
+    m_Address: Button Green.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadSprite
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4d67e60320fb21544b0c71788fe7719b, type: 2}
   m_SchemaSet:

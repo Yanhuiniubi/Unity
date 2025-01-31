@@ -1,3 +1,4 @@
+using Supercyan.FreeSample;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ public class BagData
     public static readonly BagData Inst = new BagData();
     private Dictionary<string, ItemInfo> _itemDic;
     private Dictionary<int, List<ItemInfo>> _pageDic;
-    private Dictionary<int,bool> _pageDirt;
+    private Dictionary<int, bool> _pageDirt;
     private BagData()
     {
         _pageDic = new Dictionary<int, List<ItemInfo>>();
@@ -57,7 +58,7 @@ public class BagData
     /// </summary>
     /// <param name="ID"></param>
     /// <param name="count"></param>
-    public void AddItem(TableItemMain cfg,int count)
+    public void AddItem(TableItemMain cfg, int count)
     {
         if (_itemDic.ContainsKey(cfg.ID))
             _itemDic[cfg.ID].Count += count;
@@ -76,9 +77,81 @@ public class BagData
 
         BagEvent.OnItemChanged?.Invoke(cfg.Page);
     }
-    public void UseItem(TableItemMain cfg, int count)
+    public bool UseItem(TableItemMain cfg, params object[] param)
     {
+        switch (cfg.ItemType)
+        {
+            case 0:
+            case 1:
+            case 2:
+            case 3://垃圾
+                {
+                    return UseGarbage(cfg, (int)param[0], (int)param[1]);
+                }
+            case 4://植被
+                ResData.Inst.GetResByAddress<GameObject>(cfg.PrefabPath, (obj) =>
+                {
+                    int count = (int)param[0];
+                    DeleteItem(cfg, count);
+                    GameObject plant = GameObject.Instantiate<GameObject>(obj, GameMod.Inst.RoundRoot);
+                    plant.transform.position = GameMod.Inst.PlayerPosition + GameMod.Inst.PlayerObj.transform.forward * 0.4f;
+                    RaycastHit hit;
+                    if (Physics.Raycast(plant.transform.position + 10 * Vector3.up, Vector3.down, out hit,100f, GameMod.Inst._groundMask))
+                    {
+                        // 通过 BoxCollider 的 center 和 size 计算植物底部的位置
+                        BoxCollider boxCollider = plant.GetComponentInChildren<BoxCollider>();
+                        float colliderHeight = boxCollider.size.y;
+                        float colliderCenter = boxCollider.center.y;
 
+                        // 计算植物实际需要调整的位置
+                        plant.transform.position = new Vector3(
+                            plant.transform.position.x,
+                            hit.point.y + colliderHeight / 2 - colliderCenter,
+                            plant.transform.position.z
+                        );
+                    }
+                    UIMod.Inst.HideUI();
+                    UIMod.Inst.HideUI();
+                    Camera ca = Camera.main;
+                    Vector3 originPos = ca.transform.position;
+                    Vector3 originRot = ca.transform.eulerAngles;
+                    GameObject player = GameMod.Inst.PlayerObj;
+                    var aniController = player.GetComponent<SimpleSampleCharacterControl>().m_animator;
+                    aniController.SetTrigger("Crouch");
+                    CameraSport.StartRotate(ca, GameMod.Inst.PlayerObj.transform,
+                        () =>
+                        {
+                            ca.transform.position = originPos;
+                            ca.transform.eulerAngles = originRot;
+                            UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, cfg);
+                        });
+                });
+                break;
+            default:
+                break;
+        }
+        return true;
+    }
+    private void DeleteItem(TableItemMain cfg, int count)
+    {
+        string itemID = cfg.ID;
+        int page = cfg.Page;
+        _itemDic[itemID].Count -= count;
+        if (_itemDic[itemID].Count == 0)
+        {
+            _itemDic.Remove(itemID);
+            var list = _pageDic[page];
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].ID.Equals(itemID))
+                {
+                    list.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+        _pageDirt[page] = true;
+        BagEvent.OnItemChanged?.Invoke(page);
     }
     /// <summary>
     /// 使用垃圾
@@ -98,7 +171,7 @@ public class BagData
             {
                 _itemDic.Remove(itemID);
                 var list = _pageDic[cfg.Page];
-                for (int i = 0;i < list.Count;i++)
+                for (int i = 0; i < list.Count; i++)
                 {
                     if (list[i].ID.Equals(itemID))
                     {
@@ -107,14 +180,14 @@ public class BagData
                     }
                 }
             }
-            coinsChange = DoUseGarbage(dustbinType, cfg.ItemType,count);
+            coinsChange = DoUseGarbage(dustbinType, cfg.ItemType, count);
             UIMod.Inst.ShowTipsUI<UICoinChanged>(UIDef.UI_COINCHANGED, coinsChange);
             _pageDirt[cfg.Page] = true;
             BagEvent.OnItemChanged?.Invoke(cfg.Page);
         }
         return coinsChange > 0;
     }
-    private int DoUseGarbage(int dustbinType,int itemType,int count)
+    private int DoUseGarbage(int dustbinType, int itemType, int count)
     {
         if (dustbinType == itemType)
             return PlayerData.Inst.AddCoinsByItemCount(count);

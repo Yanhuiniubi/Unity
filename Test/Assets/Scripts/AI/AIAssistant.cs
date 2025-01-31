@@ -55,7 +55,7 @@ public class AIAssistant
                     {
                         domain = "4.0Ultra",//模型领域，默认为星火通用大模型
                         temperature = 0.5,//温度采样阈值，用于控制生成内容的随机性和多样性，值越大多样性越高；范围（0，1）
-                        max_tokens = 200,//生成内容的最大长度，范围（0，4096）
+                        max_tokens = 1024,//生成内容的最大长度，范围（0，4096）
                     }
                 };
                 request.payload = new Payload()

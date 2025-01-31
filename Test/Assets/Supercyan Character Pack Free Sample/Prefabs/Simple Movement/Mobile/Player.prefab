@@ -383,7 +383,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1019
+    m_Bits: 2043
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -643,6 +643,7 @@ MonoBehaviour:
   GarbageRoot: {fileID: 0}
   DustbinRoot: {fileID: 0}
   UITipsRoot: {fileID: 0}
+  RoundRoot: {fileID: 0}
   _groundMask:
     serializedVersion: 2
     m_Bits: 128

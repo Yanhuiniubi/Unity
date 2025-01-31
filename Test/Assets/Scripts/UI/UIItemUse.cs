@@ -92,7 +92,7 @@ public class UIItemUse : UILogicBase
             GarbageUseResultInfo info = new GarbageUseResultInfo();
             info.Cfg = _garbageCfg;
             info.DustbinType = (int)_garbage.OpenBagFrom;
-            info.IsSuccess = BagData.Inst.UseGarbage(TableItemMainMod.Get(_garbage.ItemInfo.ID), (int)_slider.value, (int)_garbage.OpenBagFrom);
+            info.IsSuccess = BagData.Inst.UseItem(TableItemMainMod.Get(_garbage.ItemInfo.ID), (int)_slider.value, info.DustbinType);
             CloseUI();
             UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, info);
         }

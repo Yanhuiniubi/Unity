@@ -13,7 +13,7 @@ public static class PlayerEvent
 public class PlayerData
 {
     public static readonly PlayerData Inst = new PlayerData();
-    private int _coins;
+    private int _coins = 2000;
     public int Coins => _coins;
     private PlayerData()
     {

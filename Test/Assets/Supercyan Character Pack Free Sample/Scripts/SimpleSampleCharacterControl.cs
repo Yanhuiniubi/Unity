@@ -21,7 +21,7 @@ namespace Supercyan.FreeSample
         //[SerializeField] private float m_turnSpeed = 200;
         [SerializeField] private float m_jumpForce = 4;
 
-        [SerializeField] private Animator m_animator = null;
+        [SerializeField] public Animator m_animator = null;
         [SerializeField] private Rigidbody m_rigidBody = null;
 
         [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
@@ -50,10 +50,6 @@ namespace Supercyan.FreeSample
         private float _cameramaxRotationX_max;
         private float _cameramaxPositionZ_min;
         private float _cameramaxPositionZ_max;
-        private void Awake()
-        {
-            
-        }
         private void Start()
         {
             if (!m_animator) { m_animator = gameObject.GetComponent<Animator>(); }

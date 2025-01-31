@@ -20,6 +20,7 @@ public class GameMod : MonoBehaviour
     public Transform GarbageRoot;
     public Transform DustbinRoot;
     public Transform UITipsRoot;
+    public Transform RoundRoot;
     public LayerMask _groundMask;
     private CapsuleCollider _capsuleCollider;
     public float PlayerHeight

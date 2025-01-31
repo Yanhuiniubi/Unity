@@ -36,15 +36,11 @@ public class ResData
     /// <param name="addresses"></param>
     /// <param name="address"></param>
     /// <param name="callBack"></param>
-    public void GetResByAddress<T>(HashSet<string> addresses,string address,Action<T> callBack) where T : UnityEngine.Object
+    public void GetResByAddress<T>(string address,Action<T> callBack) where T : UnityEngine.Object
     {
         if (_resDic_normal.TryGetValue(address, out var res))
         {
-            if (!addresses.Contains(address))
-            {
-                addresses.Add(address);
-                res.ReferCount++;
-            }
+            res.ReferCount++;
             callBack?.Invoke(res.Handle.Result as T);
         }
         else
@@ -56,7 +52,6 @@ public class ResData
                 {
                     info.Handle = h;
                     info.ReferCount = 1;
-                    addresses.Add(address);
                     callBack?.Invoke(h.Result);
                     _resDic_normal[address] = info;
                 }

@@ -32,7 +32,6 @@ public class UIShop : UILogicBase
     {
         base.OnShow(param);
         SetTab();
-        SetShopItem(0);
     }
     private string[] _titles = { "Ö²±»" };
     private void SetTab()
@@ -126,7 +125,10 @@ public class UIShopTab : UITemplateBase
         _toggle.group = toggleGroup;
         if (page == 0)
         {
-            _toggle.isOn = true;
+            if (_toggle.isOn)
+                OnSelectedTab?.Invoke(_page);
+            else
+                _toggle.isOn = true;
             if (_selected == null)
                 _selected = ResData.Inst.GetResByAddressPermanent<Sprite>("Selected.png");
             _bg.sprite = _selected;

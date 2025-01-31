@@ -65,13 +65,13 @@ public class UIAIChatLogic : UILogicBase
             _AIResponsing = true;
             _InputField.text = string.Empty;
             _wait.gameObject.SetActive(true);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
         }
         var chatInfos = AIChatData.Inst.ChatInfos;
         int cnt = chatInfos.Count;
         _chatContent.Ensuresize(cnt);
         var children = _chatContent.Children;
         children[cnt - 1].SetData(chatInfos[cnt - 1]);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
     }
     private void SetWaitPanel()
     {
@@ -91,6 +91,7 @@ public class UIAIChatLogic : UILogicBase
 public class ChatTemplate : UITemplateBase
 {
     private Image _icon;
+    private Image _bg;
     private TextMeshProUGUI _content;
     public override void OnInit()
     {
@@ -98,13 +99,21 @@ public class ChatTemplate : UITemplateBase
         _icon = GetUIComponentInchildren<Image>("ChatRootLeft/MaxWidth/Icon");
         _content = GetUIComponentInchildren<TextMeshProUGUI>("ChatRootLeft/MaxWidth/Content/" +
             "ImgBG/TxtContent");
+        _bg = GetUIComponentInchildren<Image>("ChatRootLeft/MaxWidth/Content/" +
+            "ImgBG");
     }
     public void SetData(ChatInfo info)
     {
         if (info.IsSelf)
+        {
             _icon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("PLayer.png");
+            _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("Button Green.png");
+        }
         else
+        {
             _icon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("Robot.png");
+            _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("Button Blue.png");
+        }
         _content.text = info.Content;
     }
 }

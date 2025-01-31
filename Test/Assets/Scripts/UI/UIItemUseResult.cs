@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class GarbageUseResultInfo
 {
@@ -45,7 +46,7 @@ public class UIItemUseResult : UILogicBase
         _btnSure = GetUIComponentInchildren<Button>("BgTransparent/Bg/BtnSure");
         _btnSure.onClick.AddListener(HideUI);
     }
-
+    private TableItemMain _item;
     public override void OnShow(object param)
     {
         base.OnShow(param);
@@ -53,6 +54,8 @@ public class UIItemUseResult : UILogicBase
             _garbageInfo = param as GarbageUseResultInfo;
         else if (param is ShopItemBuyResultInfo)
             _shopItemInfo = param as ShopItemBuyResultInfo;
+        else
+            _item = param as TableItemMain;
         SetView();
     }
     private void SetView()
@@ -106,6 +109,13 @@ public class UIItemUseResult : UILogicBase
                 _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("30button_red.png");
             }
             _itemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_shopItemInfo.Cfg.IconPath);
+        }
+        else//种植
+        {
+            _txtResult.text = "恭喜！种植成功".ParseColorText("FF0059");
+            _txtDesc.text = $"{_item.Name.ParseColorText("FF0059")} * {1}";
+            _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
+            _itemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_item.IconPath);
         }
     }
     private void HideUI()

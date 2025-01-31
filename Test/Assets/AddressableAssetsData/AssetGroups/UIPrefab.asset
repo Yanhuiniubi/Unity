@@ -71,6 +71,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoadGameObject
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45ce0cd87e9ea59479ebda21b779e041
+    m_Address: UI-PlantUse.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4d67e60320fb21544b0c71788fe7719b, type: 2}
   m_SchemaSet:

@@ -59,7 +59,6 @@ public class UIBag : UILogicBase
                 break;
         }
         SetTab();
-        SetItems(0);
     }
     private string[] _titles = { "À¬»ø", "Ö²±»" };
     private void SetTab()
@@ -151,6 +150,10 @@ public class UIBagItem : UITemplateBase
             case eOpenBagFrom.BagKey:
                 if (_cfg.ItemType <= 3)//À¬»ø
                     return;
+                if (_cfg.ItemType == 4)//Ö²±»
+                {
+                    UIMod.Inst.ShowUI<UIPlantUseLogic>(UIDef.UI_PLANTUSE, _cfg);
+                }
                 break;
             default:
                 break;
