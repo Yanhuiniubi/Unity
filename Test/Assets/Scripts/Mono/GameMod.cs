@@ -46,7 +46,7 @@ public class GameMod : MonoBehaviour
     private void Start()
     {
         UIMod.Inst.ShowUI<UIMain>(UIDef.UI_MAIN, changeGameState: false);
-        GarbageGenerateManager.Inst.GenerateGarbage(20);
+        TaskData.Inst.RefreshCurTask();
     }
     /// <summary>
     /// ÉèÖÃÓÎÏ·×´Ì¬

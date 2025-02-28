@@ -12,8 +12,10 @@ public class GarbageGenerateManager
     {
 
     }
-    public void GenerateGarbage(int count)
+    public void GenerateGarbageFromTask()
     {
+        var data = TaskData.Inst.CurTask;
+        var count = data.Count;
         var groundObject = GameMod.Inst.GarbageRoundBox.gameObject;
         MeshRenderer meshRenderer = groundObject.GetComponent<MeshRenderer>();
         if (meshRenderer != null)
@@ -34,8 +36,7 @@ public class GarbageGenerateManager
                 if (Physics.Raycast(origin, Vector3.down, out hit,maxDistance:1000,layerMask: _layerMask))
                 {
                     Vector3 spawnPosition = hit.point;
-                    eGarbageType type = (eGarbageType)Random.Range(0, 4);
-                    GarbageData.Inst.GenerateGarbage(type, spawnPosition);
+                    GarbageData.Inst.GenerateGarbage(data.Param1, spawnPosition);
                 }
             }
         }

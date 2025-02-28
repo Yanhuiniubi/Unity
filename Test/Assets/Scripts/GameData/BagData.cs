@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 /// <summary>
@@ -94,7 +95,7 @@ public class BagData
                     int count = (int)param[0];
                     DeleteItem(cfg, count);
                     GameObject plant = GameObject.Instantiate<GameObject>(obj, GameMod.Inst.RoundRoot);
-                    plant.transform.position = GameMod.Inst.PlayerPosition + GameMod.Inst.PlayerObj.transform.forward * 0.4f;
+                    plant.transform.position = GameMod.Inst.PlayerPosition + GameMod.Inst.PlayerObj.transform.forward * 0.6f;
                     RaycastHit hit;
                     if (Physics.Raycast(plant.transform.position + 10 * Vector3.up, Vector3.down, out hit,100f, GameMod.Inst._groundMask))
                     {
@@ -118,7 +119,7 @@ public class BagData
                     GameObject player = GameMod.Inst.PlayerObj;
                     var aniController = player.GetComponent<SimpleSampleCharacterControl>().m_animator;
                     aniController.SetTrigger("Crouch");
-                    CameraSport.StartRotate(ca, GameMod.Inst.PlayerObj.transform,
+                    CameraSport.StartRotate(ca, player.transform,
                         () =>
                         {
                             ca.transform.position = originPos;

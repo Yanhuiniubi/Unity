@@ -119,7 +119,9 @@ public class GameObjInteract : MonoBehaviour
                 {
                     case eInteractionType.PickUpGarbage:
                         {
+                            var cfg = GarbageData.Inst.GetGarbageCfgByObj(obj);
                             GarbageData.Inst.DeleteGarbage(obj);
+                            TaskData.Inst.CheckTask(cfg.ID);
                         }
                         break;
                     case eInteractionType.OpenBagFromDustbin:

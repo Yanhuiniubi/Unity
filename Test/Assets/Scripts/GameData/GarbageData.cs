@@ -109,6 +109,18 @@ public class GarbageData
         PlayerEvent.OnGarbageCntChanged?.Invoke();
     }
     /// <summary>
+    /// 根据垃圾id生成垃圾
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="count"></param>
+    public void GenerateGarbage(string id, Vector3 pos)
+    {
+        GarbageInfo info = GetGarbageFromPoor(id, pos);
+        _garDic_Obj.Add(info.GameObject, info);
+        info.GameObject.SetActive(true);
+        PlayerEvent.OnGarbageCntChanged?.Invoke();
+    }
+    /// <summary>
     /// 根据垃圾Obj回收垃圾
     /// </summary>
     /// <param name="type"></param>

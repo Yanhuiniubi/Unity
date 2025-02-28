@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class CameraSport
 {
-    public static void StartRotate(Camera camera, Transform target,Action OnFinish, float rotationSpeed = 120f, float
+    public static void StartRotate(Camera camera, Transform target,Action OnFinish, float rotationSpeed = 280f, float
         radius = 5f, float angle = 0f)
     {
         GameMod.Inst.SetGameState(eGameState.OpenUI);
         GameMod.Inst.StartCoroutine(StartRotateIE(camera, target, OnFinish,rotationSpeed, radius, angle));
     }
-    static IEnumerator StartRotateIE(Camera camera, Transform target, Action OnFinish,float rotationSpeed = 120f, float
+    static IEnumerator StartRotateIE(Camera camera, Transform target, Action OnFinish,float rotationSpeed = 280f, float
         radius = 5f,float angle = 0f)
     {
         while (true)
