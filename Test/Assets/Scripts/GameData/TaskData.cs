@@ -27,13 +27,17 @@ public class TaskData
     public TableMainTask CurTask => _curTask;
     private int _process;
     public int Process => _process;
-    public void RefreshCurTask(int id = 1)
+    public int Chapter { private set; get; }
+    public void RefreshCurTask(int id = 16)
     {
         _process = 0;
         _curTask = TableMainTaskMod.Get(id);
+        Chapter = _curTask.TaskType;
         eTaskType type = (eTaskType)_curTask.TaskType;
         if (type == eTaskType.PickUpGarbage)
             GarbageGenerateManager.Inst.GenerateGarbageFromTask();
+        else if (type == eTaskType.StopCutting)
+            CuttingMod.Inst.GenerateLogger();
         TaskEvent.OnTaskStateUpdate?.Invoke();
     }
     public void CheckTask(string param,object param1 = null)
@@ -60,10 +64,12 @@ public class TaskData
                     TaskEvent.OnTaskStateUpdate?.Invoke();
                 break;
             case eTaskType.RecycleGarbage:
-                bool result = (bool)param;
+                RecycleGarbageInfo info = param as RecycleGarbageInfo;
+                bool result = info.Result;
                 if (result)
                 {
-                    if (++_process == _curTask.Count)
+                    _process += info.Count;
+                    if (_process >= _curTask.Count)
                     {
                         RefreshCurTask(_curTask.ID + 1);
                         TaskEvent.OnTaskFinish?.Invoke();

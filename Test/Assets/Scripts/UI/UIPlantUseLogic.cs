@@ -48,6 +48,11 @@ public class UIPlantUseLogic : UILogicBase
     }
     private void OnConfirmBtnClick()
     {
+        if (TaskData.Inst.Chapter < 3)
+            return;
+        var data = TaskData.Inst.CurTask;
+        if (data != null)
+            TaskData.Inst.CheckTask(_item.ID);
         BagData.Inst.UseItem(_item, 1);
     }
 }

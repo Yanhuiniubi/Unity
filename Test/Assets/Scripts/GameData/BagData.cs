@@ -78,6 +78,15 @@ public class BagData
 
         BagEvent.OnItemChanged?.Invoke(cfg.Page);
     }
+    private Dictionary<TableItemMain,int> _inTaskRecycleCache = new Dictionary<TableItemMain,int>();
+    public void HealItem()
+    {
+        foreach (var item in _inTaskRecycleCache.Keys)
+        {
+            AddItem(item, _inTaskRecycleCache[item]);
+        }
+        _inTaskRecycleCache.Clear();
+    }
     public bool UseItem(TableItemMain cfg, params object[] param)
     {
         switch (cfg.ItemType)
@@ -87,7 +96,15 @@ public class BagData
             case 2:
             case 3://À¬»ø
                 {
-                    return UseGarbage(cfg, (int)param[0], (int)param[1]);
+                    int count = (int)param[0];
+                    if (TaskData.Inst.CurTask.Param1.Equals("Recycle"))
+                    {
+                        if (_inTaskRecycleCache.ContainsKey(cfg))
+                            _inTaskRecycleCache[cfg] += count;
+                        else
+                            _inTaskRecycleCache[cfg] = count;
+                    }
+                    return UseGarbage(cfg, count, (int)param[1]);
                 }
             case 4://Ö²±»
                 ResData.Inst.GetResByAddress<GameObject>(cfg.PrefabPath, (obj) =>

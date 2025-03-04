@@ -57,19 +57,22 @@ public class UIMain : UILogicBase
         }
         else
         {
+            string str = "";
             eTaskType type = (eTaskType)data.TaskType;
             switch (type)
             {
                 case eTaskType.PickUpGarbage:
                 case eTaskType.Plant:
                     TableItemMain item = TableItemMainMod.Get(data.Param1);
-                    _taskDesc.text = data.Desc.Replace("{0}", item.Name);
+                    str = data.Desc.Replace("{0}", item.Name);
+                    break;
+                case eTaskType.RecycleGarbage:
+                    str = data.Desc;
                     break;
                 case eTaskType.StopCutting:
                     break;
             }
-            _taskDesc.text += $"({TaskData.Inst.Process.ToString().ParseColorText("000000")}/" +
-                $"{data.Count})";
+            _taskDesc.text = str + $"\n({TaskData.Inst.Process.ToString().ParseColorText("000000")}/{data.Count})";
         }
     }
     private void OnTaskFinish()
@@ -79,6 +82,8 @@ public class UIMain : UILogicBase
     }
     private void OnTaskFailure()
     {
-
+        BagData.Inst.HealItem();
+        TaskData.Inst.RefreshCurTask(TaskData.Inst.CurTask.ID);
+        UIMod.Inst.ShowUI<UITaskFailure>(UIDef.UI_TASKFAILURE);
     }
 }

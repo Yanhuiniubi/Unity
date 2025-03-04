@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using BehaviorDesigner.Runtime;
 
 public class TrolControl : MonoBehaviour {
 	
-	private Animator anim;
+	public Animator anim;
 	private CharacterController controller;
 	private bool battle_state;
 	public float speed = 6.0f;
@@ -12,13 +13,14 @@ public class TrolControl : MonoBehaviour {
 	public float gravity = 20.0f;
 	private Vector3 moveDirection = Vector3.zero;
 
-
+	private BehaviorTree BehaviorTree;
 	// Use this for initialization
 	void Start () {
 
 		anim = GetComponent<Animator>();
 		controller = GetComponent<CharacterController> ();
-	}
+        BehaviorTree = GetComponent<BehaviorTree>();
+    }
 	
 	// Update is called once per frame
 	void Update () {

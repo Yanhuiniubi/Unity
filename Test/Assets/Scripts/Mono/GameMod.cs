@@ -23,6 +23,8 @@ public class GameMod : MonoBehaviour
     public Transform RoundRoot;
     public LayerMask _groundMask;
     private CapsuleCollider _capsuleCollider;
+
+    public Transform LoggerRoot;
     public float PlayerHeight
     {
         get
@@ -46,6 +48,11 @@ public class GameMod : MonoBehaviour
     private void Start()
     {
         UIMod.Inst.ShowUI<UIMain>(UIDef.UI_MAIN, changeGameState: false);
+        var arr = TableItemMainMod.Array;
+        foreach (var item in arr)
+        {
+            BagData.Inst.AddItem(item, 10);
+        }
         TaskData.Inst.RefreshCurTask();
     }
     /// <summary>

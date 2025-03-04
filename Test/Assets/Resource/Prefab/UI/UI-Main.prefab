@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5414406791783006453}
   - component: {fileID: 2417093583944521419}
   - component: {fileID: 4514749207479305394}
+  - component: {fileID: 8457662629235064190}
   m_Layer: 5
   m_Name: Bg
   m_TagString: Untagged
@@ -77,6 +78,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!111 &8457662629235064190
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310203245036295593}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a870c495861da7a4f929eadbf67b68a2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a870c495861da7a4f929eadbf67b68a2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1162464348538458272
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +699,7 @@ RectTransform:
   - {fileID: 3045319217762232312}
   - {fileID: 7845963399507692121}
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -734,7 +751,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5282843273670744325
 MonoBehaviour:
   m_ObjectHideFlags: 0

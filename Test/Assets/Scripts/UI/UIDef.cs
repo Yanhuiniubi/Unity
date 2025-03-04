@@ -26,4 +26,5 @@ public class UIDef
     public const string UI_GAMEINTRODUTION = "UI-GameIntrodution.prefab";
     public const string UI_AICHAT = "UI-AIChat.prefab";
     public const string UI_PLANTUSE = "UI-PlantUse.prefab";
+    public const string UI_TASKFAILURE = "UI-TaskFailure.prefab";
 }

@@ -152,6 +152,8 @@ public class UIBagItem : UITemplateBase
                     return;
                 if (_cfg.ItemType == 4)//Ö²±»
                 {
+                    if (TaskData.Inst.Chapter < 3)
+                        return;
                     UIMod.Inst.ShowUI<UIPlantUseLogic>(UIDef.UI_PLANTUSE, _cfg);
                 }
                 break;

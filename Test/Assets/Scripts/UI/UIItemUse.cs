@@ -5,6 +5,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+public class RecycleGarbageInfo
+{
+    public int Count;
+    public bool Result;
+
+    public RecycleGarbageInfo(int count, bool result)
+    {
+        Count = count;
+        Result = result;
+    }
+}
 public class GarbageUseInfo
 {
     public ItemInfo ItemInfo;
@@ -89,12 +101,17 @@ public class UIItemUse : UILogicBase
     {
         if (_garbage != null)
         {
+            if (TaskData.Inst.Chapter < 2)
+                return;
+            var data = TaskData.Inst.CurTask;
             GarbageUseResultInfo info = new GarbageUseResultInfo();
             info.Cfg = _garbageCfg;
             info.DustbinType = (int)_garbage.OpenBagFrom;
             info.IsSuccess = BagData.Inst.UseItem(TableItemMainMod.Get(_garbage.ItemInfo.ID), (int)_slider.value, info.DustbinType);
             CloseUI();
             UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, info);
+            if (data != null)
+                TaskData.Inst.CheckTask("Recycle", new RecycleGarbageInfo((int)_slider.value, info.IsSuccess));
         }
         else if (_shopItem != null)
         {

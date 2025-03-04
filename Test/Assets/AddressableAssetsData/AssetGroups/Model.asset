@@ -93,7 +93,7 @@ MonoBehaviour:
     m_Address: Fish.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
-    - PreLoadGameObject
+    - default
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e21cfbe144197ce479b3da5c05bdd2ef
     m_Address: YouhaiBox.prefab
@@ -130,6 +130,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ffe8ac9f1ef9984a9428440d1c31b9f
+    m_Address: Logger.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4d67e60320fb21544b0c71788fe7719b, type: 2}
