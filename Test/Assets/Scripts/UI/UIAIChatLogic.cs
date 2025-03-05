@@ -33,7 +33,12 @@ public class UIAIChatLogic : UILogicBase
         {
             if (!string.IsNullOrEmpty(_InputField.text) && !_AIResponsing)
             {
-                AIAssistant.Inst.SendQuestion(_InputField.text);
+                AIAssistant.Inst.SendQuestion(
+                    new List<Content>
+                        {
+                            new Content() { role = "user", content = _InputField.text },
+                             // new Content() { role = "assistant", content = "....." }, // AI的历史回答结果，这里省略了具体内容，可以根据需要添加更多历史对话信息和最新问题的内容。
+                        }, _InputField.text);
             }
         });
     }

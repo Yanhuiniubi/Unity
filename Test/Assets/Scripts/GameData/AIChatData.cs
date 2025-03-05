@@ -12,7 +12,6 @@ public static class AIChatEvent
     public static Action<bool> OnResponse;
     public static Action OnResponseEnd;
     public static Action<bool> OnRequest;
-
 }
 
 public class ChatInfo
@@ -29,23 +28,34 @@ public class AIChatData
     {
         _chatInfos = new List<ChatInfo>();
     }
+    public string Question;
     public void RecvData(bool IsSelf,string Content,bool isUpdate)
     {
-        if (isUpdate)
+        if (UIMod.Inst.IsActiveUI(UIDef.UI_AICHAT))
         {
-            int count = _chatInfos.Count;
-            _chatInfos[count - 1].Content = Content;
+            if (isUpdate)
+            {
+                int count = _chatInfos.Count;
+                _chatInfos[count - 1].Content = Content;
+            }
+            else
+            {
+                ChatInfo info = new ChatInfo();
+                info.IsSelf = IsSelf;
+                info.Content = Content;
+                _chatInfos.Add(info);
+            }
+            if (IsSelf)
+                AIChatEvent.OnRequest?.Invoke(true);
+            else
+                AIChatEvent.OnResponse?.Invoke(false);
         }
-        else
+        else if (UIMod.Inst.IsActiveUI(UIDef.UI_NPCQUESTION))
         {
-            ChatInfo info = new ChatInfo();
-            info.IsSelf = IsSelf;
-            info.Content = Content;
-            _chatInfos.Add(info);
+            if (!IsSelf)
+            {
+                this.Question = Content;
+            }
         }
-        if (IsSelf)
-            AIChatEvent.OnRequest?.Invoke(true);
-        else
-            AIChatEvent.OnResponse?.Invoke(false);
     }
 }

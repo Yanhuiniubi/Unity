@@ -33,7 +33,7 @@ public class AIAssistant
 
     static string hostUrl = "wss://spark-api.xf-yun.com/v4.0/chat";
 
-    async public void SendQuestion(string question)
+    async public void SendQuestion(List<Content> con, string question,float temperature = 0.5f)
     {
         string authUrl = GetAuthUrl();
         string url = authUrl.Replace("http://", "ws://").Replace("https://", "wss://");
@@ -54,7 +54,7 @@ public class AIAssistant
                     chat = new Chat()
                     {
                         domain = "4.0Ultra",//模型领域，默认为星火通用大模型
-                        temperature = 0.5,//温度采样阈值，用于控制生成内容的随机性和多样性，值越大多样性越高；范围（0，1）
+                        temperature = temperature,//温度采样阈值，用于控制生成内容的随机性和多样性，值越大多样性越高；范围（0，1）
                         max_tokens = 1024,//生成内容的最大长度，范围（0，4096）
                     }
                 };
@@ -62,11 +62,12 @@ public class AIAssistant
                 {
                     message = new Message()
                     {
-                        text = new List<Content>
-                        {
-                             new Content() { role = "user", content = question },
-                             // new Content() { role = "assistant", content = "....." }, // AI的历史回答结果，这里省略了具体内容，可以根据需要添加更多历史对话信息和最新问题的内容。
-                        }
+                        text = con,
+                        //text = new List<Content>
+                        //{
+                        //     new Content() { role = role, content = question },
+                        //     // new Content() { role = "assistant", content = "....." }, // AI的历史回答结果，这里省略了具体内容，可以根据需要添加更多历史对话信息和最新问题的内容。
+                        //}
                     }
                 };
                 AIChatData.Inst.RecvData(true, question, false);

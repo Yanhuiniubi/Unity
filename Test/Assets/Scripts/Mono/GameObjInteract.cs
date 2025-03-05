@@ -10,6 +10,7 @@ public enum eInteractionType
     OpenBagFromDustbin,
     OpenShop,
     OpenAIChat,
+    OpenLoggerQuestion,
 }
 public class GameObjInteract : MonoBehaviour
 {
@@ -17,12 +18,14 @@ public class GameObjInteract : MonoBehaviour
     private const string KEY_DUSTBIN = UIDef.UI_INTRODUTION + "Dustbin";
     private const string KEY_SHOP = UIDef.UI_INTRODUTION + "Shop";
     private const string KEY_AI = UIDef.UI_INTRODUTION + "AI";
+    private const string KEY_LOGGER = UIDef.UI_INTRODUTION + "Logger";
     public Transform RayStartPos;
     public int RayDistance = 3;
     public LayerMask LayerMaskGarbage;//垃圾的layer
     public LayerMask LayerDustbin;//垃圾桶的layer
     public LayerMask LayerShopNpc;//商店npc的layer
     public LayerMask LayerRobot;//AI机器人的layer
+    public LayerMask LayerLogger;//砍树人的layer
     void Update()
     {
         if (GameMod.Inst.GameState == eGameState.OpenUI)
@@ -34,7 +37,7 @@ public class GameObjInteract : MonoBehaviour
     private void Awake()
     {
         interact = LayerMaskGarbage | LayerDustbin |
-            LayerShopNpc | LayerRobot;
+            LayerShopNpc | LayerRobot | LayerLogger;
     }
     private string _cacheLastGarbageName;
     private bool _cacheHideUI;
@@ -108,6 +111,19 @@ public class GameObjInteract : MonoBehaviour
                         interactionType = eInteractionType.OpenAIChat;
                     }
                     break;
+                case 11://砍树人
+                    {
+                        if (!UIMod.Inst.IsActiveUI3D(KEY_LOGGER))
+                        {
+                            UI3DInfo info = new UI3DInfo();
+                            info.BasePos = obj.transform.position;
+                            info.Height = (hit.collider as BoxCollider).size.y;
+                            info.Desc = "我要砍光这篇森林！！";
+                            UIMod.Inst.Show3DUI<UIIntroDutionLogic>(UIDef.UI_INTRODUTION, "Logger", info);
+                        }
+                        interactionType = eInteractionType.OpenLoggerQuestion;
+                    }
+                    break;
                 default:
                     break;
             }
@@ -140,6 +156,11 @@ public class GameObjInteract : MonoBehaviour
                             UIMod.Inst.ShowUI<UIAIChatLogic>(UIDef.UI_AICHAT);
                         }
                         break;
+                    case eInteractionType.OpenLoggerQuestion:
+                        {
+                            UIMod.Inst.ShowUI<UINPCQuestionLogic>(UIDef.UI_NPCQUESTION, obj);
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -151,6 +172,7 @@ public class GameObjInteract : MonoBehaviour
             UIMod.Inst.HideUI(KEY_GARBAGE);
             UIMod.Inst.HideUI(KEY_SHOP);
             UIMod.Inst.HideUI(KEY_AI);
+            UIMod.Inst.HideUI(KEY_LOGGER);
             _cacheHideUI = false;
         }
     }

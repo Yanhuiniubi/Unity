@@ -383,7 +383,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2043
+    m_Bits: 4091
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -625,6 +625,9 @@ MonoBehaviour:
   LayerRobot:
     serializedVersion: 2
     m_Bits: 512
+  LayerLogger:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &7997823908950545591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +650,7 @@ MonoBehaviour:
   _groundMask:
     serializedVersion: 2
     m_Bits: 128
+  LoggerRoot: {fileID: 0}
 --- !u!4 &5292256546635234178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1121125582535847827, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}

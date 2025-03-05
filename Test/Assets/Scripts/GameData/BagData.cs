@@ -4,7 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.AI;
 
 /// <summary>
 /// 道具信息
@@ -142,6 +144,14 @@ public class BagData
                             ca.transform.position = originPos;
                             ca.transform.eulerAngles = originRot;
                             UIMod.Inst.ShowUI<UIItemUseResult>(UIDef.UI_ITEMUSERESULT, cfg);
+                            if (plant.CompareTag("Plant"))
+                            {
+                                NavMeshObstacle obstacle = plant.AddComponent<NavMeshObstacle>();
+                                obstacle.shape = NavMeshObstacleShape.Capsule; // 根据树的形状选择
+                                obstacle.size = new Vector3(1f, 5f, 1f); // 根据树的大小调整
+                                obstacle.carving = true; // 启用 carve，使 NavMesh 动态更新
+                                CuttingMod.Inst.AddTree(plant);
+                            }
                         });
                 });
                 break;

@@ -32,13 +32,16 @@ public class TaskData
     {
         _process = 0;
         _curTask = TableMainTaskMod.Get(id);
-        Chapter = _curTask.TaskType;
-        eTaskType type = (eTaskType)_curTask.TaskType;
-        if (type == eTaskType.PickUpGarbage)
-            GarbageGenerateManager.Inst.GenerateGarbageFromTask();
-        else if (type == eTaskType.StopCutting)
-            CuttingMod.Inst.GenerateLogger();
-        TaskEvent.OnTaskStateUpdate?.Invoke();
+        if (_curTask != null)
+        {
+            Chapter = _curTask.TaskType;
+            eTaskType type = (eTaskType)_curTask.TaskType;
+            if (type == eTaskType.PickUpGarbage)
+                GarbageGenerateManager.Inst.GenerateGarbageFromTask();
+            else if (type == eTaskType.StopCutting)
+                CuttingMod.Inst.GenerateLogger();
+            TaskEvent.OnTaskStateUpdate?.Invoke();
+        }
     }
     public void CheckTask(string param,object param1 = null)
     {

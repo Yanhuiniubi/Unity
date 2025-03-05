@@ -70,6 +70,7 @@ public class UIMain : UILogicBase
                     str = data.Desc;
                     break;
                 case eTaskType.StopCutting:
+                    str = data.Desc.Replace("{0}", data.Count.ToString());
                     break;
             }
             _taskDesc.text = str + $"\n({TaskData.Inst.Process.ToString().ParseColorText("000000")}/{data.Count})";

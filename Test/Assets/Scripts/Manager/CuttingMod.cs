@@ -4,22 +4,11 @@ using UnityEngine;
 using System;
 using BehaviorDesigner.Runtime;
 
-public class TreeInfo
-{
-    public GameObject Obj;
-    public bool IsTarget;
-
-    public TreeInfo(GameObject obj, bool isTarget)
-    {
-        Obj = obj;
-        IsTarget = isTarget;
-    }
-}
 public class CuttingMod
 {
     public static readonly CuttingMod Inst = new CuttingMod();
     private HashSet<GameObject> loggers = new HashSet<GameObject>();
-    private HashSet<TreeInfo> _trees = new HashSet<TreeInfo>();
+    private Dictionary<GameObject,bool> _trees = new Dictionary<GameObject, bool>();
     private CuttingMod()
     {
 
@@ -28,32 +17,27 @@ public class CuttingMod
     {
         float minDistance = float.MaxValue;
         Transform target = null;
-        foreach (var t in _trees) 
+        foreach (var t in _trees.Keys) 
         {
-            if (t.IsTarget)
+            if (_trees[t])
                 continue;
-            float distance = Vector3.Distance(originPos, t.Obj.transform.position);
+            float distance = Vector3.Distance(originPos, t.transform.position);
             if (distance < minDistance)
             {
                 minDistance = distance;
-                t.IsTarget = true;
-                target = t.Obj.transform;
+                target = t.transform;
             }
         }
+        _trees[target.gameObject] = true;
         return target;
+    }
+    public void AddTree(GameObject obj)
+    {
+        _trees[obj] = false;
     }
     public void DeleteTree(GameObject tree)
     {
-        TreeInfo info = null;
-        foreach (var item in _trees)
-        {
-            if (tree == item.Obj)
-            {
-                info = item;
-                break;
-            }
-        }
-        _trees.Remove(info);
+        _trees.Remove(tree);
     }
     public void GenerateLogger()
     {
@@ -61,7 +45,7 @@ public class CuttingMod
         {
             var trees = GameObject.FindGameObjectsWithTag("Plant");
             if (trees != null && trees.Length != 0)
-                foreach (var t in trees) { _trees.Add(new TreeInfo(t,false)); }
+                foreach (var t in trees) { _trees[t] = false; }
             GenerateLoggerFromTask(logger);
         });
     }
@@ -91,8 +75,6 @@ public class CuttingMod
                     GameObject obj = GameObject.Instantiate<GameObject>(logger, GameMod.Inst.LoggerRoot);
                     obj.transform.position = spawnPosition + new Vector3(0f, 2f, 0f);
                     loggers.Add(obj);
-                    var bt = obj.GetComponent<BehaviorTree>();
-                    bt.SendEvent("StartCutting");
                 }
             }
         }
