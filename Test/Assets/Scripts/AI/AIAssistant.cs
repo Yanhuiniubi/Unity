@@ -227,7 +227,7 @@ public class Message
 {
     public List<Content> text { get; set; }
 }
-
+[Serializable]
 public class Content
 {
     public string role { get; set; }

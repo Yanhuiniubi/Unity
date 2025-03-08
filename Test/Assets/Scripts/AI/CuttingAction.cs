@@ -12,14 +12,22 @@ public class CuttingAction : Action
     public override void OnStart()
     {
         base.OnStart();
+
         this.anim = GetComponent<Animator>();
         bt = GetComponent<BehaviorTree>();
+        UINPCQuestionLogic.OnLoggerPause += OnPause;
         target = (SharedTransform)bt.GetVariable("TargetTree");
-        anim.SetTrigger("attack");
     }
-    private float preTime = -1;
+    private float preTime = 0;
     public override TaskStatus OnUpdate()
     {
+        if (!pause)
+            anim.SetTrigger("attack");
+        else
+        {
+            anim.SetTrigger("idle");
+            return TaskStatus.Running;
+        }
         Vector3 direction = target.Value.position - transform.position;
         direction.y = 0; // 忽略 Y 轴
         if (direction != Vector3.zero)
@@ -27,11 +35,10 @@ public class CuttingAction : Action
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
-        if (preTime == -1)
-            preTime = Time.time;
-        if (Time.time - preTime >= 10f)
+        preTime += Time.deltaTime;
+        if (preTime >= 10f)
         {
-            preTime = -1;
+            preTime = 0;
             if (target != null && target.Value != null && target.Value.gameObject != null)
             {
                 // 确保目标对象是场景中的实例
@@ -51,12 +58,18 @@ public class CuttingAction : Action
         }
         return TaskStatus.Running;
     }
-    public override void OnPause(bool paused)
+    public override void OnEnd()
     {
-        base.OnPause(paused);
-        if (paused)
-            anim.SetTrigger("idle");
-        else
-            anim.SetTrigger("attack");
+        base.OnEnd();
+        UINPCQuestionLogic.OnLoggerPause -= OnPause;
+        pause = false;
+    }
+    bool pause;
+    private void OnPause(bool paused,string name)
+    {
+        if (name.Equals(gameObject.name))
+        {
+            pause = paused;
+        }
     }
 }

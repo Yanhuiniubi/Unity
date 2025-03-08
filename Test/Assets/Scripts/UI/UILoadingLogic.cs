@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -17,6 +18,7 @@ public class UILoadingLogic : MonoBehaviour
     public Animation _ani;
 
     public GameObject _tips;
+    public GameObject _error;
     private void OnResStartLoad(string type,int TotalCnt)
     {
         _slider.minValue = 0;
@@ -67,7 +69,7 @@ public class UILoadingLogic : MonoBehaviour
     {
         _tips.SetActive(true);
     }
-    private void OnBtnNewGameClick()
+    private void OnStartGame()
     {
         _txtLoading.gameObject.SetActive(true);
         _wait.gameObject.SetActive(true);
@@ -77,8 +79,29 @@ public class UILoadingLogic : MonoBehaviour
         _ani.Play();
         ResData.Inst.LoadPermanentAssetByLabel<GameObject>("PreLoadGameObject");
     }
+    private void OnBtnNewGameClick()
+    {
+        GameMod.eOpenGameStyle = eOpenGameStyle.NewGame;
+        OnStartGame();
+    }
+
     private void OnBtnLoadFileClick()
     {
-
+        string path = Path.Combine(Application.streamingAssetsPath, "PlayerData.json");
+        if (File.Exists(path))
+        {
+            GameMod.eOpenGameStyle = eOpenGameStyle.LoadData;
+            OnStartGame();
+        }
+        else
+        {
+            _error.SetActive(true);
+            StartCoroutine(CloseError());
+        }
+    }
+    IEnumerator CloseError()
+    {
+        yield return new WaitForSeconds(2f);
+        _error.SetActive(false);
     }
 }

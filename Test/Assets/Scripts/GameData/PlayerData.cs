@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using JetBrains.Annotations;
+using System.IO;
 
 public static class PlayerEvent
 {
     public static Action OnCoinsChanged;
     public static Action OnGarbageCntChanged;
+}
+[Serializable]
+public class PlayerStoreInfo
+{
+    public int Coins;
+    public Vector3 Position;
 }
 
 public class PlayerData
@@ -17,7 +24,36 @@ public class PlayerData
     public int Coins => _coins;
     private PlayerData()
     {
-
+        
+    }
+    public void OnStoreData()
+    {
+        PlayerStoreInfo infos = new PlayerStoreInfo();
+        infos.Coins = _coins;
+        infos.Position = GameMod.Inst.PlayerPosition;
+        string json = JsonUtility.ToJson(infos, true);
+        string path = Path.Combine(Application.streamingAssetsPath, "PlayerData.json");
+        File.WriteAllText(path, json);
+    }
+    public void OnReadData()
+    {
+        // 获取文件路径
+        string path = Path.Combine(Application.streamingAssetsPath, "PlayerData.json");
+        // 读取文件内容
+        string json = "";
+        if (File.Exists(path))
+        {
+            json = File.ReadAllText(path);
+        }
+        else
+        {
+            Debug.LogError("File not found: " + path);
+            return;
+        }
+        // 反序列化JSON数据
+        PlayerStoreInfo data = JsonUtility.FromJson<PlayerStoreInfo>(json);
+        _coins = data.Coins;
+        GameMod.Inst.gameObject.transform.position = data.Position;
     }
     /// <summary>
     /// 根据道具数量增加金币

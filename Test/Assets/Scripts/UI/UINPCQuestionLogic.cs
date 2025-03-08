@@ -1,5 +1,6 @@
 using BehaviorDesigner.Runtime;
 using Palmmedia.ReportGenerator.Core.Logging;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,7 @@ using UnityEngine.UI;
 [UIBind(UIDef.UI_NPCQUESTION)]
 public class UINPCQuestionLogic : UILogicBase
 {
+    public static Action<bool, string> OnLoggerPause;
     private Button _closeBtn;
     private Button _OkBtn;
     private TextMeshProUGUI _content;
@@ -19,8 +21,7 @@ public class UINPCQuestionLogic : UILogicBase
     {
         base.OnHide();
         AIChatEvent.OnResponseEnd -= OnQuestionGenerated;
-        var bt = _logger?.GetComponent<BehaviorTree>();
-        bt?.EnableBehavior();
+        OnLoggerPause?.Invoke(false, _logger.name);
     }
 
     public override void OnInit()
@@ -30,7 +31,10 @@ public class UINPCQuestionLogic : UILogicBase
         _OkBtn = GetUIComponentInchildren<Button>("OKBtn");
         _content = GetUIComponentInchildren<TextMeshProUGUI>("Bg_transparent/Bg/Content");
         _options = new UIContainer<Option>(gameObject.transform.Find("ScrollViewPage/GridPage").gameObject);
-        _closeBtn.onClick.AddListener(() => UIMod.Inst.HideUI());
+        _closeBtn.onClick.AddListener(() => {
+            if (_OkBtn.gameObject.activeSelf)
+                UIMod.Inst.HideUI();
+            });
         _OkBtn.onClick.AddListener(OnOKBtnClick);
     }
     private GameObject _logger;
@@ -39,22 +43,20 @@ public class UINPCQuestionLogic : UILogicBase
         base.OnShow(param);
         AIChatEvent.OnResponseEnd += OnQuestionGenerated;
         _logger = param as GameObject;
+        _options.Ensuresize(0);
         _inAsk = false;
         _OkBtn.gameObject.SetActive(false);
-        AIAssistant.Inst.SendQuestion(
-                    new List<Content>
-                        {
-                            new Content() { role = "system", content = "你的环境保护知识相当丰富，需要你设计一些环境保护相关的单选题" },
-                            new Content() { role = "user", content = "请随机给出一个关于环境保护之类的" +
-            "选择题，其他多余的话不要有，我希望你能尽量发挥想象，只需要给出题干，ABCD四个选项、以及正确答案,例如： 题干：树木在环境保护中的作用是什么？\r\nA. 提供氧气\r\nB. 吸收二氧化碳\r\nC. 防止水土流失\r\nD. 以上都是，答案：D" },
-                            new Content() { role = "assistant", content = AIChatData.Inst.Question },
-                        }, "请随机给出一个关于环境保护之类的" +
-            "选择题，其他多余的话不要有，我希望你能尽量发挥想象，只需要给出题干，ABCD四个选项、以及正确答案,例如： 题干：树木在环境保护中的作用是什么？\r\nA. 提供氧气\r\nB. 吸收二氧化碳\r\nC. 防止水土流失\r\nD. 以上都是，答案：D", 0.99f);
-        var bt = _logger?.GetComponent<BehaviorTree>();
-        bt?.DisableBehavior(true);
+        _content.text = "你好啊小使者，如果你能回答出来我的问题，我就不砍树！不过我得先思考思考~";
+        AIChatData.Inst.AddQuestion("请随机给出一个关于环境保护之类的" +
+            "选择题，其他多余的话不要有，我希望你能尽量发挥想象，只需要给出题干，ABCD四个选项、以及正确答案,例如： 题干：树木在环境保护中的作用是什么？\r\nA. 提供氧气\r\nB. 吸收二氧化碳\r\nC. 防止水土流失\r\nD. 以上都是，答案：D");
+        AIAssistant.Inst.SendQuestion(AIChatData.Inst.Questions, "请随机给出一个关于环境保护之类的" +
+            "选择题，其他多余的话不要有，我希望你能尽量发挥想象，只需要给出题干，ABCD四个选项、以及正确答案,例如： 题干：树木在环境保护中的作用是什么？\r\nA. 提供氧气\r\nB. 吸收二氧化碳\r\nC. 防止水土流失\r\nD. 以上都是，答案：D"
+            ,1f);
+        OnLoggerPause?.Invoke(true, _logger.name);
     }
     private void OnOKBtnClick()
     {
+        string _question = AIChatData.Inst.Questions[AIChatData.Inst.Questions.Count - 1].content;
         if (!_inAsk)
         {
             _content.text = _question.Substring(0, _question.IndexOf("答案") - 1);
@@ -89,6 +91,7 @@ public class UINPCQuestionLogic : UILogicBase
                     if (result.Equals(_question[i].ToString()))//回答正确
                     {
                         TaskData.Inst.CheckTask("Stop");
+                        CuttingMod.Inst.DeleteLoggers(_logger);
                         GameObject.Destroy(_logger);
                     }
                     else//回答错误
@@ -100,10 +103,8 @@ public class UINPCQuestionLogic : UILogicBase
             }
         }
     }
-    private string _question;
     private void OnQuestionGenerated()
     {
-        _question = AIChatData.Inst.Question;
         _OkBtn.gameObject.SetActive(true);
     }
 }

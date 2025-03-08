@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ public class GameObjInteract : MonoBehaviour
             return;
         CheckInteractObj();
         CheckOpenBag();
+        CheckStoreData();
     }
     private LayerMask interact;
     private void Awake()
@@ -41,6 +43,13 @@ public class GameObjInteract : MonoBehaviour
     }
     private string _cacheLastGarbageName;
     private bool _cacheHideUI;
+    private void CheckStoreData()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StoreDataMod.Inst.StoreData();
+        }
+    }
     /// <summary>
     /// 射线检测可交互的物体
     /// </summary>
@@ -78,7 +87,7 @@ public class GameObjInteract : MonoBehaviour
                         {
                             UI3DInfo info = new UI3DInfo();
                             info.BasePos = obj.transform.position;
-                            info.Height = GameMod.Inst.PlayerHeight;
+                            info.Height = (hit.collider as BoxCollider).size.y * 1.5f;
                             info.Desc = DustbinData.Inst.GetDustbinCfgByObj(obj).Desc;
                             UIMod.Inst.Show3DUI<UIIntroDutionLogic>(UIDef.UI_INTRODUTION, "Dustbin", info);
                         }

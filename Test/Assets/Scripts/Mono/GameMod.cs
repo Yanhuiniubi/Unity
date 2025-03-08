@@ -7,6 +7,11 @@ public enum eGameState
     Normal,
     OpenUI
 }
+public enum eOpenGameStyle
+{
+    NewGame,
+    LoadData
+}
 
 public class GameMod : MonoBehaviour
 {
@@ -39,6 +44,7 @@ public class GameMod : MonoBehaviour
     /// 游戏状态
     /// </summary>
     public eGameState GameState => _gameState;
+    public static eOpenGameStyle eOpenGameStyle;
     private void Awake()
     { 
         inst = this;
@@ -48,12 +54,13 @@ public class GameMod : MonoBehaviour
     private void Start()
     {
         UIMod.Inst.ShowUI<UIMain>(UIDef.UI_MAIN, changeGameState: false);
-        var arr = TableItemMainMod.Array;
-        foreach (var item in arr)
+        if (eOpenGameStyle == eOpenGameStyle.NewGame)
+            TaskData.Inst.InitCurTask();
+        else
         {
-            BagData.Inst.AddItem(item, 10);
+            StoreDataMod.Inst.LoadData();
+            UIMod.Inst.ShowUI<UIStoreData>(UIDef.UI_StoreData, "正在读取档案，请稍等。。");
         }
-        TaskData.Inst.RefreshCurTask();
     }
     /// <summary>
     /// 设置游戏状态

@@ -153,4 +153,13 @@ public class GarbageData
         Debug.LogError("GarbageData GetGarbageCfgByObj 传入的obj未被缓存");
         return null;
     }
+    public List<Vector3> GetAllGarbagePos()
+    {
+        List<Vector3> pos = new List<Vector3>();
+        foreach (var item in _garDic_Obj.Keys)
+        {
+            pos.Add(item.transform.position);
+        }
+        return pos;
+    }
 }

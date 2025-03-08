@@ -3,8 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -28,6 +26,9 @@ public class ItemInfo
 public class ItemInfoList
 {
     public List<ItemInfo> itemList;
+    public List<string> PrefabName;
+    public List<Vector3> Pos;
+    public List<ItemInfo> _cacheUse;
 }
 
 public static class BagEvent
@@ -55,6 +56,71 @@ public class BagData
             return _pageDic[page];
         _pageDic[page] = new List<ItemInfo>();
         return _pageDic[page];
+    }
+    public void OnStoreData()
+    {
+        ItemInfoList infolist = new ItemInfoList();
+        infolist.itemList = new List<ItemInfo>();
+        foreach (var item in _itemDic.Values)
+        {
+            infolist.itemList.Add(item);
+        }
+        infolist.PrefabName = _plantPrefabName;
+        infolist.Pos = _plantPos;
+        infolist._cacheUse = new List<ItemInfo>();
+        foreach (var item in _inTaskRecycleCache.Keys)
+        {
+            infolist._cacheUse.Add(new ItemInfo(item.ID, _inTaskRecycleCache[item]));
+        }
+        string json = JsonUtility.ToJson(infolist, true);
+        string path = Path.Combine(Application.streamingAssetsPath, "BagData.json");
+        File.WriteAllText(path, json);
+    }
+    public void OnReadData()
+    {
+        // 获取文件路径
+        string path = Path.Combine(Application.streamingAssetsPath, "BagData.json");
+        // 读取文件内容
+        string json = "";
+        if (File.Exists(path))
+        {
+            json = File.ReadAllText(path);
+        }
+        else
+        {
+            Debug.LogError("File not found: " + path);
+            return;
+        }
+        // 反序列化JSON数据
+        ItemInfoList data = JsonUtility.FromJson<ItemInfoList>(json);
+        List<ItemInfo> infos = data.itemList;
+        foreach (var item in infos)
+        {
+            AddItem(TableItemMainMod.Get(item.ID), item.Count);
+        }
+        foreach (var item in data._cacheUse)
+        {
+            _inTaskRecycleCache[TableItemMainMod.Get(item.ID)] = item.Count;
+        }
+        _plantPos = data.Pos;
+        _plantPrefabName = data.PrefabName;
+        for (int i = 0; i < _plantPos.Count; i++) 
+        {
+            int index = i;
+            ResData.Inst.GetResByAddress<GameObject>(_plantPrefabName[i], (obj) =>
+            {
+                GameObject plant = GameObject.Instantiate<GameObject>(obj, GameMod.Inst.RoundRoot);
+                plant.transform.position = _plantPos[index];
+                if (plant.CompareTag("Plant"))
+                {
+                    NavMeshObstacle obstacle = plant.AddComponent<NavMeshObstacle>();
+                    obstacle.shape = NavMeshObstacleShape.Capsule; // 根据树的形状选择
+                    obstacle.size = new Vector3(1f, 5f, 1f); // 根据树的大小调整
+                    obstacle.carving = true; // 启用 carve，使 NavMesh 动态更新
+                    CuttingMod.Inst.AddTree(plant);
+                }
+            });
+        }
     }
     /// <summary>
     /// 添加道具
@@ -89,6 +155,9 @@ public class BagData
         }
         _inTaskRecycleCache.Clear();
     }
+    private List<string> _plantPrefabName = new List<string>();
+    private List<Vector3> _plantPos = new List<Vector3>();
+    private int plantNameBack = 0;
     public bool UseItem(TableItemMain cfg, params object[] param)
     {
         switch (cfg.ItemType)
@@ -115,6 +184,10 @@ public class BagData
                     DeleteItem(cfg, count);
                     GameObject plant = GameObject.Instantiate<GameObject>(obj, GameMod.Inst.RoundRoot);
                     plant.transform.position = GameMod.Inst.PlayerPosition + GameMod.Inst.PlayerObj.transform.forward * 0.6f;
+                    plant.name += plantNameBack.ToString();
+                    plantNameBack++;
+                    _plantPrefabName.Add(cfg.PrefabPath);
+                    _plantPos.Add(plant.transform.position);
                     RaycastHit hit;
                     if (Physics.Raycast(plant.transform.position + 10 * Vector3.up, Vector3.down, out hit,100f, GameMod.Inst._groundMask))
                     {

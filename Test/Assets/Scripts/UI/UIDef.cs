@@ -28,4 +28,5 @@ public class UIDef
     public const string UI_PLANTUSE = "UI-PlantUse.prefab";
     public const string UI_TASKFAILURE = "UI-TaskFailure.prefab";
     public const string UI_NPCQUESTION = "UI-NPCQuestion.prefab";
+    public const string UI_StoreData = "UI-StoreData.prefab";
 }

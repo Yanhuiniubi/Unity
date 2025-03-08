@@ -13,6 +13,7 @@ public class MoveToTargetTreeAction : Action
     public override void OnStart()
     {
         base.OnStart();
+        UINPCQuestionLogic.OnLoggerPause += OnPause;
         this.anim = GetComponent<Animator>();
         this.navMeshAgent = GetComponent<NavMeshAgent>(); // 获取 NavMeshAgent 组件
         target.Value = CuttingMod.Inst.GetTargetTree(gameObject.transform.position);
@@ -32,16 +33,31 @@ public class MoveToTargetTreeAction : Action
         anim.SetTrigger("walk"); // 播放移动动画
         navMeshAgent.isStopped = false;
     }
-
+    public override void OnEnd()
+    {
+        base.OnEnd();
+        UINPCQuestionLogic.OnLoggerPause -= OnPause;
+        pause = false;
+    }
     public override TaskStatus OnUpdate()
     {
         if (target.Value == null)
         {
             return TaskStatus.Failure; // 如果目标为空，返回失败
         }
-
+        if (pause)
+        {
+            anim.SetTrigger("idle");
+            navMeshAgent.isStopped = true;
+            return TaskStatus.Running;
+        }
+        else
+        {
+            anim.SetTrigger("walk"); // 播放移动动画
+            navMeshAgent.isStopped = false;
+            navMeshAgent.SetDestination(target.Value.position);
+        }
         // 设置 NavMeshAgent 的目标位置
-        navMeshAgent.SetDestination(target.Value.position);
         // 检查是否到达目标位置
         if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
@@ -50,12 +66,12 @@ public class MoveToTargetTreeAction : Action
         }
         return TaskStatus.Running; // 仍在移动中
     }
-    public override void OnPause(bool paused)
+    bool pause;
+    private void OnPause(bool paused, string name)
     {
-        base.OnPause(paused);
-        if (paused)
-            anim.SetTrigger("idle");
-        else
-            anim.SetTrigger("walk");
+        if (name.Equals(gameObject.name))
+        {
+            pause = paused;
+        }
     }
 }
