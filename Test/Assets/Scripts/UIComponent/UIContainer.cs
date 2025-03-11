@@ -33,7 +33,7 @@ public class UIContainer<T> where T : UITemplateBase, new()
             Debug.LogError($"GameObject {parent.name} Dont have Template");
             return;
         }
-        var curChildCount = parent.childCount - 1;
+        var curChildCount = ChildCount;
         if (curChildCount > count)
         {
             while(curChildCount != count)

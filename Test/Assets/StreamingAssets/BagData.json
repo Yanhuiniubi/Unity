@@ -1,6 +1,68 @@
 {
-    "itemList": [],
+    "itemList": [
+        {
+            "ID": "Item-Gear",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Paper",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Bottle",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Medicine",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Hamburger",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Fish",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Sandwich",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Ceramic",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Flower",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Glass",
+            "Count": 3
+        },
+        {
+            "ID": "Item-Mushroom",
+            "Count": 3
+        },
+        {
+            "ID": "Item-SmallTree",
+            "Count": 3
+        },
+        {
+            "ID": "Item-MiddleTree",
+            "Count": 3
+        },
+        {
+            "ID": "Item-BigTree",
+            "Count": 3
+        }
+    ],
     "PrefabName": [],
     "Pos": [],
-    "_cacheUse": []
+    "_cacheUse": [
+        {
+            "ID": "Item-Battery",
+            "Count": 3
+        }
+    ]
 }

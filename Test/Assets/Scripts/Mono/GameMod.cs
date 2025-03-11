@@ -55,7 +55,14 @@ public class GameMod : MonoBehaviour
     {
         UIMod.Inst.ShowUI<UIMain>(UIDef.UI_MAIN, changeGameState: false);
         if (eOpenGameStyle == eOpenGameStyle.NewGame)
+        {
+            var arr = TableItemMainMod.Array;
+            foreach (var item in arr)
+            {
+                BagData.Inst.AddItem(item, 3);
+            }
             TaskData.Inst.InitCurTask();
+        }
         else
         {
             StoreDataMod.Inst.LoadData();

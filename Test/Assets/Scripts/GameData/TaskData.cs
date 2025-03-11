@@ -86,7 +86,7 @@ public class TaskData
         }
         InitCurTask(data.TaskID, data.Pos);
     }
-    public void InitCurTask(int id = 1,List<Vector3> pos = null)
+    public void InitCurTask(int id = 17, List<Vector3> pos = null)
     {
         _curTask = TableMainTaskMod.Get(id);
         if (_curTask != null)

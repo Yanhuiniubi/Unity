@@ -53,6 +53,7 @@ public class PlayerData
         // 反序列化JSON数据
         PlayerStoreInfo data = JsonUtility.FromJson<PlayerStoreInfo>(json);
         _coins = data.Coins;
+        PlayerEvent.OnCoinsChanged?.Invoke();
         GameMod.Inst.gameObject.transform.position = data.Position;
     }
     /// <summary>
