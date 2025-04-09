@@ -1,8 +1,12 @@
 {
     "itemList": [
         {
-            "ID": "Item-Gear",
+            "ID": "Item-Battery",
             "Count": 3
+        },
+        {
+            "ID": "Item-Gear",
+            "Count": 2
         },
         {
             "ID": "Item-Paper",
@@ -59,10 +63,5 @@
     ],
     "PrefabName": [],
     "Pos": [],
-    "_cacheUse": [
-        {
-            "ID": "Item-Battery",
-            "Count": 3
-        }
-    ]
+    "_cacheUse": []
 }

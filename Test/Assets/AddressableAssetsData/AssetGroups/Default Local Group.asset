@@ -23,8 +23,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - default
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 97e6406f9da791a429df458aead3cce8
-    m_Address: UI-Loading.prefab
+  - m_GUID: 43463a460453ab645a23a7a29a982274
+    m_Address: MinimapRendererTexture.renderTexture
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
@@ -33,6 +33,12 @@ MonoBehaviour:
     m_Address: GameScene.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97e6406f9da791a429df458aead3cce8
+    m_Address: UI-Loading.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4d67e60320fb21544b0c71788fe7719b, type: 2}

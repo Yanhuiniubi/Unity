@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public static class AIChatEvent
