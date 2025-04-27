@@ -6,9 +6,6 @@ using System.Text;
 using System.Threading;
 using UnityEngine;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
@@ -226,9 +223,10 @@ public class Message
 {
     public List<Content> text { get; set; }
 }
+
 [Serializable]
 public class Content
 {
-    public string role { get; set; }
-    public string content { get; set; }
+    public string role;
+    public string content;
 }

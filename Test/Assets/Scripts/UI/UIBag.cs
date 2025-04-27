@@ -15,23 +15,17 @@ public enum eOpenBagFrom
     BagKey = 4,
 }
 [UIBind(UIDef.UI_UIBAG)]
-public class UIBag : UILogicBase
+public class UIBag : UIBagBase
 {
-    private TextMeshProUGUI _title;
     private UIContainer<UIBagItem> _container;
     private UIContainer<UIShopTab> _tabGrid;
-    private ToggleGroup _toggleGroup;
-    private Button _closeBtn;
     private eOpenBagFrom _openFrom;
     public override void OnInit()
     {
         base.OnInit();
-        _title = GetUIComponentInchildren<TextMeshProUGUI>("ImgTitle/TxtTitle");
         _container = new UIContainer<UIBagItem>(gameObject.transform.Find("Scroll View/Grid").gameObject);
-        _tabGrid = new UIContainer<UIShopTab>(gameObject.transform.Find("ScrollViewPage/GridPage").gameObject);
-        _toggleGroup = GetUIComponentInchildren<ToggleGroup>("ScrollViewPage/GridPage");
-        _closeBtn = GetUIComponentInchildren<Button>("CloseBtn");
-        _closeBtn.onClick.AddListener(CloseUI);
+        _tabGrid = new UIContainer<UIShopTab>(gameObject.transform.Find("ScrollViewPage/e_GridPage").gameObject);
+        e_CloseBtn.onClick.AddListener(CloseUI);
     }
     public override void OnShow(object param)
     {
@@ -41,19 +35,19 @@ public class UIBag : UILogicBase
         switch (_openFrom)
         {
             case eOpenBagFrom.Dustbin_Kehuishou:
-                _title.text = "¿É»ØÊÕÀ¬»ø".ParseColorText("00CBFF") + "Í°";
+                e_TxtTitle.text = "¿É»ØÊÕÀ¬»ø".ParseColorText("00CBFF") + "Í°";
                 break;
             case eOpenBagFrom.Dustbin_Youhai:
-                _title.text = "ÓÐº¦À¬»ø".ParseColorText("FF0700") + "Í°";
+                e_TxtTitle.text = "ÓÐº¦À¬»ø".ParseColorText("FF0700") + "Í°";
                 break;
             case eOpenBagFrom.Dustbin_Chuyu:
-                _title.text = "³øÓàÀ¬»ø".ParseColorText("78FF23") + "Í°";
+                e_TxtTitle.text = "³øÓàÀ¬»ø".ParseColorText("78FF23") + "Í°";
                 break;
             case eOpenBagFrom.Dustbin_Qita:
-                _title.text = "ÆäËûÀ¬»ø".ParseColorText("CBFF9E") + "Í°";
+                e_TxtTitle.text = "ÆäËûÀ¬»ø".ParseColorText("CBFF9E") + "Í°";
                 break;
             case eOpenBagFrom.BagKey:
-                _title.text = "±³°ü".ParseColorText("FFFFFF");
+                e_TxtTitle.text = "±³°ü".ParseColorText("FFFFFF");
                 break;
             default:
                 break;
@@ -71,7 +65,7 @@ public class UIBag : UILogicBase
         int count = children.Count;
         for (int i = 0; i < count; i++)
         {
-            children[i].SetData(i, _titles[i], _toggleGroup, SetItems);
+            children[i].SetData(i, _titles[i], e_GridPage, SetItems);
         }
     }
     public override void OnHide()
@@ -102,13 +96,9 @@ public class UIBag : UILogicBase
     }
 }
 
-public class UIBagItem : UITemplateBase
+public class UIBagItem : UIBagContentBase
 {
     private Button _btnUse;
-    private Image _icon;
-    private TextMeshProUGUI _itemCount;
-    private TextMeshProUGUI _itemName;
-    private Button _descBtn;
     private string _id;
     private int _count;
     private eOpenBagFrom _openBagFrom;
@@ -117,22 +107,18 @@ public class UIBagItem : UITemplateBase
     {
         base.OnInit();
         _btnUse = GetUIComponent<Button>();
-        _descBtn = GetUIComponentInchildren<Button>("DescBtn");
-        _icon = GetUIComponentInchildren<Image>("ItemImg");
-        _itemCount = GetUIComponentInchildren<TextMeshProUGUI>("ItemCount");
-        _itemName = GetUIComponentInchildren<TextMeshProUGUI>("ItemName");
         _btnUse.onClick.AddListener(OnUseBtnClick);
-        _descBtn.onClick.AddListener(OnDescBtnClick);
+        e_DescBtn.onClick.AddListener(OnDescBtnClick);
     }
     public void SetData(string id, int count, eOpenBagFrom openBagFrom)
     {
         _id = id;
         _count = count;
         _openBagFrom = openBagFrom;
-        _itemCount.text = count.ToString();
+        e_ItemCount.text = count.ToString();
         _cfg = TableItemMainMod.Get(id);
-        _icon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_cfg.IconPath);
-        _itemName.text = _cfg.Name;
+        e_ItemImg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_cfg.IconPath);
+        e_ItemName.text = _cfg.Name;
     }
     private void OnUseBtnClick()
     {

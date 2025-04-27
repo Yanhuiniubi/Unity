@@ -7,12 +7,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [UIBind(UIDef.UI_NPCQUESTION)]
-public class UINPCQuestionLogic : UILogicBase
+public class UINPCQuestionLogic : UINPCQuestionBase
 {
     public static Action<bool, string> OnLoggerPause;
-    private Button _closeBtn;
-    private Button _OkBtn;
-    private TextMeshProUGUI _content;
     private UIContainer<Option> _options;
     private bool _inAsk;
     public override void OnHide()
@@ -25,15 +22,12 @@ public class UINPCQuestionLogic : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        _closeBtn = GetUIComponentInchildren<Button>("Bg_transparent/Bg/CloseBtn");
-        _OkBtn = GetUIComponentInchildren<Button>("OKBtn");
-        _content = GetUIComponentInchildren<TextMeshProUGUI>("Bg_transparent/Bg/Content");
         _options = new UIContainer<Option>(gameObject.transform.Find("ScrollViewPage/GridPage").gameObject);
-        _closeBtn.onClick.AddListener(() => {
-            if (_OkBtn.gameObject.activeSelf)
+        e_CloseBtn.onClick.AddListener(() => {
+            if (e_OKBtn.gameObject.activeSelf)
                 UIMod.Inst.HideUI();
             });
-        _OkBtn.onClick.AddListener(OnOKBtnClick);
+        e_OKBtn.onClick.AddListener(OnOKBtnClick);
     }
     private GameObject _logger;
     public override void OnShow(object param)
@@ -43,8 +37,8 @@ public class UINPCQuestionLogic : UILogicBase
         _logger = param as GameObject;
         _options.Ensuresize(0);
         _inAsk = false;
-        _OkBtn.gameObject.SetActive(false);
-        _content.text = "你好啊小使者，如果你能回答出来我的问题，我就不砍树！不过我得先思考思考~";
+        e_OKBtn.gameObject.SetActive(false);
+        e_Content.text = "你好啊小使者，如果你能回答出来我的问题，我就不砍树！不过我得先思考思考~";
         AIChatData.Inst.AddQuestion("请随机给出一个关于环境保护之类的" +
             "选择题，其他多余的话不要有，我希望你能尽量发挥想象，只需要给出题干，ABCD四个选项、以及正确答案,例如： 题干：树木在环境保护中的作用是什么？\r\nA. 提供氧气\r\nB. 吸收二氧化碳\r\nC. 防止水土流失\r\nD. 以上都是，答案：D");
         AIAssistant.Inst.SendQuestion(AIChatData.Inst.Questions, "请随机给出一个关于环境保护之类的" +
@@ -57,7 +51,7 @@ public class UINPCQuestionLogic : UILogicBase
         string _question = AIChatData.Inst.Questions[AIChatData.Inst.Questions.Count - 1].content;
         if (!_inAsk)
         {
-            _content.text = _question.Substring(0, _question.IndexOf("答案") - 1);
+            e_Content.text = _question.Substring(0, _question.IndexOf("答案") - 1);
             _options.Ensuresize(4);
             var children = _options.Children;
             int count = children.Count;
@@ -103,24 +97,20 @@ public class UINPCQuestionLogic : UILogicBase
     }
     private void OnQuestionGenerated()
     {
-        _OkBtn.gameObject.SetActive(true);
+        e_OKBtn.gameObject.SetActive(true);
     }
 }
 
-public class Option : UITemplateBase
+public class Option : UINPCQuestionContentBase
 {
-    private Toggle _toggle;
-    private TextMeshProUGUI _content;
-    public bool IsSelected => _toggle.isOn;
-    public string Content => _content.text;
+    public bool IsSelected => e_Toggle.isOn;
+    public string Content => e_Text.text;
     public override void OnInit()
     {
         base.OnInit();
-        _toggle = GetUIComponentInchildren<Toggle>("Toggle");
-        _content = GetUIComponentInchildren<TextMeshProUGUI>("Toggle/Background/Text (TMP)");
     }
     public void SetData(int number)
     {
-        _content.text = ((char)(number + 'A')).ToString();
+        e_Text.text = ((char)(number + 'A')).ToString();
     }
 }

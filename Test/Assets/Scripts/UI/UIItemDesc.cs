@@ -5,12 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [UIBind(UIDef.UI_UIITEMDESC)]
-public class UIItemDesc : UILogicBase
+public class UIItemDesc : UIItemDescBase
 {
-    private TextMeshProUGUI _txtTitle;
-    private TextMeshProUGUI _txtDesc;
-    private Button _closeBtn;
-
     private TableItemMain _cfg;
     public override void OnHide()
     {
@@ -20,10 +16,7 @@ public class UIItemDesc : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        _txtTitle = GetUIComponentInchildren<TextMeshProUGUI>("ImgTitle/TxtTitle");
-        _txtDesc = GetUIComponentInchildren<TextMeshProUGUI>("TxtDesc");
-        _closeBtn = GetUIComponentInchildren<Button>("CloseBtn");
-        _closeBtn.onClick.AddListener(CloseUI);
+        e_CloseBtn.onClick.AddListener(CloseUI);
     }
 
     public override void OnShow(object param)
@@ -35,8 +28,8 @@ public class UIItemDesc : UILogicBase
             Debug.LogError("UIItemDesc OnShow 传入参数 不为TableItemGarbage");
             return;
         }
-        _txtTitle.text = _cfg.Name;
-        _txtDesc.text = _cfg.Desc;
+        e_TxtTitle.text = _cfg.Name;
+        e_TxtDesc.text = _cfg.Desc;
     }
     private void CloseUI()
     {

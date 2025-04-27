@@ -5,20 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [UIBind(UIDef.UI_StoreData)]
-public class UIStoreData : UILogicBase
+public class UIStoreData : UIStoreDataBase
 {
-    private TextMeshProUGUI _desc;
 
     public override void OnInit()
     {
         base.OnInit();
-        _desc = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/TxtDesc");
     }
 
     public override void OnShow(object param)
     {
         base.OnShow(param);
-        _desc.text = param.ToString();
+        e_TxtDesc.text = param.ToString();
         GameMod.Inst.StartCoroutine(CloseUI());
     }
     IEnumerator CloseUI()

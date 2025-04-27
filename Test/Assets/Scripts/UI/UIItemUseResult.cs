@@ -18,14 +18,8 @@ public class ShopItemBuyResultInfo
 }
 
 [UIBind(UIDef.UI_ITEMUSERESULT)]
-public class UIItemUseResult : UILogicBase
+public class UIItemUseResult : UIItemUseResultBase
 {
-    private Image _bg;
-    private Image _itemIcon;
-    private TextMeshProUGUI _txtResult;
-    private TextMeshProUGUI _txtDesc;
-    private Button _btnSure;
-
     private GarbageUseResultInfo _garbageInfo;
     private ShopItemBuyResultInfo _shopItemInfo;
     public override void OnHide()
@@ -38,12 +32,7 @@ public class UIItemUseResult : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        _bg = GetUIComponentInchildren<Image>("BgTransparent/Bg");
-        _itemIcon = GetUIComponentInchildren<Image>("BgTransparent/Bg/ItemIcon");
-        _txtResult = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/TxtResult");
-        _txtDesc = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/TxtDesc");
-        _btnSure = GetUIComponentInchildren<Button>("BgTransparent/Bg/BtnSure");
-        _btnSure.onClick.AddListener(HideUI);
+        e_BtnSure.onClick.AddListener(HideUI);
     }
     private TableItemMain _item;
     public override void OnShow(object param)
@@ -81,40 +70,40 @@ public class UIItemUseResult : UILogicBase
             }
             if (_garbageInfo.IsSuccess)
             {
-                _txtResult.text = "恭喜！垃圾分类正确".ParseColorText("FF0059");
-                _txtDesc.text = $"{_garbageInfo.Cfg.Name.ParseColorText("FF0059")}属于{garbage}";
-                _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
+                e_TxtResult.text = "恭喜！垃圾分类正确".ParseColorText("FF0059");
+                e_TxtDesc.text = $"{_garbageInfo.Cfg.Name.ParseColorText("FF0059")}属于{garbage}";
+                e_Bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
             }
             else
             {
-                _txtResult.text = "哦不！垃圾分类错误".ParseColorText("FFFFFF");
-                _txtDesc.text = $"{_garbageInfo.Cfg.Name.ParseColorText("FFFFFF")}不属于{garbage}";
-                _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("30button_red.png");
+                e_TxtResult.text = "哦不！垃圾分类错误".ParseColorText("FFFFFF");
+                e_TxtDesc.text = $"{_garbageInfo.Cfg.Name.ParseColorText("FFFFFF")}不属于{garbage}";
+                e_Bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("30button_red.png");
             }
-            _itemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_garbageInfo.Cfg.IconPath);
+            e_ItemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_garbageInfo.Cfg.IconPath);
         }
         else if (_shopItemInfo != null)
         {
             if (_shopItemInfo.IsSuccess)
             {
-                _txtResult.text = "恭喜！购买成功".ParseColorText("FF0059");
-                _txtDesc.text = $"{_shopItemInfo.Cfg.Name.ParseColorText("FF0059")} * {_shopItemInfo.Count}";
-                _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
+                e_TxtResult.text = "恭喜！购买成功".ParseColorText("FF0059");
+                e_TxtDesc.text = $"{_shopItemInfo.Cfg.Name.ParseColorText("FF0059")} * {_shopItemInfo.Count}";
+                e_Bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
             }
             else
             {
-                _txtResult.text = "哦不！购买失败".ParseColorText("FFFFFF");
-                _txtDesc.text = $"资金不足以购买{_shopItemInfo.Cfg.Name} * {_shopItemInfo.Count}";
-                _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("30button_red.png");
+                e_TxtResult.text = "哦不！购买失败".ParseColorText("FFFFFF");
+                e_TxtDesc.text = $"资金不足以购买{_shopItemInfo.Cfg.Name} * {_shopItemInfo.Count}";
+                e_Bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("30button_red.png");
             }
-            _itemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_shopItemInfo.Cfg.IconPath);
+            e_ItemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_shopItemInfo.Cfg.IconPath);
         }
         else//种植
         {
-            _txtResult.text = "恭喜！种植成功".ParseColorText("FF0059");
-            _txtDesc.text = $"{_item.Name.ParseColorText("FF0059")} * {1}";
-            _bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
-            _itemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_item.IconPath);
+            e_TxtResult.text = "恭喜！种植成功".ParseColorText("FF0059");
+            e_TxtDesc.text = $"{_item.Name.ParseColorText("FF0059")} * {1}";
+            e_Bg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("28button_green.png");
+            e_ItemIcon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_item.IconPath);
         }
     }
     private void HideUI()

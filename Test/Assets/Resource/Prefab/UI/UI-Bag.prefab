@@ -35,9 +35,9 @@ RectTransform:
   - {fileID: 2247500291807535395}
   m_Father: {fileID: 6698645910344093581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.1616, y: -50.237}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 3.161621, y: -1050.237}
   m_SizeDelta: {x: 1097.8953, y: 959.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5794129696871448145
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 8481839294111915045}
   - component: {fileID: 8990295974474364074}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: e_Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 2000, y: 2000}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 8580218036766319988}
   - component: {fileID: 6033357660166009242}
   m_Layer: 5
-  m_Name: TxtTitle
+  m_Name: e_TxtTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -761,7 +761,7 @@ GameObject:
   - component: {fileID: 4823862027900714940}
   - component: {fileID: 561472606488913412}
   m_Layer: 5
-  m_Name: TxtPageName
+  m_Name: e_TxtPageName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 6457397991106395429}
   - component: {fileID: 6055178362204700522}
   m_Layer: 5
-  m_Name: CloseBtn
+  m_Name: e_CloseBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,9 +1014,9 @@ RectTransform:
   - {fileID: 275471571227863056}
   m_Father: {fileID: 6698645910344093581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 549, y: 575}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -451, y: -425}
   m_SizeDelta: {x: 94, y: 91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8545418306908900516
@@ -1134,10 +1134,10 @@ RectTransform:
   - {fileID: 2420776433149608668}
   m_Father: {fileID: 6698645910344093581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23.7563, y: 579.2151}
-  m_SizeDelta: {x: 441.6638, y: 121.5699}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 23.7563, y: -420.7849}
+  m_SizeDelta: {x: 441.6638, y: 121.56995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5493581147429554302
 CanvasRenderer:
@@ -1297,9 +1297,9 @@ RectTransform:
   - {fileID: 3421908743232194530}
   m_Father: {fileID: 6698645910344093581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.1625977, y: 479.50024}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 3.1625977, y: -520.49976}
   m_SizeDelta: {x: 1097.8953, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2025345895222523169
@@ -1398,7 +1398,7 @@ GameObject:
   - component: {fileID: 4470768386373324571}
   - component: {fileID: 6844232796582336186}
   m_Layer: 5
-  m_Name: GridPage
+  m_Name: e_GridPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1573,9 +1573,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4883915380819042834, guid: 94efca83c8fe4594eb3409ab55890607, type: 3}
+      propertyPath: m_Name
+      value: e_ItemCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017758695261477899, guid: 94efca83c8fe4594eb3409ab55890607, type: 3}
+      propertyPath: m_Name
+      value: e_ItemImg
+      objectReference: {fileID: 0}
     - target: {fileID: 6188439732643301280, guid: 94efca83c8fe4594eb3409ab55890607, type: 3}
       propertyPath: m_Name
       value: Template
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403897479155279389, guid: 94efca83c8fe4594eb3409ab55890607, type: 3}
+      propertyPath: m_Name
+      value: e_DescBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726354167415666639, guid: 94efca83c8fe4594eb3409ab55890607, type: 3}
+      propertyPath: m_Name
+      value: e_ItemName
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

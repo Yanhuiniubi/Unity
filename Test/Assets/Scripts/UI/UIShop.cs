@@ -7,12 +7,11 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [UIBind(UIDef.UI_SHOP)]
-public class UIShop : UILogicBase
+public class UIShop : UIShopBase
 {
     private UIContainer<UIShopItem> _shopGrid;
     private UIContainer<UIShopTab> _tabGrid;
     private ToggleGroup _toggleGroup;
-    private Button _btnClose;
     public override void OnHide()
     {
         base.OnHide();
@@ -21,11 +20,10 @@ public class UIShop : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        _btnClose = GetUIComponentInchildren<Button>("CloseBtn");
         _shopGrid = new UIContainer<UIShopItem>(gameObject.transform.Find("Scroll View/Grid").gameObject);
         _tabGrid = new UIContainer<UIShopTab>(gameObject.transform.Find("ScrollViewPage/GridPage").gameObject);
         _toggleGroup = GetUIComponentInchildren<ToggleGroup>("ScrollViewPage/GridPage");
-        _btnClose.onClick.AddListener(CloseUI);
+        e_CloseBtn.onClick.AddListener(CloseUI);
     }
 
     public override void OnShow(object param)
@@ -60,34 +58,26 @@ public class UIShop : UILogicBase
         UIMod.Inst.HideUI();
     }
 }
-public class UIShopItem : UITemplateBase
+public class UIShopItem : UIShopContentBase
 {
     private Button _btnBuy;
-    private Image _icon;
-    private TextMeshProUGUI _itemPrice;
-    private TextMeshProUGUI _itemName;
-    private Button _descBtn;
 
     private TableItemShop _shopItemCfg;
     private TableItemMain _itemCfg;
     public override void OnInit()
     {
         base.OnInit();
-        _btnBuy = GetUIComponent<Button>();
-        _descBtn = GetUIComponentInchildren<Button>("DescBtn");
-        _icon = GetUIComponentInchildren<Image>("ItemImg");
-        _itemPrice = GetUIComponentInchildren<TextMeshProUGUI>("HorizontalLayout/ItemCount");
-        _itemName = GetUIComponentInchildren<TextMeshProUGUI>("ItemName");
+        _btnBuy = GetUIComponent<Button>();;
         _btnBuy.onClick.AddListener(OnBuyBtnClick);
-        _descBtn.onClick.AddListener(OnDescBtnClick);
+        e_DescBtn.onClick.AddListener(OnDescBtnClick);
     }
     public void SetData(TableItemShop cfg)
     {
         _shopItemCfg = cfg;
         _itemCfg = TableItemMainMod.Get(_shopItemCfg.ItemID);
-        _itemPrice.text = cfg.Price.ToString();
-        _icon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_itemCfg.IconPath);
-        _itemName.text = _itemCfg.Name;
+        e_ItemCount.text = cfg.Price.ToString();
+        e_ItemImg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_itemCfg.IconPath);
+        e_ItemName.text = _itemCfg.Name;
     }
     private void OnBuyBtnClick()
     {
@@ -98,10 +88,8 @@ public class UIShopItem : UITemplateBase
         UIMod.Inst.ShowUI<UIItemDesc>(UIDef.UI_UIITEMDESC, TableItemMainMod.Get(_shopItemCfg.ItemID));
     }
 }
-public class UIShopTab : UITemplateBase
+public class UIShopTab : UIShopContentBase1
 {
-    private TextMeshProUGUI _txtTitle;
-    private Toggle _toggle;
     private Image _bg;
     private int _page;
 
@@ -111,24 +99,22 @@ public class UIShopTab : UITemplateBase
     public override void OnInit()
     {
         base.OnInit();
-        _txtTitle = GetUIComponentInchildren<TextMeshProUGUI>("Toggle/TxtPageName");
-        _toggle = GetUIComponentInchildren<Toggle>("Toggle");
         _bg = GetUIComponent<Image>();
-        _toggle.onValueChanged.AddListener(OnValueChanged);
+        e_Toggle.onValueChanged.AddListener(OnValueChanged);
     }
 
     public void SetData(int page,string title,ToggleGroup toggleGroup, Action<int> OnSelectedTab)
     {
         _page = page;
-        _txtTitle.text = title;
+        e_TxtPageName.text = title;
         this.OnSelectedTab = OnSelectedTab;
-        _toggle.group = toggleGroup;
+        e_Toggle.group = toggleGroup;
         if (page == 0)
         {
-            if (_toggle.isOn)
+            if (e_Toggle.isOn)
                 OnSelectedTab?.Invoke(_page);
             else
-                _toggle.isOn = true;
+                e_Toggle.isOn = true;
             if (_selected == null)
                 _selected = ResData.Inst.GetResByAddressPermanent<Sprite>("Selected.png");
             _bg.sprite = _selected;

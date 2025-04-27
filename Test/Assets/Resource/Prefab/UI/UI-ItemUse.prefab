@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1898676398287704684}
   - component: {fileID: 3561462936534685310}
   m_Layer: 5
-  m_Name: ConfirmBtn
+  m_Name: e_ConfirmBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 3938239578893022221}
   - component: {fileID: 6402090750535143213}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: e_Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,13 +478,13 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 2000, y: 2000}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!111 &8248334969783545292
 Animation:
   m_ObjectHideFlags: 0
@@ -863,7 +863,7 @@ GameObject:
   - component: {fileID: 2872085365115046310}
   - component: {fileID: 1956225809954406923}
   m_Layer: 5
-  m_Name: ItemImg
+  m_Name: e_ItemImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 118852647528290183}
   - component: {fileID: 18267556074786841}
   m_Layer: 5
-  m_Name: TxtName
+  m_Name: e_TxtName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,7 +1072,7 @@ GameObject:
   - component: {fileID: 3943847657438813345}
   - component: {fileID: 181366503767334581}
   m_Layer: 5
-  m_Name: TxtUse
+  m_Name: e_TxtUse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1288,7 +1288,7 @@ GameObject:
   - component: {fileID: 3171070223189877018}
   - component: {fileID: 5527670773788306877}
   m_Layer: 5
-  m_Name: CloseBtn
+  m_Name: e_CloseBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

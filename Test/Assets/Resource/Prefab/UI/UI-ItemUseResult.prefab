@@ -97,7 +97,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 2000, y: 2000}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 1835368007009833747}
   - component: {fileID: 403140938228426943}
   m_Layer: 5
-  m_Name: TxtDesc
+  m_Name: e_TxtDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 1053621963840732441}
   - component: {fileID: 6470939606945388750}
   m_Layer: 5
-  m_Name: TxtResult
+  m_Name: e_TxtResult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,10 +298,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2829859107940384902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150.18}
-  m_SizeDelta: {x: 503.4084, y: 104.4042}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -55.820007}
+  m_SizeDelta: {x: 503.4084, y: 104.404205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1053621963840732441
 CanvasRenderer:
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 2617851698476975653}
   - component: {fileID: 8718677467000290719}
   m_Layer: 5
-  m_Name: Bg
+  m_Name: e_Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,7 +645,7 @@ RectTransform:
   - {fileID: 5252477020948301823}
   - {fileID: 5891353547132145729}
   m_Father: {fileID: 683836439343570653}
-  m_LocalEulerAnglesHint: {x: 0, y: 354.22876, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.66378784, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000024796, y: 205.99}
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 7115291600072923071}
   - component: {fileID: 6719640530152581698}
   m_Layer: 5
-  m_Name: ItemIcon
+  m_Name: e_ItemIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,10 +721,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2829859107940384902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -396, y: 123.09}
-  m_SizeDelta: {x: 158.5892, y: 158.5891}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -82.91}
+  m_SizeDelta: {x: 158.5892, y: 158.58911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7115291600072923071
 CanvasRenderer:
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 8817142084653400464}
   - component: {fileID: 3416621557245352079}
   m_Layer: 5
-  m_Name: BtnSure
+  m_Name: e_BtnSure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,9 +798,9 @@ RectTransform:
   - {fileID: 2686912621149682061}
   m_Father: {fileID: 2829859107940384902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -87}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 119}
   m_SizeDelta: {x: 271.6389, y: 102.9409}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9219470878223085855

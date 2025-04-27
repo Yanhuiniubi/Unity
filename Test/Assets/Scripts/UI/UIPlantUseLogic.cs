@@ -5,25 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [UIBind(UIDef.UI_PLANTUSE)]
-public class UIPlantUseLogic : UILogicBase
+public class UIPlantUseLogic : UIPlantUseBase
 {
-    private TextMeshProUGUI _txtName;
-    private TextMeshProUGUI _txtUse;
-    private Button _closeBtn;
-    private Button _confirmBtn;
-    private Image _imgItem;
-
     private TableItemMain _item;
     public override void OnInit()
     {
         base.OnInit();
-        _txtName = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/TxtName");
-        _txtUse = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/TxtUse");
-        _closeBtn = GetUIComponentInchildren<Button>("BgTransparent/Bg/CloseBtn");
-        _confirmBtn = GetUIComponentInchildren<Button>("BgTransparent/Bg/ConfirmBtn");
-        _imgItem = GetUIComponentInchildren<Image>("BgTransparent/Bg/Kuang/ItemImg");
-        _closeBtn.onClick.AddListener(CloseUI);
-        _confirmBtn.onClick.AddListener(OnConfirmBtnClick);
+        e_CloseBtn.onClick.AddListener(CloseUI);
+        e_ConfirmBtn.onClick.AddListener(OnConfirmBtnClick);
     }
 
     public override void OnShow(object param)
@@ -34,9 +23,9 @@ public class UIPlantUseLogic : UILogicBase
     }
     private void SetView()
     {
-        _txtName.text = _item.Name;
-        _imgItem.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_item.IconPath);
-        _txtUse.text = $"是否将{_item.Name.ParseColorText("000000")}种植在此？";
+        e_TxtName.text = _item.Name;
+        e_ItemImg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_item.IconPath);
+        e_TxtUse.text = $"是否将{_item.Name.ParseColorText("000000")}种植在此？";
     }
     public override void OnHide()
     {

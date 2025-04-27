@@ -32,7 +32,6 @@ RectTransform:
   m_Children:
   - {fileID: 6070068028755244233}
   m_Father: {fileID: 6335146930949919239}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -90,7 +89,7 @@ GameObject:
   - component: {fileID: 3998786060432693446}
   - component: {fileID: 8174132290235587527}
   m_Layer: 5
-  m_Name: BtnSure
+  m_Name: e_BtnSure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +109,6 @@ RectTransform:
   m_Children:
   - {fileID: 1714025046413236458}
   m_Father: {fileID: 6070068028755244233}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -230,7 +228,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8489595165204332298}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -346,7 +343,7 @@ GameObject:
   - component: {fileID: 3845018089553360281}
   - component: {fileID: 7700112619503169549}
   m_Layer: 5
-  m_Name: TxtDesc
+  m_Name: e_TxtDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,7 +362,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6070068028755244233}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -502,7 +498,6 @@ RectTransform:
   - {fileID: 4661794997752904496}
   - {fileID: 8489595165204332298}
   m_Father: {fileID: 5145885441619744562}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 354.22876, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -582,7 +577,6 @@ RectTransform:
   m_Children:
   - {fileID: 5145885441619744562}
   m_Father: {fileID: 0}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -645,7 +639,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 2000, y: 2000}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,8 +43,16 @@ public class AIChatData
     public void OnStoreData()
     {
         AIDataStore infos = new AIDataStore();
-        infos.ChatInfos = _chatInfos;
-        infos.Contents = Questions;
+        infos.ChatInfos = new List<ChatInfo>();
+        infos.Contents = new List<Content>();
+        for (int i = 0;i < _chatInfos.Count; i++)
+        {
+            infos.ChatInfos.Add(_chatInfos[i]);
+        }
+        for (int i = 0; i < Questions.Count; i++)
+        {
+            infos.Contents.Add(Questions[i]);
+        }
         string json = JsonUtility.ToJson(infos, true);
         string path = Path.Combine(Application.streamingAssetsPath, "AIChatData.json");
         File.WriteAllText(path, json);
