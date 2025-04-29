@@ -84,7 +84,6 @@ public class UINPCQuestionLogic : UINPCQuestionBase
                     {
                         TaskData.Inst.CheckTask("Stop");
                         CuttingMod.Inst.DeleteLoggers(_logger);
-                        GameObject.Destroy(_logger);
                     }
                     else//»Ø´ð´íÎó
                     {

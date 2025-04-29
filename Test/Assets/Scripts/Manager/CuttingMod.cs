@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using BehaviorDesigner.Runtime;
 using Unity.VisualScripting;
+using BehaviorDesigner.Runtime.Tasks;
 
 public class CuttingMod
 {
@@ -108,6 +109,7 @@ public class CuttingMod
                         obj.transform.position = spawnPosition + new Vector3(0f, 2f, 0f);
                         obj.name = $"logger{i}";
                         loggers.Add(obj);
+                        obj.SetActive(true);
                     }
                 }
             }
@@ -125,11 +127,15 @@ public class CuttingMod
                  obj.transform.position = spawnPosition + new Vector3(0f, 2f, 0f);
                  obj.name = $"logger{i}";
                  loggers.Add(obj);
+                 obj.SetActive(true);
             }
         }
     }
     public void DeleteLoggers(GameObject obj)
     {
+        UINPCQuestionLogic.OnLoggerPause?.Invoke(true, obj.name);
         loggers.Remove(obj);
+        var script = obj.GetComponent<CuttingEffectLogic>();
+        script.PlayDestoryedEffect();
     }
 }

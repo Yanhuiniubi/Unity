@@ -76,6 +76,7 @@ public class UIScriptsGenerate /*: EditorWindow*/
 
             string outputPath = Path.Combine(fullFolderPath, rootName + "Base.cs");
             File.WriteAllText(outputPath, uIClasses[0].sbClass.ToString());
+            AssetDatabase.Refresh();
             Debug.Log("UI C# script generated at: " + outputPath);
         }
     }

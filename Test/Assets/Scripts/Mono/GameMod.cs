@@ -30,6 +30,7 @@ public class GameMod : MonoBehaviour
     private CapsuleCollider _capsuleCollider;
 
     public Transform LoggerRoot;
+    public Camera UICamera;
     public float PlayerHeight
     {
         get

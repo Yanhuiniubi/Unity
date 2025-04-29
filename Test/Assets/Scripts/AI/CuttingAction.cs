@@ -22,7 +22,9 @@ public class CuttingAction : Action
     public override TaskStatus OnUpdate()
     {
         if (!pause)
+        {
             anim.SetTrigger("attack");
+        }
         else
         {
             anim.SetTrigger("idle");

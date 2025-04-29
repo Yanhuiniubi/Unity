@@ -23,6 +23,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoadGameObject
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45ce0cd87e9ea59479ebda21b779e041
+    m_Address: UI-PlantUse.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50145cb924607ec41bf60dfc8c3adbcd
+    m_Address: UI-AIChat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 693c5a7e17d3cac47aceda8da2916d10
     m_Address: UI-ItemUse.prefab
     m_ReadOnly: 0
@@ -31,6 +43,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8c04981d96e00264ba27f8a75a7d60be
     m_Address: UI-ItemDesc.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3b6681eced6a9f4e84cd5fe9a9f27ab
+    m_Address: UI-TaskFailure.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoadGameObject
@@ -59,26 +77,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoadGameObject
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dc4f0b982b21c9f47af8a5c3c34c2612
-    m_Address: UI-CoinChanged.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoadGameObject
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 50145cb924607ec41bf60dfc8c3adbcd
-    m_Address: UI-AIChat.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoadGameObject
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 45ce0cd87e9ea59479ebda21b779e041
-    m_Address: UI-PlantUse.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoadGameObject
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a3b6681eced6a9f4e84cd5fe9a9f27ab
-    m_Address: UI-TaskFailure.prefab
+  - m_GUID: d1d7bcc82a366b2419b9d2263d957986
+    m_Address: UI-StoreData.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoadGameObject
@@ -89,8 +89,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoadGameObject
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d1d7bcc82a366b2419b9d2263d957986
-    m_Address: UI-StoreData.prefab
+  - m_GUID: dc4f0b982b21c9f47af8a5c3c34c2612
+    m_Address: UI-CoinChanged.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoadGameObject
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e509867be4f82f246a95eca1ee5a2d61
+    m_Address: CFXR Smoke Source 3D.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoadGameObject

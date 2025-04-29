@@ -10,6 +10,7 @@ public class UILogicBase
     public string resPath;
     public GameObject gameObject;
     public RectTransform rectTransform;
+    protected Canvas canvas;
     private Coroutine co;
     /// <summary>
     /// 初始化
@@ -17,6 +18,11 @@ public class UILogicBase
     public virtual void OnInit()
     {
         rectTransform = gameObject.GetComponent<RectTransform>();
+        canvas = gameObject.GetComponent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.worldCamera = GameMod.Inst.UICamera;
+        }
     }
     /// <summary>
     /// UI每次显示

@@ -34,6 +34,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7840d900dc0a4ed4dbcd26e23f064dd8
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr smoke
+      cloud x4 ab.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97e6406f9da791a429df458aead3cce8
     m_Address: UI-Loading.prefab
     m_ReadOnly: 0
