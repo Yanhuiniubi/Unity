@@ -49,6 +49,10 @@ public class GameObjInteract : MonoBehaviour
         {
             StoreDataMod.Inst.StoreData();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIMod.Inst.ShowUI<UIGuideLogic>(UIDef.UI_Guide);
+        }
     }
     /// <summary>
     /// 射线检测可交互的物体
