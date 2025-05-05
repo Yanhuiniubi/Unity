@@ -115,6 +115,11 @@ public class UIScriptsGenerate /*: EditorWindow*/
                     sbField.AppendLine($"protected ToggleGroup {onlyName};//{curPathStr}");
                     sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<ToggleGroup>(\"{methodPathStr}\");");
                 }
+                else if (t.TryGetComponent<ScrollRect>(out var rect))
+                {
+                    sbField.AppendLine($"protected ScrollRect {onlyName};//{curPathStr}");
+                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<ScrollRect>(\"{methodPathStr}\");");
+                }
                 else if (t.TryGetComponent<Toggle>(out var toggle))
                 {
                     sbField.AppendLine($"protected Toggle {onlyName};//{curPathStr}");

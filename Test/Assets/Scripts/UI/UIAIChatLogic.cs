@@ -1,5 +1,6 @@
 using BehaviorDesigner.Runtime.Tasks;
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,14 +9,14 @@ using UnityEngine.UI;
 
 public class UIAIChatLogic : UIAIChatBase
 {
-    private UIContainer<ChatTemplate> _chatContent;
-
+    private UITileLoop<ChatTemplate> _chatContent;
+    private List<ChatInfo> _chatInfos;
     RectTransform _rect;
     public override void OnInit()
     {
         base.OnInit();
-        _rect = GetUIComponentInchildren<RectTransform>("Scroll View/Grid");
-        _chatContent = new UIContainer<ChatTemplate>(gameObject.transform.Find("Scroll View/Grid").gameObject);
+        _rect = GetUIComponentInchildren<RectTransform>("e_Scroll View/Grid");
+        _chatContent = new UITileLoop<ChatTemplate>(gameObject.transform.Find("e_Scroll View/Grid").gameObject, e_ScrollView);
         e_CloseBtn.onClick.AddListener(() =>
         {
             if (!_AIResponsing) 
@@ -33,8 +34,17 @@ public class UIAIChatLogic : UIAIChatBase
                         }, e_InputField.text);
             }
         });
+        _chatInfos = AIChatData.Inst.ChatInfos;
+
+        _chatContent.OnUpdateItem = null;
+        _chatContent.OnUpdateItem += OnUpdateItem;
     }
 
+    private void OnUpdateItem(int index, ChatTemplate template)
+    {
+        template.SetData(_chatInfos[index]);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
+    }
     public override void OnShow(object param)
     {
         base.OnShow(param);
@@ -48,11 +58,6 @@ public class UIAIChatLogic : UIAIChatBase
         var chatInfos = AIChatData.Inst.ChatInfos;
         int cnt = chatInfos.Count;
         _chatContent.Ensuresize(cnt);
-        var children = _chatContent.Children;
-        for (int i = 0;i < cnt;i++)
-        {
-            children[i].SetData(chatInfos[i]);
-        }
     }
     private bool _AIResponsing;
     private void AddOrUpdateNewMessage(bool isSelf)
@@ -66,15 +71,11 @@ public class UIAIChatLogic : UIAIChatBase
         var chatInfos = AIChatData.Inst.ChatInfos;
         int cnt = chatInfos.Count;
         _chatContent.Ensuresize(cnt);
-        var children = _chatContent.Children;
-        children[cnt - 1].SetData(chatInfos[cnt - 1]);
-        LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
     }
     private void SetWaitPanel()
     {
         e_WaitBg.gameObject.SetActive(false);
         _AIResponsing = false;
-        LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
     }
     public override void OnHide()
     {

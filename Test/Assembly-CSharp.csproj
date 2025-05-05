@@ -668,6 +668,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Timeline\Play.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\GetAngularDrag.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Light\GetRange.cs" />
+    <Compile Include="Assets\Scripts\UIComponent\UITileLoop.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedFloat.cs" />
     <Compile Include="Assets\Scripts\AI\ReFindNewTargetTree.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetRotation.cs" />
