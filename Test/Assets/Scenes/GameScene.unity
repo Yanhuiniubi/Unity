@@ -3154,6 +3154,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &327231632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4597,10 +4608,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1336117167}
     - target: {fileID: 7997823908950545591, guid: c0bfad1b94282b345a379816d5812658, type: 3}
-      propertyPath: UICamera
-      value: 
-      objectReference: {fileID: 1639096762}
-    - target: {fileID: 7997823908950545591, guid: c0bfad1b94282b345a379816d5812658, type: 3}
       propertyPath: RoundRoot
       value: 
       objectReference: {fileID: 331031347}
@@ -4640,6 +4647,10 @@ PrefabInstance:
     - target: {fileID: 156312, guid: 3ffe8ac9f1ef9984a9428440d1c31b9f, type: 3}
       propertyPath: m_Name
       value: Logger
+      objectReference: {fileID: 0}
+    - target: {fileID: 156312, guid: 3ffe8ac9f1ef9984a9428440d1c31b9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 491852, guid: 3ffe8ac9f1ef9984a9428440d1c31b9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10178,7 +10189,7 @@ GameObject:
   - component: {fileID: 1336117166}
   - component: {fileID: 1336117165}
   - component: {fileID: 1336117164}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: UI3DRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12465,11 +12476,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623465891}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!20 &1639096762 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7302337539377900930, guid: c0bfad1b94282b345a379816d5812658, type: 3}
-  m_PrefabInstance: {fileID: 549026496}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1640699230
 PrefabInstance:
   m_ObjectHideFlags: 0

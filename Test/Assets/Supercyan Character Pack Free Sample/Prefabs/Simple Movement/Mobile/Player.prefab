@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 2452085060060565876}
   m_Layer: 0
   m_Name: CameraUI
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -476,7 +476,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8155
+    m_Bits: 16347
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -744,6 +744,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   LoggerRoot: {fileID: 0}
+  UICamera: {fileID: 7302337539377900930}
 --- !u!4 &5292256546635234178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1121125582535847827, guid: 9854bb05e98038145add8ed7c25af4b1, type: 3}
