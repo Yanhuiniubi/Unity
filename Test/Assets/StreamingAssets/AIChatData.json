@@ -29,6 +29,10 @@
       "Content": "7"
     },
     {
+      "IsSelf": true,
+      "Content": "3"
+    },
+    {
       "IsSelf": false,
       "Content": "8"
     },
