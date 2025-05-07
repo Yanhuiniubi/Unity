@@ -349,6 +349,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animator\StopRecording.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Animation\Play.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Variables\SharedTransform.cs" />
+    <Compile Include="Assets\Scripts\UI\UIAIChatTestLogic.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Input\IsKeyUp.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\AudioSource\IsPlaying.cs" />
     <Compile Include="Assets\Scripts\GameData\BagData.cs" />

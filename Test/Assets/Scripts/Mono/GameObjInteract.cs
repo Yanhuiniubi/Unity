@@ -166,7 +166,7 @@ public class GameObjInteract : MonoBehaviour
                         break;
                     case eInteractionType.OpenAIChat:
                         {
-                            UIMod.Inst.ShowUI<UIAIChatLogic>(UIDef.UI_AICHAT);
+                            UIMod.Inst.ShowUI<UIAIChatTestLogic>(UIDef.UI_AICHATTEST);
                         }
                         break;
                     case eInteractionType.OpenLoggerQuestion:

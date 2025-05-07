@@ -11,8 +11,10 @@ public class UITileLoop<T> where T : GameUIComponent, new()
     private GameObject gameObject;
     private ScrollRect scrollRect;
     private RectTransform content;
-    private int canVisibleMaxCount;
+    private int canVisibleMaxCountVertical;
+    private int canVisibleMaxCountHorizontal;
     private float itemHeight;
+    private float itemWidth;
     private List<T> _children;
     private int firstVisibleIndex;
     private int lastVisibleIndex;
@@ -41,15 +43,18 @@ public class UITileLoop<T> where T : GameUIComponent, new()
             Debug.LogError("Template 上无 LayoutElement组件");
             return;
         }
-        itemHeight += layout.preferredHeight;
+        itemHeight = layout.preferredHeight;
+        itemWidth = layout.preferredWidth;
 
         // 初始化 Item 池
-        canVisibleMaxCount = Mathf.CeilToInt(scrollRect.viewport.rect.height / itemHeight) + 1;
+        canVisibleMaxCountVertical = Mathf.FloorToInt(scrollRect.viewport.rect.height / itemHeight) + 1;
+        canVisibleMaxCountHorizontal = Mathf.FloorToInt(scrollRect.viewport.rect.width / itemWidth);
+        if (canVisibleMaxCountHorizontal < 1) canVisibleMaxCountHorizontal = 1;
         // 监听滚动事件
         scrollRect.onValueChanged.AddListener(OnScroll);
         
         firstVisibleIndex = 0;
-        lastVisibleIndex = canVisibleMaxCount - 1;
+        lastVisibleIndex = (canVisibleMaxCountVertical - 1) * canVisibleMaxCountHorizontal;
 
         Offset = content.GetComponent<LayoutGroup>().padding;
     }
@@ -58,30 +63,39 @@ public class UITileLoop<T> where T : GameUIComponent, new()
     {
         // 计算当前应该显示的 Item 范围
         float contentY = content.anchoredPosition.y;
-        int firstIndex = Mathf.FloorToInt(contentY / itemHeight);
-        int lastIndex = firstIndex + canVisibleMaxCount - 1;
+        int firstIndex = Mathf.FloorToInt(contentY / itemHeight) * canVisibleMaxCountHorizontal;
+        int lastIndex = firstIndex + (canVisibleMaxCountVertical - 1) * canVisibleMaxCountHorizontal;
 
-        if (firstIndex < 0 || lastIndex >= ChildCount || firstVisibleIndex == firstIndex) return;
+        if (firstIndex < 0 || lastIndex > ChildCount - canVisibleMaxCountHorizontal || firstVisibleIndex == firstIndex) return;
 
         if (firstVisibleIndex < firstIndex)
         {
-            Transform firstChild = content.GetChild(1);
-            firstChild.SetAsLastSibling();
-            if (lastIndex >= _children.Count)
+            for (int i = 0;i < canVisibleMaxCountHorizontal;i++)
             {
-                GameObject go = firstChild.gameObject;
-                go.SetActive(true);
-                T template = new T();
-                template.Init(go);
-                _children.Add(template);
+                int index = lastIndex + i;
+                Transform firstChild = content.GetChild(1);
+                firstChild.SetAsLastSibling();
+                if (index >= _children.Count)
+                {
+                    GameObject go = firstChild.gameObject;
+                    go.SetActive(true);
+                    T template = new T();
+                    template.Init(go);
+                    _children.Add(template);
+                }
+                OnUpdateItem?.Invoke(index, _children[index]);
             }
-            OnUpdateItem?.Invoke(lastIndex, _children[lastIndex]);
+            
         }
         else if (firstVisibleIndex > firstIndex)
         {
-            Transform lastChild = content.GetChild(content.childCount - 1);
-            lastChild.SetSiblingIndex(1);
-            OnUpdateItem?.Invoke(firstIndex, _children[firstIndex]);
+            for (int i = canVisibleMaxCountHorizontal - 1; i >= 0; i--)
+            {
+                int index = firstIndex + i;
+                Transform lastChild = content.GetChild(content.childCount - 1);
+                lastChild.SetSiblingIndex(1);
+                OnUpdateItem?.Invoke(index, _children[index]);
+            }
         }
         firstVisibleIndex = firstIndex;
         lastVisibleIndex = lastIndex;
@@ -99,9 +113,10 @@ public class UITileLoop<T> where T : GameUIComponent, new()
             return;
         }
         var curChildCount = ChildCount;
+        int totalCnt = canVisibleMaxCountVertical * canVisibleMaxCountHorizontal;
         if (curChildCount < count)
         {
-            while (curChildCount < count && curChildCount < canVisibleMaxCount)
+            while (curChildCount < count && curChildCount < totalCnt)
             {
                 GameObject go = GameObject.Instantiate<GameObject>(temp.gameObject, parent);
                 go.SetActive(true);
@@ -113,7 +128,7 @@ public class UITileLoop<T> where T : GameUIComponent, new()
         }
         else if (curChildCount > count)
         {
-            while (curChildCount > count && curChildCount > canVisibleMaxCount)
+            while (curChildCount > count && curChildCount > totalCnt)
             {
                 GameObject.Destroy(parent.GetChild(curChildCount).gameObject);
                 curChildCount--;
@@ -122,7 +137,7 @@ public class UITileLoop<T> where T : GameUIComponent, new()
         }
         temp.gameObject.SetActive(false);
         ChildCount = count;
-        for (int i = firstVisibleIndex; i < count && i <= lastVisibleIndex; i++)
+        for (int i = firstVisibleIndex; i < count && i <= lastVisibleIndex + canVisibleMaxCountHorizontal - 1; i++)
         {
             OnUpdateItem?.Invoke(i, _children[i]);
         }
@@ -130,8 +145,8 @@ public class UITileLoop<T> where T : GameUIComponent, new()
     }
     private void SetOffset(int startIndex,int endIndex)
     {
-        int diffTop = Mathf.FloorToInt(startIndex * itemHeight);
-        int diffBottom = Mathf.FloorToInt((ChildCount - 1 - endIndex) * itemHeight);
+        int diffTop = Mathf.FloorToInt(startIndex / canVisibleMaxCountHorizontal * itemHeight);
+        int diffBottom = Mathf.FloorToInt((ChildCount - endIndex - canVisibleMaxCountHorizontal) / canVisibleMaxCountHorizontal * itemHeight);
         Offset.top = diffTop;
         Offset.bottom = diffBottom >= 0 ? diffBottom : 0;
     }

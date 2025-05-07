@@ -80,7 +80,7 @@ public class AIChatData
     }
     public void RecvData(bool IsSelf,string Content,bool isUpdate)
     {
-        if (UIMod.Inst.IsActiveUI(UIDef.UI_AICHAT))
+        if (UIMod.Inst.IsActiveUI(UIDef.UI_AICHATTEST))
         {
             if (isUpdate)
             {
