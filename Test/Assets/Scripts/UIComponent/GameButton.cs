@@ -12,7 +12,7 @@ public class GameButton : GameUIComponent
     protected override void OnInit()
     {
         base.OnInit();
-        _btn = GetComponent<Button>();
+        _btn = GetUIComponent<Button>();
     }
     public void AddClickEvent(UnityAction OnClick)
     {

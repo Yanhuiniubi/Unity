@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIContainer<T> where T : UITemplateBase, new()
+public class UIContainer<T> where T : GameUIComponent, new()
 {
     private List<T> _children = new List<T>();
     public List<T> Children => _children;
@@ -50,8 +50,7 @@ public class UIContainer<T> where T : UITemplateBase, new()
                 GameObject go = GameObject.Instantiate<GameObject>(temp.gameObject, parent);
                 go.SetActive(true);
                 T template = new T();
-                template.gameObject = go;
-                template.OnInit();
+                template.Init(go);
                 curChildCount++;
                 _children.Add(template);
             }

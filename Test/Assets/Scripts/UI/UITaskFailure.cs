@@ -14,12 +14,12 @@ public class UITaskFailure : UITaskFailureBase
     {
         base.OnShow(param);
         if (param != null)
-            e_TxtDesc.text = param.ToString();
+            e_TxtDesc.Text = param.ToString();
     }
     public override void OnInit()
     {
         base.OnInit();
-        e_BtnSure.onClick.AddListener(HideUI);
+        e_BtnSure.AddClickEvent(HideUI);
     }
     private void HideUI()
     {

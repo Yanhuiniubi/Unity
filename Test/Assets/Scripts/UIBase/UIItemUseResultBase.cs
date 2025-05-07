@@ -5,18 +5,18 @@ using UnityEngine.UI;
 using TMPro;
 public class UIItemUseResultBase : UILogicBase
 {
-    protected Image e_Bg;//UI-ItemUseResult/BgTransparent/e_Bg
-    protected Image e_ItemIcon;//UI-ItemUseResult/BgTransparent/e_Bg/e_ItemIcon
-    protected TextMeshProUGUI e_TxtResult;//UI-ItemUseResult/BgTransparent/e_Bg/e_TxtResult
-    protected TextMeshProUGUI e_TxtDesc;//UI-ItemUseResult/BgTransparent/e_Bg/e_TxtDesc
-    protected Button e_BtnSure;//UI-ItemUseResult/BgTransparent/e_Bg/e_BtnSure
+    protected GameImage e_Bg;//UI-ItemUseResult/BgTransparent/e_Bg
+    protected GameImage e_ItemIcon;//UI-ItemUseResult/BgTransparent/e_Bg/e_ItemIcon
+    protected GameLabel e_TxtResult;//UI-ItemUseResult/BgTransparent/e_Bg/e_TxtResult
+    protected GameLabel e_TxtDesc;//UI-ItemUseResult/BgTransparent/e_Bg/e_TxtDesc
+    protected GameButton e_BtnSure;//UI-ItemUseResult/BgTransparent/e_Bg/e_BtnSure
     public override void OnInit()
     {
         base.OnInit();
-        e_Bg = GetUIComponent<Image>("BgTransparent/e_Bg");
-        e_ItemIcon = GetUIComponent<Image>("BgTransparent/e_Bg/e_ItemIcon");
-        e_TxtResult = GetUIComponent<TextMeshProUGUI>("BgTransparent/e_Bg/e_TxtResult");
-        e_TxtDesc = GetUIComponent<TextMeshProUGUI>("BgTransparent/e_Bg/e_TxtDesc");
-        e_BtnSure = GetUIComponent<Button>("BgTransparent/e_Bg/e_BtnSure");
+        e_Bg = MakeUIComponent<GameImage>("BgTransparent/e_Bg");
+        e_ItemIcon = MakeUIComponent<GameImage>("BgTransparent/e_Bg/e_ItemIcon");
+        e_TxtResult = MakeUIComponent<GameLabel>("BgTransparent/e_Bg/e_TxtResult");
+        e_TxtDesc = MakeUIComponent<GameLabel>("BgTransparent/e_Bg/e_TxtDesc");
+        e_BtnSure = MakeUIComponent<GameButton>("BgTransparent/e_Bg/e_BtnSure");
     }
 }

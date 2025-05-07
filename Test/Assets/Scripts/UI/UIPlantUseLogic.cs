@@ -11,8 +11,8 @@ public class UIPlantUseLogic : UIPlantUseBase
     public override void OnInit()
     {
         base.OnInit();
-        e_CloseBtn.onClick.AddListener(CloseUI);
-        e_ConfirmBtn.onClick.AddListener(OnConfirmBtnClick);
+        e_CloseBtn.AddClickEvent(CloseUI);
+        e_ConfirmBtn.AddClickEvent(OnConfirmBtnClick);
     }
 
     public override void OnShow(object param)
@@ -23,9 +23,9 @@ public class UIPlantUseLogic : UIPlantUseBase
     }
     private void SetView()
     {
-        e_TxtName.text = _item.Name;
-        e_ItemImg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_item.IconPath);
-        e_TxtUse.text = $"是否将{_item.Name.ParseColorText("000000")}种植在此？";
+        e_TxtName.Text = _item.Name;
+        e_ItemImg.Sprite = _item.IconPath;
+        e_TxtUse.Text = $"是否将{_item.Name.ParseColorText("000000")}种植在此？";
     }
     public override void OnHide()
     {

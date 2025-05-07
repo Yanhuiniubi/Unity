@@ -23,11 +23,11 @@ public class UINPCQuestionLogic : UINPCQuestionBase
     {
         base.OnInit();
         _options = new UIContainer<Option>(gameObject.transform.Find("ScrollViewPage/GridPage").gameObject);
-        e_CloseBtn.onClick.AddListener(() => {
+        e_CloseBtn.AddClickEvent(() => {
             if (e_OKBtn.gameObject.activeSelf)
                 UIMod.Inst.HideUI();
             });
-        e_OKBtn.onClick.AddListener(OnOKBtnClick);
+        e_OKBtn.AddClickEvent(OnOKBtnClick);
     }
     private GameObject _logger;
     public override void OnShow(object param)
@@ -38,7 +38,7 @@ public class UINPCQuestionLogic : UINPCQuestionBase
         _options.Ensuresize(0);
         _inAsk = false;
         e_OKBtn.gameObject.SetActive(false);
-        e_Content.text = "你好啊小使者，如果你能回答出来我的问题，我就不砍树！不过我得先思考思考~";
+        e_Content.Text = "你好啊小使者，如果你能回答出来我的问题，我就不砍树！不过我得先思考思考~";
         AIChatData.Inst.AddQuestion("请随机给出一个关于环境保护之类的" +
             "选择题，其他多余的话不要有，我希望你能尽量发挥想象，只需要给出题干，ABCD四个选项、以及正确答案,例如： 题干：树木在环境保护中的作用是什么？\r\nA. 提供氧气\r\nB. 吸收二氧化碳\r\nC. 防止水土流失\r\nD. 以上都是，答案：D");
         AIAssistant.Inst.SendQuestion(AIChatData.Inst.Questions, "请随机给出一个关于环境保护之类的" +
@@ -51,7 +51,7 @@ public class UINPCQuestionLogic : UINPCQuestionBase
         string _question = AIChatData.Inst.Questions[AIChatData.Inst.Questions.Count - 1].content;
         if (!_inAsk)
         {
-            e_Content.text = _question.Substring(0, _question.IndexOf("答案") - 1);
+            e_Content.Text = _question.Substring(0, _question.IndexOf("答案") - 1);
             _options.Ensuresize(4);
             var children = _options.Children;
             int count = children.Count;
@@ -102,14 +102,14 @@ public class UINPCQuestionLogic : UINPCQuestionBase
 
 public class Option : UINPCQuestionContentBase
 {
-    public bool IsSelected => e_Toggle.isOn;
-    public string Content => e_Text.text;
-    public override void OnInit()
+    public bool IsSelected => e_Toggle.IsOn;
+    public string Content => e_Text.Text;
+    protected override void OnInit()
     {
         base.OnInit();
     }
     public void SetData(int number)
     {
-        e_Text.text = ((char)(number + 'A')).ToString();
+        e_Text.Text = ((char)(number + 'A')).ToString();
     }
 }

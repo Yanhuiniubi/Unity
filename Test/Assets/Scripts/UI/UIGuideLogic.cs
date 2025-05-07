@@ -8,6 +8,6 @@ public class UIGuideLogic : UIGuideBase
     public override void OnInit()
     {
         base.OnInit();
-        e_CloseBtn.onClick.AddListener(() => UIMod.Inst.HideUI());
+        e_CloseBtn.AddClickEvent(() => UIMod.Inst.HideUI());
     }
 }

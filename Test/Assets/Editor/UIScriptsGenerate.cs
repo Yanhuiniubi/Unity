@@ -177,9 +177,9 @@ public class UIScriptsGenerate /*: EditorWindow*/
                 string onlyName = name.ToString();
                 recordName.Add(onlyName);
 
-                sbClass.AppendLine($"public class {onlyName} : UITemplateBase");
+                sbClass.AppendLine($"public class {onlyName} : GameUIComponent");
                 sbClass.AppendLine("{");
-                sbMethod.AppendLine("public override void OnInit()");
+                sbMethod.AppendLine("protected override void OnInit()");
                 sbMethod.AppendLine("{");
                 sbMethod.AppendLine("base.OnInit();");
                 var p =  new StringBuilder(fullPath.ToString());

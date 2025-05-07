@@ -13,7 +13,7 @@ public class GameToggle : GameUIComponent
     protected override void OnInit()
     {
         base.OnInit();
-        _toggle = GetComponent<Toggle>();
+        _toggle = GetUIComponent<Toggle>();
     }
     public void AddValueChangeEvent(UnityAction<bool> OnValueChange)
     {

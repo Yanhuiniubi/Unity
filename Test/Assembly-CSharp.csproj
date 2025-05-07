@@ -423,6 +423,7 @@
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetIsKinematic.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\SetAcceleration.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\IsAlive.cs" />
+    <Compile Include="Assets\Scripts\UIBase\UIAIChatTestBase.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Math\BoolOperator.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Object Drawers\FloatSliderAttribute.cs" />
     <Compile Include="Assets\AssetStore\Behavior Designer\Runtime\Tasks\Unity\Transform\SetUpVector.cs" />

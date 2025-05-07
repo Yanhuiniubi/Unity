@@ -104,7 +104,7 @@ public class UIBagItem : UIBagContentBase
     private int _count;
     private eOpenBagFrom _openBagFrom;
     private TableItemMain _cfg;
-    public override void OnInit()
+    protected override void OnInit()
     {
         base.OnInit();
         _btnUse = GetUIComponent<Button>();

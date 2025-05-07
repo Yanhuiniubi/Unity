@@ -64,7 +64,7 @@ public class UIShopItem : UIShopContentBase
 
     private TableItemShop _shopItemCfg;
     private TableItemMain _itemCfg;
-    public override void OnInit()
+    protected override void OnInit()
     {
         base.OnInit();
         _btnBuy = GetUIComponent<Button>();;
@@ -96,7 +96,7 @@ public class UIShopTab : UIShopContentBase1
     private Sprite _selected;
     private Sprite _unSelected;
     private Action<int> OnSelectedTab;
-    public override void OnInit()
+    protected override void OnInit()
     {
         base.OnInit();
         _bg = GetUIComponent<Image>();

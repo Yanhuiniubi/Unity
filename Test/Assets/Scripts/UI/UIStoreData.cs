@@ -16,7 +16,7 @@ public class UIStoreData : UIStoreDataBase
     public override void OnShow(object param)
     {
         base.OnShow(param);
-        e_TxtDesc.text = param.ToString();
+        e_TxtDesc.Text = param.ToString();
         GameMod.Inst.StartCoroutine(CloseUI());
     }
     IEnumerator CloseUI()

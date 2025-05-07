@@ -19,12 +19,12 @@ public class UIAIChatLogic : UIAIChatBase
         _rect = GetUIComponent<RectTransform>("e_Scroll View/Grid");
         //_chatContent = new UITileLoop<ChatTemplate>(gameObject.transform.Find("e_Scroll View/Grid").gameObject, e_ScrollView);
         _chatContent = new UIContainer<ChatTemplate>(gameObject.transform.Find("e_Scroll View/Grid").gameObject);
-        e_CloseBtn.onClick.AddListener(() =>
+        e_CloseBtn.AddClickEvent(() =>
         {
             if (!_AIResponsing) 
                 UIMod.Inst.HideUI();
         });
-        e_SendBtn.onClick.AddListener(() =>
+        e_SendBtn.AddClickEvent(() =>
         {
             if (!string.IsNullOrEmpty(e_InputField.text) && !_AIResponsing)
             {
@@ -99,7 +99,7 @@ public class UIAIChatLogic : UIAIChatBase
 }
 public class ChatTemplate : UIAIChatContentBase
 {
-    public override void OnInit()
+    protected override void OnInit()
     {
         base.OnInit();
     }
@@ -107,14 +107,14 @@ public class ChatTemplate : UIAIChatContentBase
     {
         if (info.IsSelf)
         {
-            e_Icon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("PLayer.png");
-            e_ImgBG.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("Button Green.png");
+            e_Icon.Sprite = "PLayer.png";
+            e_ImgBG.Sprite = "Button Green.png";
         }
         else
         {
-            e_Icon.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("Robot.png");
-            e_ImgBG.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>("Button Blue.png");
+            e_Icon.Sprite = "Robot.png";
+            e_ImgBG.Sprite = "Button Blue.png";
         }
-        e_TxtContent.text = info.Content;
+        e_TxtContent.Text = info.Content;
     }
 }

@@ -37,13 +37,25 @@ public class UI3DLogicBase
     {
 
     }
-    protected T GetUIComponentInchildren<T>(string path) where T : Component
+    /// <summary>
+    /// UIÏú»Ù
+    /// </summary>
+    public virtual void OnDispose()
     {
+
+    }
+    protected T GetUIComponent<T>(string path = "") where T : Component
+    {
+        if (string.IsNullOrEmpty(path))
+            return gameObject.GetComponent<T>();
         return gameObject.transform.Find(path).GetComponent<T>();
     }
-    protected T GetUIComponent<T>() where T : Component
+
+    protected T MakeUIComponent<T>(string path) where T : GameUIComponent, new()
     {
-        return gameObject.GetComponent<T>();
+        T com = new T();
+        com.Init(path, gameObject);
+        return com;
     }
 
     public void HideThisPanel()

@@ -19,7 +19,7 @@ public class UIIntroDutionLogic : UI3DLogicBase
     public override void OnInit()
     {
         base.OnInit();
-        txt = GetUIComponentInchildren<TextMeshProUGUI>("txtName");
+        txt = GetUIComponent<TextMeshProUGUI>("txtName");
     }
 
     public override void OnShow(object param)

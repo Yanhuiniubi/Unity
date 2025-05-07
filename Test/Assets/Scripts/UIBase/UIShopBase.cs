@@ -12,13 +12,13 @@ public class UIShopBase : UILogicBase
         e_CloseBtn = MakeUIComponent<GameButton>("e_CloseBtn");
     }
 }
-public class UIShopContentBase : UITemplateBase
+public class UIShopContentBase : GameUIComponent
 {
     protected GameImage e_ItemImg;//UI-Shop/Scroll View/Grid/Template/e_ItemImg
     protected GameLabel e_ItemName;//UI-Shop/Scroll View/Grid/Template/e_ItemName
     protected GameButton e_DescBtn;//UI-Shop/Scroll View/Grid/Template/e_DescBtn
     protected GameLabel e_ItemCount;//UI-Shop/Scroll View/Grid/Template/HorizontalLayout/e_ItemCount
-    public override void OnInit()
+    protected override void OnInit()
     {
         base.OnInit();
         e_ItemImg = MakeUIComponent<GameImage>("e_ItemImg");
@@ -27,11 +27,11 @@ public class UIShopContentBase : UITemplateBase
         e_ItemCount = MakeUIComponent<GameLabel>("HorizontalLayout/e_ItemCount");
     }
 }
-public class UIShopContentBase1 : UITemplateBase
+public class UIShopContentBase1 : GameUIComponent
 {
     protected GameToggle e_Toggle;//UI-Shop/ScrollViewPage/GridPage/Template/e_Toggle
     protected GameLabel e_TxtPageName;//UI-Shop/ScrollViewPage/GridPage/Template/e_Toggle/e_TxtPageName
-    public override void OnInit()
+    protected override void OnInit()
     {
         base.OnInit();
         e_Toggle = MakeUIComponent<GameToggle>("e_Toggle");

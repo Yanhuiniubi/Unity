@@ -26,13 +26,25 @@ public class GameUIComponent
         rectTransform = gameObject.GetComponent<RectTransform>();
         OnInit();
     }
+    public void Init(GameObject go)
+    {
+        gameObject = go;
+        rectTransform = gameObject.GetComponent<RectTransform>();
+        OnInit();
+    }
     protected virtual void OnInit()
     {
 
     }
-    public T GetComponent<T>() where T : Component
+    public T GetUIComponent<T>() where T : Component
     {
         T com = gameObject.GetComponent<T>();
+        return com;
+    }
+    protected T MakeUIComponent<T>(string path) where T : GameUIComponent, new()
+    {
+        T com = new T();
+        com.Init(path, gameObject);
         return com;
     }
     public void AddClickPointerHandle(Action<PointerEventData> OnClick)

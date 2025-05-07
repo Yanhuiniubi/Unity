@@ -16,13 +16,13 @@ public class UIBagBase : UILogicBase
         e_GridPage = GetUIComponent<ToggleGroup>("ScrollViewPage/e_GridPage");
     }
 }
-public class UIBagContentBase : UITemplateBase
+public class UIBagContentBase : GameUIComponent
 {
     protected GameImage e_ItemImg;//UI-Bag/Scroll View/Grid/Template/e_ItemImg
     protected GameLabel e_ItemCount;//UI-Bag/Scroll View/Grid/Template/e_ItemCount
     protected GameLabel e_ItemName;//UI-Bag/Scroll View/Grid/Template/e_ItemName
     protected GameButton e_DescBtn;//UI-Bag/Scroll View/Grid/Template/e_DescBtn
-    public override void OnInit()
+    protected override void OnInit()
     {
         base.OnInit();
         e_ItemImg = MakeUIComponent<GameImage>("e_ItemImg");
@@ -31,11 +31,11 @@ public class UIBagContentBase : UITemplateBase
         e_DescBtn = MakeUIComponent<GameButton>("e_DescBtn");
     }
 }
-public class UIBagContentBase1 : UITemplateBase
+public class UIBagContentBase1 : GameUIComponent
 {
     protected GameToggle e_Toggle;//UI-Bag/ScrollViewPage/e_GridPage/Template/e_Toggle
     protected GameLabel e_TxtPageName;//UI-Bag/ScrollViewPage/e_GridPage/Template/e_Toggle/e_TxtPageName
-    public override void OnInit()
+    protected override void OnInit()
     {
         base.OnInit();
         e_Toggle = MakeUIComponent<GameToggle>("e_Toggle");

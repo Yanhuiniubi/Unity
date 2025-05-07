@@ -9,7 +9,7 @@ public class GameImage : GameUIComponent
     protected override void OnInit()
     {
         base.OnInit();
-        _image = GetComponent<Image>();
+        _image = GetUIComponent<Image>();
     }
     public string Sprite
     {

@@ -9,7 +9,7 @@ public class GameLabel : GameUIComponent
     protected override void OnInit()
     {
         base.OnInit();
-        _label = GetComponent<TextMeshProUGUI>();
+        _label = GetUIComponent<TextMeshProUGUI>();
     }
     public string Text
     {

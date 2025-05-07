@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class UITileLoop<T> where T : UITemplateBase, new()
+public class UITileLoop<T> where T : GameUIComponent, new()
 {
     public Action<int, T> OnUpdateItem;
 
@@ -72,8 +72,7 @@ public class UITileLoop<T> where T : UITemplateBase, new()
                 GameObject go = firstChild.gameObject;
                 go.SetActive(true);
                 T template = new T();
-                template.gameObject = go;
-                template.OnInit();
+                template.Init(go);
                 _children.Add(template);
             }
             OnUpdateItem?.Invoke(lastIndex, _children[lastIndex]);
@@ -107,8 +106,7 @@ public class UITileLoop<T> where T : UITemplateBase, new()
                 GameObject go = GameObject.Instantiate<GameObject>(temp.gameObject, parent);
                 go.SetActive(true);
                 T template = new T();
-                template.gameObject = go;
-                template.OnInit();
+                template.Init(go);
                 curChildCount++;
                 _children.Add(template);
             }

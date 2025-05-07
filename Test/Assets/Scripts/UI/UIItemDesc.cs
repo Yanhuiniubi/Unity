@@ -16,7 +16,7 @@ public class UIItemDesc : UIItemDescBase
     public override void OnInit()
     {
         base.OnInit();
-        e_CloseBtn.onClick.AddListener(CloseUI);
+        e_CloseBtn.AddClickEvent(CloseUI);
     }
 
     public override void OnShow(object param)
@@ -28,8 +28,8 @@ public class UIItemDesc : UIItemDescBase
             Debug.LogError("UIItemDesc OnShow 传入参数 不为TableItemGarbage");
             return;
         }
-        e_TxtTitle.text = _cfg.Name;
-        e_TxtDesc.text = _cfg.Desc;
+        e_TxtTitle.Text = _cfg.Name;
+        e_TxtDesc.Text = _cfg.Desc;
     }
     private void CloseUI()
     {

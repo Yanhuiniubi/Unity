@@ -37,8 +37,8 @@ public class UIItemUse : UIItemUseBase
     public override void OnInit()
     {
         base.OnInit();
-        e_CloseBtn.onClick.AddListener(CloseUI);
-        e_ConfirmBtn.onClick.AddListener(OnConfirmBtnClick);
+        e_CloseBtn.AddClickEvent(CloseUI);
+        e_ConfirmBtn.AddClickEvent(OnConfirmBtnClick);
         e_Slider.onValueChanged.AddListener(OnCountChanged);
     }
 
@@ -58,26 +58,26 @@ public class UIItemUse : UIItemUseBase
         if (_garbage != null)
         {
             _garbageCfg = TableItemMainMod.Get(_garbage.ItemInfo.ID);
-            e_TxtName.text = _garbageCfg.Name;
+            e_TxtName.Text = _garbageCfg.Name;
             e_Slider.minValue = 0;
             e_Slider.maxValue = _garbage.ItemInfo.Count;
             e_Slider.value = 0;
-            e_ItemImg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_garbageCfg.IconPath);
+            e_ItemImg.Sprite = _garbageCfg.IconPath;
         }
         else if (_shopItem != null)
         {
             _shopItemCfg = TableItemMainMod.Get(_shopItem.ItemID);
-            e_TxtName.text = _shopItemCfg.Name;
+            e_TxtName.Text = _shopItemCfg.Name;
             e_Slider.minValue = 1;
             e_Slider.maxValue = 10;
             e_Slider.value = 1;
-            e_ItemImg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_shopItemCfg.IconPath);
+            e_ItemImg.Sprite = _shopItemCfg.IconPath;
             string color = "";
             if (_shopItem.Price > PlayerData.Inst.Coins)
                 color = "FF1515";
             else
                 color = "3CFF14";
-            e_TxtUse.text = $"购买1个" + $"（${_shopItem.Price}）".ParseColorText(color);
+            e_TxtUse.Text = $"购买1个" + $"（${_shopItem.Price}）".ParseColorText(color);
         }
     }
     private void CloseUI()
@@ -114,7 +114,7 @@ public class UIItemUse : UIItemUseBase
     {
         if (_garbage != null)
         {
-            e_TxtUse.text = $"投入{val}个";
+            e_TxtUse.Text = $"投入{val}个";
             if (val == 0)
                 e_ConfirmBtn.gameObject.SetActive(false);
             else
@@ -128,7 +128,7 @@ public class UIItemUse : UIItemUseBase
                 color = "FF1515";
             else
                 color = "3CFF14";
-            e_TxtUse.text = $"购买{val}个" + $"（${_shopItem.Price * val}）".ParseColorText(color);
+            e_TxtUse.Text = $"购买{val}个" + $"（${_shopItem.Price * val}）".ParseColorText(color);
         }
     }
 }
