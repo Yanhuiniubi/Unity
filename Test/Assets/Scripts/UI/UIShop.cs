@@ -22,8 +22,8 @@ public class UIShop : UIShopBase
         base.OnInit();
         _shopGrid = new UIContainer<UIShopItem>(gameObject.transform.Find("Scroll View/Grid").gameObject);
         _tabGrid = new UIContainer<UIShopTab>(gameObject.transform.Find("ScrollViewPage/GridPage").gameObject);
-        _toggleGroup = GetUIComponentInchildren<ToggleGroup>("ScrollViewPage/GridPage");
-        e_CloseBtn.onClick.AddListener(CloseUI);
+        _toggleGroup = GetUIComponent<ToggleGroup>("ScrollViewPage/GridPage");
+        e_CloseBtn.AddClickEvent(CloseUI);
     }
 
     public override void OnShow(object param)
@@ -69,15 +69,15 @@ public class UIShopItem : UIShopContentBase
         base.OnInit();
         _btnBuy = GetUIComponent<Button>();;
         _btnBuy.onClick.AddListener(OnBuyBtnClick);
-        e_DescBtn.onClick.AddListener(OnDescBtnClick);
+        e_DescBtn.AddClickEvent(OnDescBtnClick);
     }
     public void SetData(TableItemShop cfg)
     {
         _shopItemCfg = cfg;
         _itemCfg = TableItemMainMod.Get(_shopItemCfg.ItemID);
-        e_ItemCount.text = cfg.Price.ToString();
-        e_ItemImg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_itemCfg.IconPath);
-        e_ItemName.text = _itemCfg.Name;
+        e_ItemCount.Text = cfg.Price.ToString();
+        e_ItemImg.Sprite = _itemCfg.IconPath;
+        e_ItemName.Text = _itemCfg.Name;
     }
     private void OnBuyBtnClick()
     {
@@ -100,21 +100,21 @@ public class UIShopTab : UIShopContentBase1
     {
         base.OnInit();
         _bg = GetUIComponent<Image>();
-        e_Toggle.onValueChanged.AddListener(OnValueChanged);
+        e_Toggle.AddValueChangeEvent(OnValueChanged);
     }
 
     public void SetData(int page,string title,ToggleGroup toggleGroup, Action<int> OnSelectedTab)
     {
         _page = page;
-        e_TxtPageName.text = title;
+        e_TxtPageName.Text = title;
         this.OnSelectedTab = OnSelectedTab;
-        e_Toggle.group = toggleGroup;
+        e_Toggle.Group = toggleGroup;
         if (page == 0)
         {
-            if (e_Toggle.isOn)
+            if (e_Toggle.IsOn)
                 OnSelectedTab?.Invoke(_page);
             else
-                e_Toggle.isOn = true;
+                e_Toggle.IsOn = true;
             if (_selected == null)
                 _selected = ResData.Inst.GetResByAddressPermanent<Sprite>("Selected.png");
             _bg.sprite = _selected;

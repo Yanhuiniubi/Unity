@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+[UIBind(UIDef.UI_AICHAT)]
 public class UIAIChatLogic : UIAIChatBase
 {
     //private UITileLoop<ChatTemplate> _chatContent;
@@ -16,7 +16,7 @@ public class UIAIChatLogic : UIAIChatBase
     public override void OnInit()
     {
         base.OnInit();
-        _rect = GetUIComponentInchildren<RectTransform>("e_Scroll View/Grid");
+        _rect = GetUIComponent<RectTransform>("e_Scroll View/Grid");
         //_chatContent = new UITileLoop<ChatTemplate>(gameObject.transform.Find("e_Scroll View/Grid").gameObject, e_ScrollView);
         _chatContent = new UIContainer<ChatTemplate>(gameObject.transform.Find("e_Scroll View/Grid").gameObject);
         e_CloseBtn.onClick.AddListener(() =>

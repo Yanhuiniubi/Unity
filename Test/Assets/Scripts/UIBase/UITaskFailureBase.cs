@@ -10,7 +10,7 @@ public class UITaskFailureBase : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        e_TxtDesc = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/e_TxtDesc");
-        e_BtnSure = GetUIComponentInchildren<Button>("BgTransparent/Bg/e_BtnSure");
+        e_TxtDesc = GetUIComponent<TextMeshProUGUI>("BgTransparent/Bg/e_TxtDesc");
+        e_BtnSure = GetUIComponent<Button>("BgTransparent/Bg/e_BtnSure");
     }
 }

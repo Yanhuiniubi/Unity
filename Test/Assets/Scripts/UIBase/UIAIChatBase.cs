@@ -14,12 +14,12 @@ public class UIAIChatBase : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        e_TxtTitle = GetUIComponentInchildren<TextMeshProUGUI>("ImgTitle/e_TxtTitle");
-        e_ScrollView = GetUIComponentInchildren<ScrollRect>("e_Scroll View");
-        e_CloseBtn = GetUIComponentInchildren<Button>("e_CloseBtn");
-        e_InputField = GetUIComponentInchildren<TMP_InputField>("Input/e_InputField");
-        e_SendBtn = GetUIComponentInchildren<Button>("e_SendBtn");
-        e_WaitBg = GetUIComponentInchildren<Image>("e_WaitBg");
+        e_TxtTitle = GetUIComponent<TextMeshProUGUI>("ImgTitle/e_TxtTitle");
+        e_ScrollView = GetUIComponent<ScrollRect>("e_Scroll View");
+        e_CloseBtn = GetUIComponent<Button>("e_CloseBtn");
+        e_InputField = GetUIComponent<TMP_InputField>("Input/e_InputField");
+        e_SendBtn = GetUIComponent<Button>("e_SendBtn");
+        e_WaitBg = GetUIComponent<Image>("e_WaitBg");
     }
 }
 public class UIAIChatContentBase : UITemplateBase
@@ -30,8 +30,8 @@ public class UIAIChatContentBase : UITemplateBase
     public override void OnInit()
     {
         base.OnInit();
-        e_Icon = GetUIComponentInchildren<Image>("ChatRootLeft/MaxWidth/e_Icon");
-        e_ImgBG = GetUIComponentInchildren<Image>("ChatRootLeft/MaxWidth/Content/e_ImgBG");
-        e_TxtContent = GetUIComponentInchildren<TextMeshProUGUI>("ChatRootLeft/MaxWidth/Content/e_ImgBG/e_TxtContent");
+        e_Icon = GetUIComponent<Image>("ChatRootLeft/MaxWidth/e_Icon");
+        e_ImgBG = GetUIComponent<Image>("ChatRootLeft/MaxWidth/Content/e_ImgBG");
+        e_TxtContent = GetUIComponent<TextMeshProUGUI>("ChatRootLeft/MaxWidth/Content/e_ImgBG/e_TxtContent");
     }
 }

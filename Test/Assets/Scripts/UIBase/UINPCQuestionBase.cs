@@ -12,10 +12,10 @@ public class UINPCQuestionBase : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        e_CloseBtn = GetUIComponentInchildren<Button>("Bg_transparent/Bg/e_CloseBtn");
-        e_Content = GetUIComponentInchildren<TextMeshProUGUI>("Bg_transparent/Bg/e_Content");
-        e_OKBtn = GetUIComponentInchildren<Button>("e_OKBtn");
-        e_ToggleGroup = GetUIComponentInchildren<ToggleGroup>("e_ToggleGroup");
+        e_CloseBtn = GetUIComponent<Button>("Bg_transparent/Bg/e_CloseBtn");
+        e_Content = GetUIComponent<TextMeshProUGUI>("Bg_transparent/Bg/e_Content");
+        e_OKBtn = GetUIComponent<Button>("e_OKBtn");
+        e_ToggleGroup = GetUIComponent<ToggleGroup>("e_ToggleGroup");
     }
 }
 public class UINPCQuestionContentBase : UITemplateBase
@@ -25,7 +25,7 @@ public class UINPCQuestionContentBase : UITemplateBase
     public override void OnInit()
     {
         base.OnInit();
-        e_Toggle = GetUIComponentInchildren<Toggle>("e_Toggle");
-        e_Text = GetUIComponentInchildren<TextMeshProUGUI>("e_Toggle/Background/e_Text");
+        e_Toggle = GetUIComponent<Toggle>("e_Toggle");
+        e_Text = GetUIComponent<TextMeshProUGUI>("e_Toggle/Background/e_Text");
     }
 }

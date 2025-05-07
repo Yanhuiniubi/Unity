@@ -13,10 +13,10 @@ public class UIPlantUseBase : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        e_CloseBtn = GetUIComponentInchildren<Button>("BgTransparent/Bg/e_CloseBtn");
-        e_ConfirmBtn = GetUIComponentInchildren<Button>("BgTransparent/Bg/e_ConfirmBtn");
-        e_TxtName = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/e_TxtName");
-        e_TxtUse = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/e_TxtUse");
-        e_ItemImg = GetUIComponentInchildren<Image>("BgTransparent/Bg/Kuang/e_ItemImg");
+        e_CloseBtn = GetUIComponent<Button>("BgTransparent/Bg/e_CloseBtn");
+        e_ConfirmBtn = GetUIComponent<Button>("BgTransparent/Bg/e_ConfirmBtn");
+        e_TxtName = GetUIComponent<TextMeshProUGUI>("BgTransparent/Bg/e_TxtName");
+        e_TxtUse = GetUIComponent<TextMeshProUGUI>("BgTransparent/Bg/e_TxtUse");
+        e_ItemImg = GetUIComponent<Image>("BgTransparent/Bg/Kuang/e_ItemImg");
     }
 }

@@ -25,7 +25,8 @@ public class UIBag : UIBagBase
         base.OnInit();
         _container = new UIContainer<UIBagItem>(gameObject.transform.Find("Scroll View/Grid").gameObject);
         _tabGrid = new UIContainer<UIShopTab>(gameObject.transform.Find("ScrollViewPage/e_GridPage").gameObject);
-        e_CloseBtn.onClick.AddListener(CloseUI);
+        e_CloseBtn.AddClickEvent(CloseUI);
+        e_TxtTitle.AddClickPointerHandle((data) => Debug.Log($"{e_TxtTitle.Text}"));
     }
     public override void OnShow(object param)
     {
@@ -35,19 +36,19 @@ public class UIBag : UIBagBase
         switch (_openFrom)
         {
             case eOpenBagFrom.Dustbin_Kehuishou:
-                e_TxtTitle.text = "¿É»ØÊÕÀ¬»ø".ParseColorText("00CBFF") + "Í°";
+                e_TxtTitle.Text = "¿É»ØÊÕÀ¬»ø".ParseColorText("00CBFF") + "Í°";
                 break;
             case eOpenBagFrom.Dustbin_Youhai:
-                e_TxtTitle.text = "ÓÐº¦À¬»ø".ParseColorText("FF0700") + "Í°";
+                e_TxtTitle.Text = "ÓÐº¦À¬»ø".ParseColorText("FF0700") + "Í°";
                 break;
             case eOpenBagFrom.Dustbin_Chuyu:
-                e_TxtTitle.text = "³øÓàÀ¬»ø".ParseColorText("78FF23") + "Í°";
+                e_TxtTitle.Text = "³øÓàÀ¬»ø".ParseColorText("78FF23") + "Í°";
                 break;
             case eOpenBagFrom.Dustbin_Qita:
-                e_TxtTitle.text = "ÆäËûÀ¬»ø".ParseColorText("CBFF9E") + "Í°";
+                e_TxtTitle.Text = "ÆäËûÀ¬»ø".ParseColorText("CBFF9E") + "Í°";
                 break;
             case eOpenBagFrom.BagKey:
-                e_TxtTitle.text = "±³°ü".ParseColorText("FFFFFF");
+                e_TxtTitle.Text = "±³°ü".ParseColorText("FFFFFF");
                 break;
             default:
                 break;
@@ -108,17 +109,17 @@ public class UIBagItem : UIBagContentBase
         base.OnInit();
         _btnUse = GetUIComponent<Button>();
         _btnUse.onClick.AddListener(OnUseBtnClick);
-        e_DescBtn.onClick.AddListener(OnDescBtnClick);
+        e_DescBtn.AddClickEvent(OnDescBtnClick);
     }
     public void SetData(string id, int count, eOpenBagFrom openBagFrom)
     {
         _id = id;
         _count = count;
         _openBagFrom = openBagFrom;
-        e_ItemCount.text = count.ToString();
+        e_ItemCount.Text = count.ToString();
         _cfg = TableItemMainMod.Get(id);
-        e_ItemImg.sprite = ResData.Inst.GetResByAddressPermanent<Sprite>(_cfg.IconPath);
-        e_ItemName.text = _cfg.Name;
+        e_ItemImg.Sprite = _cfg.IconPath;
+        e_ItemName.Text = _cfg.Name;
     }
     private void OnUseBtnClick()
     {

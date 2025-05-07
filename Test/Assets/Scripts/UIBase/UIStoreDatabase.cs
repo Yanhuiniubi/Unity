@@ -9,6 +9,6 @@ public class UIStoreDataBase : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        e_TxtDesc = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/Bg/e_TxtDesc");
+        e_TxtDesc = GetUIComponent<TextMeshProUGUI>("BgTransparent/Bg/e_TxtDesc");
     }
 }

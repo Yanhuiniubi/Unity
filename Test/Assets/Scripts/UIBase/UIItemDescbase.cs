@@ -11,8 +11,8 @@ public class UIItemDescBase : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        e_TxtTitle = GetUIComponentInchildren<TextMeshProUGUI>("ImgTitle/e_TxtTitle");
-        e_TxtDesc = GetUIComponentInchildren<TextMeshProUGUI>("e_TxtDesc");
-        e_CloseBtn = GetUIComponentInchildren<Button>("e_CloseBtn");
+        e_TxtTitle = GetUIComponent<TextMeshProUGUI>("ImgTitle/e_TxtTitle");
+        e_TxtDesc = GetUIComponent<TextMeshProUGUI>("e_TxtDesc");
+        e_CloseBtn = GetUIComponent<Button>("e_CloseBtn");
     }
 }

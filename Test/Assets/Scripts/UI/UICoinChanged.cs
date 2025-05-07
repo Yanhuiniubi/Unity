@@ -18,7 +18,7 @@ public class UICoinChanged : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        _txtCoinChange = GetUIComponentInchildren<TextMeshProUGUI>("TxtCoinChange");
+        _txtCoinChange = GetUIComponent<TextMeshProUGUI>("TxtCoinChange");
         _ani = GetUIComponent<Animation>();
     }
 

@@ -9,6 +9,6 @@ public class UIGuideBase : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        e_CloseBtn = GetUIComponentInchildren<Button>("e_CloseBtn");
+        e_CloseBtn = GetUIComponent<Button>("e_CloseBtn");
     }
 }

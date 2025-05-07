@@ -20,7 +20,7 @@ public class UIMain : UIMainBase
     public override void OnInit()
     {
         base.OnInit();
-        _taskAni = GetUIComponentInchildren<Animation>("TaskArea/Bg");
+        _taskAni = GetUIComponent<Animation>("TaskArea/Bg");
     }
 
     public override void OnShow(object param)
@@ -36,18 +36,18 @@ public class UIMain : UIMainBase
     }
     private void SetCoins()
     {
-        e_CoinsCount.text = PlayerData.Inst.Coins.ToString();
+        e_CoinsCount.Text = PlayerData.Inst.Coins.ToString();
     }
     private void SetGarbageCount()
     {
-        e_TxtGarbageCount.text = $"剩余垃圾数量：{GarbageData.Inst.GarbageCount.ToString().ParseColorText("FD17F5")}";
+        e_TxtGarbageCount.Text = $"剩余垃圾数量：{GarbageData.Inst.GarbageCount.ToString().ParseColorText("FD17F5")}";
     }
     private void OnTaskStateUpdate()
     {
         var data = TaskData.Inst.CurTask;
         if (data == null)
         {
-            e_TaskDesc.text = "已完成所有任务！";
+            e_TaskDesc.Text = "已完成所有任务！";
         }
         else
         {
@@ -67,7 +67,7 @@ public class UIMain : UIMainBase
                     str = data.Desc.Replace("{0}", data.Count.ToString());
                     break;
             }
-            e_TaskDesc.text = str + $"\n({TaskData.Inst.Process.ToString().ParseColorText("000000")}/{data.Count})";
+            e_TaskDesc.Text = str + $"\n({TaskData.Inst.Process.ToString().ParseColorText("000000")}/{data.Count})";
         }
     }
     private void OnTaskFinish()

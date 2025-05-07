@@ -13,10 +13,10 @@ public class UIItemUseResultBase : UILogicBase
     public override void OnInit()
     {
         base.OnInit();
-        e_Bg = GetUIComponentInchildren<Image>("BgTransparent/e_Bg");
-        e_ItemIcon = GetUIComponentInchildren<Image>("BgTransparent/e_Bg/e_ItemIcon");
-        e_TxtResult = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/e_Bg/e_TxtResult");
-        e_TxtDesc = GetUIComponentInchildren<TextMeshProUGUI>("BgTransparent/e_Bg/e_TxtDesc");
-        e_BtnSure = GetUIComponentInchildren<Button>("BgTransparent/e_Bg/e_BtnSure");
+        e_Bg = GetUIComponent<Image>("BgTransparent/e_Bg");
+        e_ItemIcon = GetUIComponent<Image>("BgTransparent/e_Bg/e_ItemIcon");
+        e_TxtResult = GetUIComponent<TextMeshProUGUI>("BgTransparent/e_Bg/e_TxtResult");
+        e_TxtDesc = GetUIComponent<TextMeshProUGUI>("BgTransparent/e_Bg/e_TxtDesc");
+        e_BtnSure = GetUIComponent<Button>("BgTransparent/e_Bg/e_BtnSure");
     }
 }

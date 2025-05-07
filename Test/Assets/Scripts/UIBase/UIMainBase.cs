@@ -5,14 +5,14 @@ using UnityEngine.UI;
 using TMPro;
 public class UIMainBase : UILogicBase
 {
-    protected TextMeshProUGUI e_CoinsCount;//UI-Main/PlayerInfo/Kuang/CoinIcon/Bg/e_CoinsCount
-    protected TextMeshProUGUI e_TxtGarbageCount;//UI-Main/PlayerInfo/Kuang/BgGarbageCount/e_TxtGarbageCount
-    protected TextMeshProUGUI e_TaskDesc;//UI-Main/TaskArea/Bg/e_TaskDesc
+    protected GameLabel e_CoinsCount;//UI-Main/PlayerInfo/Kuang/CoinIcon/Bg/e_CoinsCount
+    protected GameLabel e_TxtGarbageCount;//UI-Main/PlayerInfo/Kuang/BgGarbageCount/e_TxtGarbageCount
+    protected GameLabel e_TaskDesc;//UI-Main/TaskArea/Bg/e_TaskDesc
     public override void OnInit()
     {
         base.OnInit();
-        e_CoinsCount = GetUIComponentInchildren<TextMeshProUGUI>("PlayerInfo/Kuang/CoinIcon/Bg/e_CoinsCount");
-        e_TxtGarbageCount = GetUIComponentInchildren<TextMeshProUGUI>("PlayerInfo/Kuang/BgGarbageCount/e_TxtGarbageCount");
-        e_TaskDesc = GetUIComponentInchildren<TextMeshProUGUI>("TaskArea/Bg/e_TaskDesc");
+        e_CoinsCount = MakeUIComponent<GameLabel>("PlayerInfo/Kuang/CoinIcon/Bg/e_CoinsCount");
+        e_TxtGarbageCount = MakeUIComponent<GameLabel>("PlayerInfo/Kuang/BgGarbageCount/e_TxtGarbageCount");
+        e_TaskDesc = MakeUIComponent<GameLabel>("TaskArea/Bg/e_TaskDesc");
     }
 }

@@ -113,52 +113,52 @@ public class UIScriptsGenerate /*: EditorWindow*/
                 if (t.TryGetComponent<ToggleGroup>(out var component))
                 {
                     sbField.AppendLine($"protected ToggleGroup {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<ToggleGroup>(\"{methodPathStr}\");");
+                    sbMethod.AppendLine($"{onlyName} = GetUIComponent<ToggleGroup>(\"{methodPathStr}\");");
                 }
                 else if (t.TryGetComponent<ScrollRect>(out var rect))
                 {
                     sbField.AppendLine($"protected ScrollRect {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<ScrollRect>(\"{methodPathStr}\");");
+                    sbMethod.AppendLine($"{onlyName} = GetUIComponent<ScrollRect>(\"{methodPathStr}\");");
                 }
                 else if (t.TryGetComponent<Toggle>(out var toggle))
                 {
-                    sbField.AppendLine($"protected Toggle {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<Toggle>(\"{methodPathStr}\");");
+                    sbField.AppendLine($"protected GameToggle {onlyName};//{curPathStr}");
+                    sbMethod.AppendLine($"{onlyName} = MakeUIComponent<GameToggle>(\"{methodPathStr}\");");
                 }
                 else if (t.TryGetComponent<Button>(out var btn))
                 {
-                    sbField.AppendLine($"protected Button {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<Button>(\"{methodPathStr}\");");
+                    sbField.AppendLine($"protected GameButton {onlyName};//{curPathStr}");
+                    sbMethod.AppendLine($"{onlyName} = MakeUIComponent<GameButton>(\"{methodPathStr}\");");
                 }
                 else if (t.TryGetComponent<Slider>(out var slider))
                 {
                     sbField.AppendLine($"protected Slider {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<Slider>(\"{methodPathStr}\");");
+                    sbMethod.AppendLine($"{onlyName} = GetUIComponent<Slider>(\"{methodPathStr}\");");
                 }
                 else if (t.TryGetComponent<TMP_InputField>(out var inputField))
                 {
                     sbField.AppendLine($"protected TMP_InputField {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<TMP_InputField>(\"{methodPathStr}\");");
+                    sbMethod.AppendLine($"{onlyName} = GetUIComponent<TMP_InputField>(\"{methodPathStr}\");");
                 }
                 else if (t.TryGetComponent<Image>(out var img))
                 {
-                    sbField.AppendLine($"protected Image {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<Image>(\"{methodPathStr}\");");
+                    sbField.AppendLine($"protected GameImage {onlyName};//{curPathStr}");
+                    sbMethod.AppendLine($"{onlyName} = MakeUIComponent<GameImage>(\"{methodPathStr}\");");
                 }
                 else if (t.TryGetComponent<TextMeshProUGUI>(out var txt))
                 {
-                    sbField.AppendLine($"protected TextMeshProUGUI {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<TextMeshProUGUI>(\"{methodPathStr}\");");
+                    sbField.AppendLine($"protected GameLabel {onlyName};//{curPathStr}");
+                    sbMethod.AppendLine($"{onlyName} = MakeUIComponent<GameLabel>(\"{methodPathStr}\");");
                 }
                 else if (t.TryGetComponent<RectTransform>(out var rectTransform))
                 {
                     sbField.AppendLine($"protected RectTransform {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<RectTransform>(\"{methodPathStr}\");");
+                    sbMethod.AppendLine($"{onlyName} = GetUIComponent<RectTransform>(\"{methodPathStr}\");");
                 }
                 else
                 {
                     sbField.AppendLine($"protected Transform {onlyName};//{curPathStr}");
-                    sbMethod.AppendLine($"{onlyName} = GetUIComponentInchildren<Transform>(\"{methodPathStr}\");");
+                    sbMethod.AppendLine($"{onlyName} = GetUIComponent<Transform>(\"{methodPathStr}\");");
                 }
 
             }
